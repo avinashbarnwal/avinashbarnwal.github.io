@@ -4,7 +4,7 @@ Time Series Clustering - Mixture Models for Clustering
 Following are the steps in using mixture models for Clustering:-
     
 1. Fit the mixture model
-2. Compute $$x_{1,2} = -b\frac{\sqrt{b^2-4\cdot a \cdot c}{2a}$$
+2. Compute ![img](../images/clustering/posterior.gif)
 
 ![img](http://latex.codecogs.com/svg.latex?%24P%28z_i%3Dk%7Cx_i%2C%5Ctheta%29%24) represents the posterior probability that point i belongs to cluster k.
 
