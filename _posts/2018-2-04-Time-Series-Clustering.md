@@ -30,20 +30,8 @@ from sklearn.mixture import GaussianMixture
 
 path = '/Users/avinashbarnwal/Desktop/Machine Learning/Daily'
 os.chdir(path)
-
 X = pd.read_csv("simola_natural_yeast_imputed.csv",sep=",",header='infer',index_col=0)
-X.head()
-X.shape
-
-
 ```
-
-
-
-
-    (6172, 180)
-
-
 
 One of the most important parameter is covariance type which is "full" leading to exhaustive search
 
@@ -56,35 +44,15 @@ models = [GaussianMixture(n, covariance_type='full', random_state=0).fit(X)
 plt.plot(n_components, [m.bic(X) for m in models], label='BIC')
 plt.plot(n_components, [m.aic(X) for m in models], label='AIC')
 plt.legend(loc='best')
-plt.xlabel('n_components');
-
-
+plt.xlabel('n_components')
 ```
 
-
-![png](/img/output_3_0.png)
-
-
+![png](../images/output_3_0.png)
 
 ```python
-
 gmm = GaussianMixture(n_components=16, covariance_type='full').fit(X)
-
 for i in range(16):
     plt.plot(gmm.means_[i], label=i)
-
-plt.legend(loc='best')    
-
-
+plt.legend(loc='best')
 ```
-
-
-
-
-    <matplotlib.legend.Legend at 0x104bb9690>
-
-
-
-
-![png](/img/output_4_1.png)
-
+![png](../images/output_4_1.png)
