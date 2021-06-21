@@ -4,9 +4,9 @@ Time Series Clustering - Mixture Models for Clustering
 Following are the steps in using mixture models for Clustering:-
     
 1. Fit the mixture model
-2. Compute ![img](https://latex.codecogs.com/png.latex?P%28z_i%3Dk%7Cx_i%2C%5Ctheta%29)
+2. Compute ![img](https://latex.codecogs.com/svg.latex?P%28z_i%3Dk%7Cx_i%2C%5Ctheta%29)
 
-![img](http://latex.codecogs.com/svg.latex?%24P%28z_i%3Dk%7Cx_i%2C%5Ctheta%29%24) represents the posterior probability that point i belongs to cluster k.
+![img](https://latex.codecogs.com/svg.latex?P%28z_i%3Dk%7Cx_i%2C%5Ctheta%29) represents the posterior probability that point i belongs to cluster k.
 
 ![img](http://latex.codecogs.com/svg.latex?r_%7Bik%7D%3DP%28z_i%3Dk%7Cx_i%2C%5Ctheta%29%5Cpropto%28P%28z_i%3Dk%7C%5Ctheta%29P%28x_i%7Cz_i%3Dk%2C%5Ctheta%29%29)
 
