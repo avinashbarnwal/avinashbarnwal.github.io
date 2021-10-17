@@ -249,7 +249,6 @@ defaults:
       layout: single
       author_profile: true
       share: true
-
   # _life
   - scope:
       path: ""
