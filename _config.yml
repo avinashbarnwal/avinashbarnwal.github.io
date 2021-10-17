@@ -184,6 +184,9 @@ collections:
   books:
     output: true
     permalink: /:collection/:path/
+  life:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
