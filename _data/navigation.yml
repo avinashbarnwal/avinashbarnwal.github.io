@@ -20,3 +20,6 @@ main:
 
   - title: "Books"
     url: /books/
+  
+  - title: "Life"
+    url: /life/
