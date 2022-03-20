@@ -7,7 +7,7 @@ As of date - 20th March-2022, there are multiple risks associated to US economy.
 Inflation has increased 40 year high with 7.5% but supply chain disruption could be reason also.
 
 ## Pressure appeared to have peaked
-Retail sales, retail inventories, labor participation looks good.
+Retail sales, retail inventories and labor participation looks good.
 
 ## How the War Drives Up Recession Risk
 Impact could be through three transmission channels.
@@ -35,3 +35,5 @@ Despite the headwinds of War Crisis, its not clear that it outweighs the tailwin
 - Dont assume shocks drive structural changes.
 - Dont assume that pricing power persists.
 - Do think of productivity growth as competitive advantage.
+
+![png](../images/.png)
