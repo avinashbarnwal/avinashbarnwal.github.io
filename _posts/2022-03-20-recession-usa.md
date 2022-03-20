@@ -1,3 +1,10 @@
+---
+title: "Current risks to US Economy"
+collection: posts
+type: "Finance"
+permalink: /posts/2022-03-20-us-economy
+date: 2022-03-20
+---
 
 # Current risks to US Economy
 

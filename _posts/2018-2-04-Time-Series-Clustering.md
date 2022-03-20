@@ -1,3 +1,11 @@
+---
+title: "Time Series Clustering - Mixture Models for Clustering"
+collection: posts
+type: "Data Science"
+permalink: /posts/2018-04-15-clustering
+date: 2018-04-15
+---
+
 
 Time Series Clustering - Mixture Models for Clustering
 
