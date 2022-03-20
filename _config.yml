@@ -4,7 +4,7 @@ locale                   : "en-US"
 title                    : "Avinash Barnwal, Ph.D."
 title_separator          : "-"
 name                     : &name "Avinash Barnwal"
-description              : &description "Senior Data Scientist - Kapitus"
+description              : &description "Data Scientist III - Kapitus"
 url                      : https://avinashbarnwal.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "avinashbarnwal.github.io"
@@ -173,6 +173,9 @@ collections:
     output: true
     permalink: /:collection/:path/
   publications:
+    output: true
+    permalink: /:collection/:path/
+  posts:
     output: true
     permalink: /:collection/:path/
   portfolio:
