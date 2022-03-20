@@ -43,4 +43,4 @@ Despite the headwinds of War Crisis, its not clear that it outweighs the tailwin
 - Dont assume that pricing power persists.
 - Do think of productivity growth as competitive advantage.
 
-[<img src="../images/risk_us_economy/W220310_CARLSSON_ECONOMY_PEAK_ECONOMIC_PRESSURE_360.png" width="20" height="20"/>](../images/risk_us_economy/W220310_CARLSSON_ECONOMY_PEAK_ECONOMIC_PRESSURE_360.png)
+[<img src="../images/risk_us_economy/W220310_CARLSSON_ECONOMY_PEAK_ECONOMIC_PRESSURE_360.png" width="200" height="200"/>](../images/risk_us_economy/W220310_CARLSSON_ECONOMY_PEAK_ECONOMIC_PRESSURE_360.png)
