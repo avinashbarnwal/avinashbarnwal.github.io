@@ -26,3 +26,15 @@ date: 2022-03-26
 - Appeal to the nobler motives. 
 - Dramatize your ideas. 
 - Throw down a challenge.
+
+## BE A LEADER
+A leader’s job often includes changing your people’s attitudes and behavior. Some suggestions to accomplish this:
+- Begin with praise and honest appreciation. 
+- Call attention to people’s mistakes indirectly. 
+- Talk about your own mistakes before criticizing the other person. 
+- Ask questions instead of giving direct orders. 
+- Let the other person save face. 
+- Praise the slightest improvement and praise every improvement. Be “hearty in your approbation and lavish in your praise.” 
+- Give the other person a fine reputation to live up to.
+- Use encouragement. Make the fault seem easy to correct.
+- Make the other person happy about doing the thing you suggest.
