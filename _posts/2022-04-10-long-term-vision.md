@@ -1,5 +1,5 @@
 ---
-title: "Keeping Sight of Your Company’s Long-Term Vision"
+title: "Keeping Sight of Your Company's Long-Term Vision"
 collection: posts
 type: "Strategy"
 permalink: /posts/2022-04-10-long-term-vision
