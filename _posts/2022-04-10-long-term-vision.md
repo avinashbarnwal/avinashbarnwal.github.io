@@ -20,10 +20,10 @@ There are three approaches that we have seen leaders use successfully to deal wi
 ## Vision-Based Planning Process
 - Dreaming sessions - Team would identify longer-term possibilities for what their businesses could become, and then shape their yearly plans with those opportunities in mind.
 - V2MOM — vision, values, methods, obstacles, and measures.
--- One-pager for the entire company which, as the acronym suggests.
--- First articulates the firm’s overall vision and then spells out his thoughts about the key steps needed to move towards it. 
--- Direct reports create V2MOM documents for their own groups.
--- Combine V2MOMs to achieve full enterprise-wide alignment and commitment to their strategic intent for the next 12 months.
+  - One-pager for the entire company which, as the acronym suggests.
+  - First articulates the firm’s overall vision and then spells out his thoughts about the key steps needed to move towards it. 
+  - Direct reports create V2MOM documents for their own groups.
+  - Combine V2MOMs to achieve full enterprise-wide alignment and commitment to their strategic intent for the next 12 months.
 
 ## Focused Experimentation
 That’s where experimentation comes in — shaping small tests to find out what will work and what will not on the path towards the vision, while also building support for it along the way. But without a focused approach, this experimentation may not lead to the ultimate goal you are trying to reach.
