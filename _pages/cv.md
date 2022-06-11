@@ -30,13 +30,15 @@ Work experience
   * Indiabulls Housing Finance
   * Analytics and Investor Relations
 
+* Jan 2015 - Jul 2015: Senior Analyst
+  * Deutsche Bank
+  * Derivates Funding Desk
+
 * Sep 2012 - Nov 2014: Assistant Manager
   * Fullerton India Credit Company
   * Analytics and Information Management
 
-* Jan 2015 - Jul 2015: Senior Analyst
-  * Deutsche Bank
-  * Derivates Funding Desk
+
   
   
 Skills
