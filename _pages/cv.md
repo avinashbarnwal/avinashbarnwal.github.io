@@ -18,7 +18,7 @@ Education
 Work experience
 ======
 
-* Mar 2020: Senior Data Scientist
+* Mar 2020 - Current: Manager - Data Science
   * Kapitus
   * Predictive Modeling
 
