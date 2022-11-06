@@ -7,12 +7,41 @@ date: 2022-11-03
 ---
 
 
-# Chapter 1
+# Chapter 1 - Resetting execution for a time of crisis
 
-The way the world works is broken
-The author talks about the history of how different methodologies are used to manage the project and create value for the stakeholders. Waterfall has been an old methodology used to manage projects and deliver value but it doesn't work as planning doesn't meet the reality. He introduces a new concept "Scrum" which addresses this problem by incorporating how people work rather than what people say.  It is based on rugby where the team huddles and addresses the strategy again. It embraces creativity and uncertainty. It requires thought, inspection, honesty, and discipline. Scrum improves the productivity of the team. The author builds the case for  Scrum by giving different scenarios of improving FBI, healthcar.gov, and many more. 
+The Three Core Processes of Execution
+- Strategy
+- People
+- Operations
 
-The author declares that the waterfall method doesn't work but doesn't provide a very sound reason for it. He provides the correct reasons for why Scrum would work. Scrum provides a way where people can use it to their advantage to derail the project and the ultimate focus would have been to deliver value and continuous measures of improving productivity.
+Dimon(JP Morgan) vs Prince(Citi)
+Dimon below principles:-
+- Clear Profit-and-loss responsibilities for each division of the bank down to the lowest levels feasible.
+- Evaluate people from complete world.
+- Invested heavily in information technology.
+- Rigorous compensation policies - Earned vs Award.
+- Intense effort to discovering and managing risk.
+
+Prince below principles:-
+- Lacked Dimon's operating experiance.
+- Failed to understand business and people.
+- Didnt get much-needed advice from senior executive.
+- Didnt understand the business risks from new,exotic financial products.
+
+
+The Seven Essential Behaviors
+
+- Know your people and know your business.
+- Insist on realism.
+- Identify clear goals and priorities.
+- Follow-through.
+- Reward the doers.
+- Expand the peoples capabilities.
+- Know Yourself.
+
+
+
+
 
 # Chapter 2
 
