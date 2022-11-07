@@ -40,7 +40,10 @@ The Seven Essential Behaviors
 - Know Yourself.
 
 
-
+# Chapter 2 - Introduction
+- Execution is a disciplin, and integral to strategy.
+- Execution is the major job of the business leader.
+- Execution must be a core element of an organization's culture.
 
 
 # Chapter 2
