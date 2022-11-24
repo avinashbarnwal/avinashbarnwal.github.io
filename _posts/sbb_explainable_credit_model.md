@@ -15,11 +15,11 @@ The complex machine learning models provide higher predictive power but it has l
 
 Traditional score-cards use WOE and Information of the features as independent features. Generally cuts are used to increase IV. Manual adjustment of bins is then applied to satisfy monotonic relatiosnhip requirement. Missing and extreme feature values can be binned separately and both categorical and continuous variables can be with optimal binning.
 
-![png](../images/explainable_ai/WOE.png)
+![png](../images/explainable_ai/WOE.png =250x250)
 
 Non Linear Risk Models(such as XGBoost, Catboost and LighGBM) may perform better than score-card models when feature feature interactions are complex. XGBoost has produced higher KS by 7%. Neural Networks performed not so good compared to tree based models given number of data points was lower compared to features. 
 
-![png](../images/explainable_ai/KS.png)
+![png](../images/explainable_ai/KS.png =250x250)
 
 Adverse Action Codes are assigned based on the higher value of the features increases the risk or lowers the risk. Construction of score-card having property of the monotonic relationship between features and scores. 
 
@@ -29,8 +29,8 @@ Explaining the XGBoost model can be done using two techniques:-
 - SHAP calculates the feature attribution using Shapley Values. Features with the highest Shapley Values is then mapped to the AA reason code.
 
 The monotonicity requirements that ensures credit decisions have acceptable explanations was satisfied using a features in XGBoost which forces predictions to monotonically icnrease ordecrease with respect to each feature when other features are constant. For a tree based model, right child's value is constrained to be higher than the left child's value for each split of a particular feature. Model monotonicity constraints give higher KS by 8%.
-![png](../images/explainable_ai/AUC_compare.png)
-![png](../images/explainable_ai/KS_compare.png)
+![png](../images/explainable_ai/AUC_compare.png =250x250)
+![png](../images/explainable_ai/KS_compare.png =250x250)
 
 It is also important to understand the direction of impact with highly imbalanced distribution such as high contribution of missing values. It is possible that high contribution might be from missing values that has negative WOE but larger values of the variable lead to lower risks. We can handle this by creating separate dummy feature.
 
