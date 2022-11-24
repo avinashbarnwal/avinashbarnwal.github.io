@@ -46,3 +46,6 @@ Binning the population based on the scores and comparing the agreement on the fe
 [<img src="../images/explainable_ai/SHAP.png" width="200" height="200"/>](../images/explainable_ai/SHAP.png)
 [<img src="../images/explainable_ai/WOE_weird.png" width="200" height="200"/>](../images/explainable_ai/WOE_weird.png)
 
+
+### References
+- https://ojs.aaai.org/index.php/AAAI/article/view/7055
