@@ -42,3 +42,7 @@ Scorecard vs XGBoost Explanations
 
 Binning the population based on the scores and comparing the agreement on the features provide the clear idea of the efficacy of the model. For risky deciles, it has more agreement vs less risky declines. To find more risky customers is easy very less risky customers therefore, we see more agreement in the risky deciles.
 
+[<img src="../images/explainable_ai/AAC_compare.png" width="200" height="200"/>](../images/explainable_ai/AAC_compare.png)
+[<img src="../images/explainable_ai/SHAP.png" width="200" height="200"/>](../images/explainable_ai/SHAP.png)
+[<img src="../images/explainable_ai/WOE_weird.png" width="200" height="200"/>](../images/explainable_ai/WOE_weird.png)
+
