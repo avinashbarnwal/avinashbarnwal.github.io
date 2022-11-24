@@ -29,7 +29,8 @@ Explaining the XGBoost model can be done using two techniques:-
 - SHAP calculates the feature attribution using Shapley Values. Features with the highest Shapley Values is then mapped to the AA reason code.
 
 The monotonicity requirements that ensures credit decisions have acceptable explanations was satisfied using a features in XGBoost which forces predictions to monotonically icnrease ordecrease with respect to each feature when other features are constant. For a tree based model, right child's value is constrained to be higher than the left child's value for each split of a particular feature. Model monotonicity constraints give higher KS by 8%.
-
+![png](../images/explainable_ai/AUC_compare.png)
+![png](../images/explainable_ai/KS_compare.png)
 
 It is also important to understand the direction of impact with highly imbalanced distribution such as high contribution of missing values. It is possible that high contribution might be from missing values that has negative WOE but larger values of the variable lead to lower risks. We can handle this by creating separate dummy feature.
 
