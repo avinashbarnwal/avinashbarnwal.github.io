@@ -13,7 +13,9 @@ The complex machine learning models provide higher predictive power but it has l
 
 ### Methodology and Results
 
-Traditional score-cards use WOE and Information of the features as independent features. Generally cuts are used to increase IV. Manual adjustment of bins is then applied to satisfy monotonic relatiosnhip requirement. Missing and extreme feature values can be binned separately and both categorical and continuous variables can be with optimal binning. 
+Traditional score-cards use WOE and Information of the features as independent features. Generally cuts are used to increase IV. Manual adjustment of bins is then applied to satisfy monotonic relatiosnhip requirement. Missing and extreme feature values can be binned separately and both categorical and continuous variables can be with optimal binning.
+
+![png](../images/explainable_ai/WOE.png)
 
 Non Linear Risk Models(such as XGBoost, Catboost and LighGBM) may perform better than score-card models when feature feature interactions are complex. XGBoost has produced higher KS by 7%. Neural Networks performed not so good compared to tree based models given number of data points was lower compared to features. 
 
