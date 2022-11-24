@@ -19,6 +19,8 @@ Traditional score-cards use WOE and Information of the features as independent f
 
 Non Linear Risk Models(such as XGBoost, Catboost and LighGBM) may perform better than score-card models when feature feature interactions are complex. XGBoost has produced higher KS by 7%. Neural Networks performed not so good compared to tree based models given number of data points was lower compared to features. 
 
+![png](../images/explainable_ai/KS.png)
+
 Adverse Action Codes are assigned based on the higher value of the features increases the risk or lowers the risk. Construction of score-card having property of the monotonic relationship between features and scores. 
 
 Explaining the XGBoost model can be done using two techniques:-
