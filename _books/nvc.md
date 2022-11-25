@@ -10,7 +10,7 @@ date: 2022-11-25
 
 The two parts of NVC: 
 1. expressing honestly 
-2. 2. receiving empathically
+2. receiving empathically
 
 - Empathy: emptying our mind and listening with our whole being.   
 - Ask before offering advice or reassurance.   
