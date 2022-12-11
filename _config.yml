@@ -190,6 +190,9 @@ collections:
   life:
     output: true
     permalink: /:collection/:path/
+  geeta:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -259,6 +262,14 @@ defaults:
   - scope:
       path: ""
       type: life
+    values:
+      layout: single
+      author_profile: true
+      share: true
+  # _geeta
+  - scope:
+      path: ""
+      type: geeta
     values:
       layout: single
       author_profile: true
