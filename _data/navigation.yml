@@ -9,9 +9,6 @@ main:
   - title: "Teaching"
     url: /teaching/
 
-  - title: "Portfolio"
-    url: /portfolio/
-
   - title: "Blog Posts"
     url: /posts/
 
@@ -23,3 +20,6 @@ main:
 
   - title: "Life"
     url: /life/
+  
+  - title: "Geeta"
+    url: /geeta/
