@@ -2,7 +2,7 @@
 title: "Execution: The Discipline of Getting Things Done"
 collection: books
 type: "Non-Fictional"
-permalink: /books/execution
+permalink: /geeta/pain
 date: 2022-11-03
 ---
 
