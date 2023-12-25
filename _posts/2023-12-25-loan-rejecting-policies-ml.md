@@ -1,3 +1,10 @@
+---
+title: "Loan Rejection Policies — Machine Learning"
+collection: posts
+type: "Data Science"
+permalink: /posts/2023-12-25-loan_rejection
+date: 2023-12-25
+---
 
 Interpretability versus performance trade-off given common ML algorithms. Source — http://tinyurl.com/4n5xtszb
 
