@@ -1,3 +1,11 @@
+---
+title: "Music Notes of Jo Main Bora - Kabir ke dohe"
+collection: music
+type: "Non-Fictional"
+permalink: /music/kabir_ke_dohe_jo_main_bora
+date: 2024-09-08
+---
+
 Line 1: जो मैं बौरा तो राम तोरा
 Notes: Sa Re Ga Ma Pa, Pa Ma Ga Re Sa
 
