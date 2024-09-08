@@ -190,6 +190,12 @@ collections:
   geeta:
     output: true
     permalink: /:collection/:path/
+  yoga:
+    output: true
+    permalink: /:collection/:path/
+  music:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -258,6 +264,22 @@ defaults:
   - scope:
       path: ""
       type: geeta
+    values:
+      layout: single
+      author_profile: true
+      share: true
+  # _yoga
+  - scope:
+      path: ""
+      type: yoga
+    values:
+      layout: single
+      author_profile: true
+      share: true
+  # _music
+  - scope:
+      path: ""
+      type: music
     values:
       layout: single
       author_profile: true
