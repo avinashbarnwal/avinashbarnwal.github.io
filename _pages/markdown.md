@@ -20,6 +20,8 @@ redirect_from:
   * _talks/
   * _books/
   * _life/
+  * _yoga/
+  * _music/
 * Footer: _includes/footer.html
 * Static files (like PDFs): /files/
 * Profile image (can set in _config.yml): images/profile.png
