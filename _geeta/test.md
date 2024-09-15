@@ -1,5 +1,5 @@
 ---
-title: "Execution: The Discipline of Getting Things Done"
+title: "Types of sufferings/pain"
 collection: books
 type: "Non-Fictional"
 permalink: /geeta/pain
