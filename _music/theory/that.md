@@ -11,4 +11,5 @@ There are 10 types of Thats:-
 - Marwa (Re Komal, Teevar M)
 - Purvi (Re, Dha - Komal, Teevar M)
 - Todi (Re Ga Dha - Komal, Teerav - M)
-- Bharwavi (End Notes)
+- Bharwavi (Sa, Pa - Komal)
+  - Generally at the end.
