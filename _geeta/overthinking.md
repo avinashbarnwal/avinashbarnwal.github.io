@@ -3,7 +3,7 @@ title: "overthinking"
 collection: books
 type: "Non-Fictional"
 permalink: /geeta/overthinking
-date: 2022-11-03
+date: 2024-09-29
 ---
 
 Overthinking and Dependencies over others
