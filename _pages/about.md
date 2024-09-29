@@ -8,6 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-I am a curious and passionate scientist, seeking knowledge, and trying to understand and improve the world. Trained as a Statistician, I found my way through machine learning and statistical learning to learn how to build better models and solve difficult problems using data science. Always taking a curious and creative approach to problems and challenges ensures my research is never shy of excitement.
+I am a curious and passionate scientist at heart, helping small businesses to become better financial instruments. Trained as a Statistician, I found my way through machine learning and statistical learning to learn how to build better models and solve impactful problems using data science. Trying to find ways to enable better financing options for small businesses.
 
-Here you can find more information about my background and research interests, research projects, and publications.
+Here you can find more information about my background, research interests, research projects, publications and views on finance.
