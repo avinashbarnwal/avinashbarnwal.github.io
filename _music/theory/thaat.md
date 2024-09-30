@@ -17,13 +17,13 @@ There are 10 types of Thats:-
   - RAGAS Melhar
   - Ragas like Asavari and Jaunpuri are based on this Thaat.
   - It is often used in sad or serious ragas.
-- Kalyan (Teevar M)
+- Kalyan (Tivar M)
   - Yaman is the main raga of this Thaat.
   - The Thaat has a serene and romantic quality, typically performed in the evening.
-- Marwa (Re Komal, Teevar M)
+- Marwa (Re Komal, Tivar M)
   - Ragas like Marwa and Puriya are based on this Thaat.
   - It has a restless and tense character, suitable for late afternoon.
-- Purvi (Re, Dha - Komal, Teevar M)
-- Todi (Re Ga Dha - Komal, Teerav - M)
+- Purvi (Re, Dha - Komal, Tivar M)
+- Todi (Re Ga Dha - Komal, Tivar - M)
 - Bharwavi (Sa, Pa - Komal)
   - Generally at the end.
