@@ -1,3 +1,12 @@
+---
+title: "awareness and faith"
+collection: books
+type: "Non-Fictional"
+permalink: /geeta/faith
+date: 2024-10-03
+---
+
+
 **Shlok : 4 and 40 Verse**
 
 **agyaschashraddadhanasch sanshayatma vinashyati.     
