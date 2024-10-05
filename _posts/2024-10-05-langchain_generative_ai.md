@@ -338,7 +338,7 @@ For someone of your age, a good gift would be something that is both practical a
 ```
 
 **Conclusion**    
-This is overview about LangChain can be used to build the applications using LLMs. We also shared the concept about agents and how it can used. There are lot more concepts about improving the applications using LangChain such as how to optimize memory so that we can be selective about the summaries of the conversations. I hope you had fun reading this article.
+This is overview about LangChain which can be used to build the applications using LLMs. We also shared the concept about agents and how it can be used. There are lot more concepts about improving the applications using LangChain such as how to optimize memory so that we can be selective about the summaries of the conversations. I hope you had fun reading this article.
 
-**References**
+**References**      
 [1] https://towardsdatascience.com/a-gentle-intro-to-chaining-llms-agents-and-utils-via-langchain-16cd385fca81
