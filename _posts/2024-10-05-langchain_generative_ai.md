@@ -326,8 +326,8 @@ overall_chain.run("If my age is half of my dad's age and he is going to be 60 ne
 For someone of your age, a good gift would be something that is both practical and meaningful. Consider something like a nice watch, a piece of jewelry, a nice leather bag, or a gift card to a favorite store or restaurant.\nIf you have a larger budget, you could consider something like a weekend getaway, a spa package, or a special experience.'}
 ```
 
-**Conclusion**
+**Conclusion**     
 This is overview about LangChain can be used to build the applications using LLMs. We also shared the concept about agents and how it can used. There are lot more concepts about improving the applications using LangChain such as how to optimize memory so that we can be selective about the summaries of the conversations. I hope you had fun reading this article.
 
-**References**
+**References**      
 [1] https://towardsdatascience.com/a-gentle-intro-to-chaining-llms-agents-and-utils-via-langchain-16cd385fca81
