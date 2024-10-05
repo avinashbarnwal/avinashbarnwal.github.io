@@ -5,12 +5,12 @@ type: "Data Science"
 permalink: /posts/langchain
 date: 2024-10-05
 ---
-What is does - It is a framework that allows developers to create applications using LLMs. 
-How it works - It combines external components with LLMs. It can also add context and memory to existing LLMs, which can help them complete more complex tasks. 
-Features - It includes centralized development environment, module-based approach, and ability to compare different prompts and foundation models. 
-Integration - It integrates with other tools and frameworks, including Couchbase, a high-performance NoSQL database. 
-How to build applications
-Lets Start building a simple prototype or use case of the Langchain
+**What is does** - It is a framework that allows developers to create applications using LLMs.      
+**How it works** - It combines external components with LLMs. It can also add context and memory to existing LLMs, which can help them complete more complex tasks.      
+**Features** - It includes centralized development environment, module-based approach, and ability to compare different prompts and foundation models.     
+**Integration** - It integrates with other tools and frameworks, including Couchbase, a high-performance NoSQL database.     
+**How to build applications**    
+Lets Start building a simple prototype or use case of the Langchain      
 1. Generic
 import os
 os.environ["OPENAI_API_KEY"] = "..."
