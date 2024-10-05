@@ -49,7 +49,7 @@ llmchain_chat = LLMChain(llm=chatopenai, prompt=prompt)
 llmchain_chat.run("podcast player")
 ```
 
-Generix chains are used as building blocks for the Utility chains.
+Generic chains are used as building blocks for the Utility chains.
 
 2. Utility:- It comprised of multiple chains to help solve the problems. One of the example is PalChain. PAL stands for Programme Aided Language Model. 
 
@@ -57,12 +57,17 @@ It reads  maths problem. --> Generates programs to solve the maths problem --> o
 
 Again, it has two parts:-
 
-- First uses a generic LLMChain to understand the query.
-- Second uses Python REPL to solve the function/program outputted by the LLM.
+- First, it uses a generic LLMChain to understand the query.    
+- Second, Python REPL solves the function/program outputted by the LLM.     
 
+
+```
 from langchain.chains import PALChain
 palchain = PALChain.from_math_prompt(llm=llm, verbose=True)
 palchain.run("If my age is half of my dad's age and he is going to be 60 next year, what is my current age?")
+```
+
+
 ```
 # OUTPUT
 # > Entering new PALChain chain...
@@ -82,10 +87,10 @@ It has default prompt passed.
 print(palchain.prompt.template)
 ```
 
-**Building chains**
-We have set up ourselves to build the chains. We need to build how we can pass output of one chain to another chain as input. We can use SimpleSequentialChain. One of the use case of Chains is to improve the OpenAI - ChatGPT as it is limited with recency of the information to build the models. 
+**Building chains**      
+We have set up ourselves to build the chains. We need to figure out how to pass the output of one chain to another chain as input. We can use SimpleSequentialChain. One use case of Chains is to improve the OpenAI-ChatGPT, as it is limited by the recency of the information used to build the models.    
 
-We have similar concept to LLMs which is Agents. Agents have access to LLMs and suite of tools for example Google Search, Python REPL, math calculator, weather APIs, etc. One of the most common agent is zero-shot-react-description. This tool uses ReAct (Reason+Act) framework to pick the most usable tool. We need to initialize the agent and pass it the tools and LLM it needs. For example- we are using pal-math. We will pass the same LLM used before for initialization. 
+We have a similar concept to LLMs: agents. Agents have access to LLMs and a suite of tools, such as Google Search, Python REPL, math calculator, weather APIs, etc. One of the most common agents is zero-shot-react-description. This tool uses the ReAct (Reason+Act) framework to pick the most usable tool. We need to initialize the agent and pass it the tools and LLM it needs. For example, we are using pal-math. We will pass the same LLM used before for initialization.    
 
 ```
 from langchain.agents import initialize_agent
@@ -154,12 +159,14 @@ print(agent.agent.llm_chain.prompt.template)
 # Thought:{agent_scratchpad}
 ```
 
-Agent lift is ability to use unknown chains which is generally not possible in the predetermined chain of calls to LLMs/other tools. For example, OpenAI has stale information as it is built using data till 2020. 
+Agent lift is the ability to use unknown chains, which is generally not possible in the predetermined chain of calls to LLMs/other tools. For example, OpenAI has stale information as it is built using data until 2020.    
 
-agent.run("My age is half of my dad's age. Next year he is going to be same age as Demi Moore. What is my current age?")
+```
+agent.run("My age is half of my dad's age. Next year he is going to be same age as Demi Moore. What is my current age?)
+```
 
-This can be easily fixed by including another tool —
-tools = load_tools([“pal-math”, "serpapi"], llm=llm). serpapi is useful for answering questions about current events.
+This can be easily fixed by including another tool - tools = load_tools(["pal-math", "serpapi"], llm=llm). serpapi is useful for answering questions about current events.
+
 
 **Use case 1**     
 
@@ -188,14 +195,16 @@ agent.run("Show me episodes for money saving tips.")
 
 # > Finished chain.
 ```
-It has two parts.
-- First part is about creating the API URL based on our input instructions and making the API call. 
-- Second part is about summerizing the response.
+It has two parts.     
+- The first part concerns creating the API URL based on our input instructions and making the API call.    
+- The second part is about summarizing the response.    
 
 **Use case 2: Combine chains to create an age-appropriate gift generator**
-We are going to create our own sequential chains based on our previous use case about age problems. We will combine them:-
+We are going to create our own sequential chains based on our previous use case about age problems. We will combine them:-    
+
 - Chain #1:- The agent we just created that can solve age problems in math.
-- Chain #2:- An LLM that takes the age of a person and suggests an appropriate gift for them.
+- Chain #2:- An LLM that takes a person's age and suggests an appropriate gift for them.
+
 
 ```
 # Chain1 - solve math problem, get the age
@@ -250,7 +259,7 @@ overall_chain.run(question)
 # > Finished chain.
 ```
 
-We can also pass extra information to second chain using SimpleMemory. For example, lets add budget as the input variable.     
+We can also pass extra information to the second chain using SimpleMemory. For example, let's add budget as the input variable.   
 
 ```
 template = """You are a gift recommender. Given a person's age,\n
@@ -264,7 +273,7 @@ prompt_template = PromptTemplate(input_variables=["output", "budget"], template=
 chain_two = LLMChain(llm=llm, prompt=prompt_template)
 ```
 
-We need to careful about the output variable and it has been changed from age. 
+We must be careful about the output variable, which has changed from age.
 
 
 ```
@@ -273,7 +282,7 @@ print(agent.agent.llm_chain.output_keys)
 ["output"]
 ```
 
-SimpleSequentialChain works with only single input and single output. Now we are using two inputs with budget as additional variable. Therefore, we need to use SequentialChain which can handle multiple multiple inputs and outputs.
+SimpleSequentialChain works with only a single input and a single output. Now, we are using two inputs with a budget as an additional variable. Therefore, we need to use SequentialChain, which can handle multiple inputs and outputs.
 
 
 ```
@@ -338,7 +347,7 @@ For someone of your age, a good gift would be something that is both practical a
 ```
 
 **Conclusion**    
-This is overview about LangChain which can be used to build the applications using LLMs. We also shared the concept about agents and how it can be used. There are lot more concepts about improving the applications using LangChain such as how to optimize memory so that we can be selective about the summaries of the conversations. I hope you had fun reading this article.
+This is an overview of LangChain, which can be used to build applications using LLMs. We also shared the concept of agents and how they can be used. There are a lot more concepts about improving applications using LangChain, such as how to optimize memory so that we can be selective about the summaries of the conversations. I hope you had fun reading this article.
 
 **References**      
 [1] https://towardsdatascience.com/a-gentle-intro-to-chaining-llms-agents-and-utils-via-langchain-16cd385fca81
