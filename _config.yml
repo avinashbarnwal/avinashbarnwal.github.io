@@ -51,7 +51,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &AVINASH_BARNWAL
 facebook:
   username               :
   app_id                 :
@@ -96,7 +96,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : ""
+  linkedin         : "https://www.linkedin.com/in/avinash-barnwal/"
   orcid            : "https://orcid.org/0000-0002-7581-0062"
   pinterest        :
   soundcloud       :
