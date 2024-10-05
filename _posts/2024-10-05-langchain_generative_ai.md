@@ -5,6 +5,8 @@ type: "Data Science"
 permalink: /posts/langchain
 date: 2024-10-05
 ---
+![png](../images/langchain_llm/llm.png)
+
 **What it does** - It is a framework that allows developers to create applications using LLMs.      
 **How it works** - It combines external components with LLMs. It can also add context and memory to existing LLMs, which can help them complete more complex tasks.      
 **Features** - It includes centralized development environment, module-based approach, and ability to compare different prompts and foundation models.     
