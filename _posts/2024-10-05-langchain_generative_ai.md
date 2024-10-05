@@ -12,18 +12,19 @@ date: 2024-10-05
 **How to build applications**    
 Lets Start building a simple prototype or use case of the Langchain      
 1. Generic
+
+```
 import os
 os.environ["OPENAI_API_KEY"] = "..."
 Let’s build a basic chain — create a prompt and get a prediction
 from langchain.prompts import PromptTemplate
-
 prompt = PromptTemplate(
     input_variables=["product"],
     template="What is a good name for a company that makes {product}?",
 )
-
 print(prompt.format(product="podcast player"))
-
+```
+```
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 
@@ -32,13 +33,13 @@ llm = OpenAI(
           temperature=0.9) #temperature dictates how whacky the output should be
 llmchain = LLMChain(llm=llm, prompt=prompt)
 llmchain.run("podcast player")
-
-
+```
+```
 from langchain.chat_models import ChatOpenAI
-
 chatopenai = ChatOpenAI(
                 model_name="gpt-3.5-turbo")
 llmchain_chat = LLMChain(llm=chatopenai, prompt=prompt)
 llmchain_chat.run("podcast player")
+```
 
 2. 
