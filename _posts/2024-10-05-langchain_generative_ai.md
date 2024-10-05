@@ -102,6 +102,7 @@ agent = initialize_agent(tools,
 ```
 
 Let’s test it out on the same example as above:
+
 ```
 agent.run("If my age is half of my dad's age and he is going to be 60 next year, what is my current age?")
 # OUTPUT
@@ -124,11 +125,14 @@ agent.run("If my age is half of my dad's age and he is going to be 60 next year,
 # > Finished chain.
 # 'My current age is 29.5 years old.'
 ```
-It takes one of the 3 steps to complete the tasks.
+
+It does one of the 3 steps to complete the tasks.
 - Observation    
 - Thought     
 - Action    
+
 This is mainly due to the ReAct framework and the associated prompt that the agent is using:
+
 ```
 print(agent.agent.llm_chain.prompt.template)
 # OUTPUT
@@ -158,14 +162,17 @@ This can be easily fixed by including another tool —
 tools = load_tools([“pal-math”, "serpapi"], llm=llm). serpapi is useful for answering questions about current events.
 
 **Use case 1**     
+
 Another example is podcast-api. 
 
-
+```
 tools = load_tools(["podcast-api"], llm=llm, listen_api_key="...")
 agent = initialize_agent(tools,
                          llm,
                          agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
                          verbose=True)
+```
+
 
 ```
 agent.run("Show me episodes for money saving tips.")
@@ -204,7 +211,9 @@ Suggest gift:"""
 prompt_template = PromptTemplate(input_variables=["age"], template=template)
 chain_two = LLMChain(llm=llm, prompt=prompt_template) 
 ```
+
 We can combine them using SimpleSequentialChain.
+
 ```
 from langchain.chains import SimpleSequentialChain
 overall_chain = SimpleSequentialChain(
@@ -213,14 +222,13 @@ overall_chain = SimpleSequentialChain(
 ```
 
 Below is the same math problem run again:-
+
 ```
 question = "If my age is half of my dad's age and he is going to be 60 next year, what is my current age?"
 overall_chain.run(question)
 
 # OUTPUT
 # > Entering new SimpleSequentialChain chain...
-
-
 # > Entering new AgentExecutor chain...
 # I need to figure out my dad's current age and then divide it by two.
 # Action: PAL-MATH
@@ -236,16 +244,13 @@ overall_chain.run(question)
 # Observation: 29.5
 # Thought: I now know the final answer.
 # Final Answer: My current age is 29.5 years old.
-
 # > Finished chain.
 # My current age is 29.5 years old.
-
 # Given your age, a great gift would be something that you can use and enjoy now like a nice bottle of wine, a luxury watch, a cookbook, or a gift card to a favorite store or restaurant. Or, you could get something that will last for years like a nice piece of jewelry or a quality leather wallet.
-
 # > Finished chain.
 ```
 
-We can also pass extra information to second chain using SimpleMemory. For example, lets add budget as the input variable. 
+We can also pass extra information to second chain using SimpleMemory. For example, lets add budget as the input variable.     
 
 ```
 template = """You are a gift recommender. Given a person's age,\n
@@ -260,14 +265,17 @@ chain_two = LLMChain(llm=llm, prompt=prompt_template)
 ```
 
 We need to careful about the output variable and it has been changed from age. 
+
+
 ```
 print(agent.agent.llm_chain.output_keys)
-
 # OUTPUT
 ["output"]
 ```
 
 SimpleSequentialChain works with only single input and single output. Now we are using two inputs with budget as additional variable. Therefore, we need to use SequentialChain which can handle multiple multiple inputs and outputs.
+
+
 ```
 overall_chain = SequentialChain(
                 input_variables=["input"],
@@ -296,6 +304,7 @@ print(agent.agent.llm_chain.prompt.template)
 #Question: {input}
 #Thought:{agent_scratchpad}
 ```
+
 Finally, let’s run the new chain with the same prompt as before.
 
 ```
@@ -322,11 +331,13 @@ overall_chain.run("If my age is half of my dad's age and he is going to be 60 ne
 # For someone of your age, a good gift would be something that is both practical and meaningful. Consider something like a nice watch, a piece of jewelry, a nice leather bag, or a gift card to a favorite store or restaurant.\nIf you have a larger budget, you could consider something like a weekend getaway, a spa package, or a special experience.'}
 #> Finished chain.
 ```
+
+
 ```
 For someone of your age, a good gift would be something that is both practical and meaningful. Consider something like a nice watch, a piece of jewelry, a nice leather bag, or a gift card to a favorite store or restaurant.\nIf you have a larger budget, you could consider something like a weekend getaway, a spa package, or a special experience.'}
 ```
 
-**Conclusion**
+**Conclusion**    
 This is overview about LangChain can be used to build the applications using LLMs. We also shared the concept about agents and how it can used. There are lot more concepts about improving the applications using LangChain such as how to optimize memory so that we can be selective about the summaries of the conversations. I hope you had fun reading this article.
 
 **References**
