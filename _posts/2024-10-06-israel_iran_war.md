@@ -1,4 +1,10 @@
-
+---
+title: "Israel and Iran War"
+collection: posts
+type: "Politics"
+permalink: /posts/israel_and_iran_War
+date: 2024-10-06
+---
 
 **1979 Iranian Revolution:**
 
