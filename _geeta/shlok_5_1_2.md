@@ -1,3 +1,11 @@
+---
+title: "karm yog"
+collection: books
+type: "Non-Fictional"
+permalink: /geeta/karm_yog
+date: 2024-10-08
+---
+
 
 **arjun uvach
 sanyasam karmanam krushna punaryogam ch shansasi .
