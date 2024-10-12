@@ -1,4 +1,12 @@
+---
+title: "Noble prize chemistry-2024"
+collection: posts
+type: "science"
+permalink: /posts/noble_prize_chemistry_2024
+date: 2024-10-12
+---
 
+**Noble Prize Chemistry:2024**      
 
 
 The 2024 Nobel Prize in Chemistry was awarded to David Baker, Demis Hassabis, and John Jumper. Baker was recognized for his work on designing new proteins, while Hassabis and Jumper were honored for creating technology to predict protein structures.
