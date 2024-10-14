@@ -6,6 +6,8 @@ permalink: /geeta/karm_yog
 date: 2024-10-08
 ---
 
+**Chapter 5**       
+**Verse 5.1-2**    
 
 **arjun uvach
 sanyasam karmanam krushna punaryogam ch shansasi .
