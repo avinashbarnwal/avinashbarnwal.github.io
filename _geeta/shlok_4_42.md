@@ -7,7 +7,8 @@ date: 2024-10-08
 ---
 
 
-**Shlok : 4 and 42 Verse**      
+**Chapter 4**       
+**Verse 4.42**     
 **tasmadadhnyanasambhutam hrutstham dnyanasina̕̕tmanah.
 chhittvainam sanshayam yogamatishthottishth bharat**
 
