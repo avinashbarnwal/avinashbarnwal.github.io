@@ -6,8 +6,8 @@ permalink: /geeta/faith
 date: 2024-10-03
 ---
 
-
-**Shlok : 4 and 40 Verse**
+**Chapter 4**       
+**Verse 4.40**
 
 **agyaschashraddadhanasch sanshayatma vinashyati.     
 nayam loko̕sti na paro na sukham sanshayatmanah.** 
