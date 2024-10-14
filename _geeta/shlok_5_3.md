@@ -6,6 +6,11 @@ permalink: /geeta/renunciation
 date: 2024-10-09
 ---
 
+
+
+**Chapter 5**       
+**Verse 5.3**     
+
 **dnyeyah sa nityasanyasi yo na dveshti na kankshati .
 nirdvandvo hi mahabaho sukham bandhatpramuchyate ॥**
 
