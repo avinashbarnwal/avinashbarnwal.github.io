@@ -6,7 +6,8 @@ permalink: /geeta/karmyog
 date: 2024-10-10
 ---
 
-
+**Chapter 5**       
+**Verse 5.4**    
 **uparyuktt sannyaas aur karmayog ko moorkh log prthak-prthak phal dene vaale kahate hain na ki panditajan ; kyonki donon mein se ek mein bhee samyak prakaar se sthit purush donon ke phalaroop paramaatma ko praapt hota hai**       
 
 **Explanation**     
