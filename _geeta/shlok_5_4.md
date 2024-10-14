@@ -15,4 +15,23 @@ This verse is from the fifth chapter of the Bhagavad Gita, where Lord Krishna ex
 
 Renunciation refers to giving up worldly actions and dedicating oneself to meditation and contemplation, while Karma Yoga means performing one's duties and actions without attachment to the results. The wise understand that whether one follows the path of renunciation or the path of selfless action, as long as one is firmly established in either, the ultimate goal of attaining God or liberation can be achieved.
 
-The key message is that it is not necessary to give up action in life to attain spiritual realization; one can achieve the same by performing actions selflessly, without attachment to their outcomes. Both paths, when followed properly, lead to the same divine goal.
+The key message is that it is not necessary to give up action in life to attain spiritual realization; one can achieve the same by performing actions selflessly, without attachment to their outcomes. Both paths, when followed properly, lead to the same divine goal.     
+
+**Detailed Explanation**     
+Gatee apne aap hota hai. Niskam ka koi test nai hota.  
+Bal Bodhi ko ye lagta hai two things below are different: 
+- Sankhya – Gyan 
+- Yog 
+Sankhya means Ahankar prakritik hai. 
+- It exists – Behavior ke liye 
+- It doesnt exits – In true sense, it doesnt. 
+Mukt purush ko dona ka dhyan deta hai. 
+Nahi satya ko bholta hai. Nahi tathya ko bholta hai. Tathya se satya takka rasta chalta hai. Kamne ke prati udasin ho jata hai. Niskaam and Karuna ek hin baat hai.  
+Jo Kaam kar rahe ho, wahi urja deta hai.  
+Russia mein Iron curtain tha.  
+Kaam Sab Apne anusar karna hai. 
+Aur milna sabko jaroort anusar hai. 
+Above theory failed. Vaam Margya declared dharm is useless. Samyawad aur Dharm saath nai chale. Lao Tzhu says --> Asli cheez ko hone do, usko jayada janane ki kosish mat karo.  
+Toh phir kya karein --> Apni Gandagi ko pata karo. Gyan maane apne aapko honesty se dekhna.  
+
+ 
