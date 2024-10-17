@@ -2,7 +2,7 @@
 title: "krishan_started_talking_to_arjun"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/krishan_started_talking_to_arjun
+permalink: /geeta/krishna_started_talking_to_arjun
 date: 2024-10-17
 ---
 
