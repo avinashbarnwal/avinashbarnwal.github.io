@@ -1,3 +1,13 @@
+---
+title: "Osho vs Krishnamurthy"
+collection: posts
+type: "dharma"
+permalink: /posts/osho_vs_krishnamurthy
+date: 2024-10-19
+---
+
+**Osho vs Krishnamurthy**      
+
 Here is the improved flowchart with better spacing to avoid overlapping text. It visually maps out the perspectives of Osho and Krishnamurti, highlighting:
 ![png](../images/output.png)
 - Truth as the central authority.
