@@ -1,3 +1,11 @@
+---
+title: "Moke Kahan Dhunde Re Bande"
+collection: music
+type: "Non-Fictional"
+permalink: /music/moke_kahan_dhunde
+date: 2024-10-19
+---
+
 **Moko Kahan Dhundhe Re Bande**  
 Sa Sa Re Ma Ga Re Sa (Sa for emphasis)  
 **Main To Tere Paas Mein**  
