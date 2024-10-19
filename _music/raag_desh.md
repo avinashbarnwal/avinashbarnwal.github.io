@@ -1,3 +1,11 @@
+---
+title: "Raag Desh"
+collection: music
+type: "Non-Fictional"
+permalink: /music/raag_desh
+date: 2024-10-19
+---
+
 Raag Desh (or Raaga Desh) is a traditional raga in Indian classical music, associated with the late evening and monsoon season. Known for its serene, emotional, and patriotic character, it is commonly played to evoke feelings of devotion, longing, and tranquility. Raag Desh is often heard in instrumental performances, vocal compositions, and even patriotic songs in India, such as the iconic Vande Mataram and Jana Gana Mana.
 
 Characteristics of Raag Desh
