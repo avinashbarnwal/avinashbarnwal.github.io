@@ -1,3 +1,12 @@
+---
+title: "Thaat"
+collection: music
+type: "Non-Fictional"
+permalink: /music/thaat
+date: 2024-10-19
+---
+
+
 There are 10 types of Thats:-
 
 - **Bilawal** (Sudh Swara)
