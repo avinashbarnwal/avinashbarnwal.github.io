@@ -1,5 +1,5 @@
 Here is the improved flowchart with better spacing to avoid overlapping text. It visually maps out the perspectives of Osho and Krishnamurti, highlighting:
-![png](../images/langchain_llm/llm.png)
+![png](../images/output.png)
 - Truth as the central authority.
 - **Osho’s view:** The Guru embodies Truth, using playful and urgent methods.      
 - **Krishnamurti’s view:** No authority should be given to individuals, emphasizing direct inquiry.        
