@@ -1,1 +1,10 @@
-This is my website and i write about my research interests, books, finance, data science and machine learning.
+This is my website and i write about below topics:-
+- Research interests
+- Books
+- Finance
+- Data Science
+- Machine Learning
+- Sports
+- Generative AI
+- Music
+- Health
