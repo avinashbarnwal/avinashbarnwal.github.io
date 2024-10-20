@@ -27,6 +27,7 @@ Sa' Ni Dha Pa, Ma Ga Re Sa
 
   
 **Mood and Rasa**
+
 Raag Desh conveys a devotional and peaceful mood. It is also associated with patriotism in modern compositions, giving it a sense of emotional connection with the nation, especially when used for songs and film scores about freedom and pride.        
 
 **Popular Usage**
@@ -35,4 +36,5 @@ Raag Desh conveys a devotional and peaceful mood. It is also associated with pat
 - Jana Gana Mana – The Indian national anthem has sections influenced by Desh.
 - Classical Performances: Frequently performed in Hindustani classical concerts, both vocally and instrumentally (sitar, flute, and sarod renditions are common).
 - Film Music: Various Bollywood songs use the raga to evoke romance or nostalgia.
+  
 This raga is cherished for its adaptability, fitting comfortably within both classical and modern contexts.
