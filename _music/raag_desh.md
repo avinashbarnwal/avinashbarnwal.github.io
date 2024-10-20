@@ -21,17 +21,18 @@ Sa Re Ma Pa Ni Sa'
 
 **Avarohana (Descending scale):**      
 Sa' Ni Dha Pa, Ma Ga Re Sa
-(Notes: Shuddha Re, Ga, Ma, Pa, Dha, Ni in full descent)
+(Notes: Shuddha Re, Ga, Ma, Pa, Dha, Ni in full descent)      
+- Vadi (Primary Note): Re (Rishabh)      
+- Samvadi (Secondary Note): Pa (Pancham)
 
-Vadi (Primary Note): Re (Rishabh)
-Samvadi (Secondary Note): Pa (Pancham)
-Mood and Rasa
-Raag Desh conveys a devotional and peaceful mood. It is also associated with patriotism in modern compositions, giving it a sense of emotional connection with the nation, especially when used for songs and film scores about freedom and pride.
+  
+**Mood and Rasa**
+Raag Desh conveys a devotional and peaceful mood. It is also associated with patriotism in modern compositions, giving it a sense of emotional connection with the nation, especially when used for songs and film scores about freedom and pride.        
 
-Popular Usage
-Patriotic Songs:
-Vande Mataram – A.R. Rahman’s rendition includes elements of Raag Desh.
-Jana Gana Mana – The Indian national anthem has sections influenced by Desh.
-Classical Performances: Frequently performed in Hindustani classical concerts, both vocally and instrumentally (sitar, flute, and sarod renditions are common).
-Film Music: Various Bollywood songs use the raga to evoke romance or nostalgia.
+**Popular Usage**
+**Patriotic Songs:**
+- Vande Mataram – A.R. Rahman’s rendition includes elements of Raag Desh.
+- Jana Gana Mana – The Indian national anthem has sections influenced by Desh.
+- Classical Performances: Frequently performed in Hindustani classical concerts, both vocally and instrumentally (sitar, flute, and sarod renditions are common).
+- Film Music: Various Bollywood songs use the raga to evoke romance or nostalgia.
 This raga is cherished for its adaptability, fitting comfortably within both classical and modern contexts.
