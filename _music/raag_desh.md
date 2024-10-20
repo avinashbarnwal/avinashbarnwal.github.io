@@ -8,16 +8,18 @@ date: 2024-10-19
 
 Raag Desh (or Raaga Desh) is a traditional raga in Indian classical music, associated with the late evening and monsoon season. Known for its serene, emotional, and patriotic character, it is commonly played to evoke feelings of devotion, longing, and tranquility. Raag Desh is often heard in instrumental performances, vocal compositions, and even patriotic songs in India, such as the iconic Vande Mataram and Jana Gana Mana.
 
-Characteristics of Raag Desh
-Thaat: Khamaj (a parent scale similar to the Western major scale but includes a komal (flat) Ni).
-Jati: Audava-Sampurna (5 notes in the ascent and 7 notes in the descent).
-Time of Performance: Late evening or night (post-9 PM).
-Season: Monsoon.
-Arohana (Ascending scale):
+**Characteristics of Raag Desh**
+- Thaat: Khamaj (a parent scale similar to the Western major scale but includes a komal (flat) Ni).
+- Jati: Audava-Sampurna (5 notes in the ascent and 7 notes in the descent).
+- Time of Performance: Late evening or night (post-9 PM).
+- Season: Monsoon.
+
+
+**Arohana (Ascending scale):**   
 Sa Re Ma Pa Ni Sa'
 (Notes: Shuddha Re, Shuddha Ma, Shuddha Ni)
 
-Avarohana (Descending scale):
+**Avarohana (Descending scale):**      
 Sa' Ni Dha Pa, Ma Ga Re Sa
 (Notes: Shuddha Re, Ga, Ma, Pa, Dha, Ni in full descent)
 
