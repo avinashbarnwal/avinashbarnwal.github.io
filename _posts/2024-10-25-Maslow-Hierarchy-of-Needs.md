@@ -1,3 +1,16 @@
+---
+title: "Maslow's Needs of Hierarchy"
+collection: posts
+type: "dharma"
+permalink: /posts/maslows_needs_of_hierarchy
+date: 2024-10-25
+---
+
+
+![png](../images/maslow_hierarchy_needs.jpeg)
+
+
+
 **Here’s a concise summary of Acharya Prashant's take on Maslow’s hierarchy of needs:**
 
 **Critique of Maslow’s Model:**      
