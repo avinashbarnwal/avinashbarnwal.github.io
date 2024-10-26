@@ -1,3 +1,7 @@
+
+![png](../images/shlok_2_14.webp)
+
+
 The Bhagavad Gita, Chapter 2, Verse 14 (Śloka 2.14) emphasizes the transient nature of sensory experiences and encourages equanimity. Here is the Sanskrit text along with its transliteration and translation:
 
 Sanskrit (Śloka 2.14):
