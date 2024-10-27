@@ -6,6 +6,8 @@ permalink: /geeta/self_knowledge
 date: 2024-10-08
 ---
 
+![png](../images/shlok_4_42.webp)
+
 
 **Chapter 4**       
 **Verse 4.42**     
