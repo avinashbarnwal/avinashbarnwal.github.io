@@ -3,7 +3,7 @@ title: "Not Afraid: The Evolution of Eminem"
 collection: books
 type: "Non-Fictional"
 permalink: /books/not_afraid_the_evolution_of_eminem
-date: 2021-12-15
+date: 2024-10-28
 ---
 
 "Not Afraid: The Evolution of Eminem" by Anthony Bozza provides a detailed look into the life and career of Marshall Mathers (Eminem), capturing his personal struggles and artistic growth.
