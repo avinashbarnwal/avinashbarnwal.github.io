@@ -1,3 +1,15 @@
+---
+title: "Same in Joy and Peace"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/same_in_joy_and_peace
+date: 2024-10-26
+---
+
+
+![png](../images/shlok_2_14.webp)
+
+
 Bhagavad Gita 2.15 (Chapter 2, Verse 15):
 
 Sanskrit:
