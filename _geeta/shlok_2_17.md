@@ -1,3 +1,13 @@
+---
+title: "Soul is indestructible"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/soul_is_indestructible
+date: 2024-11-01
+---
+
+
+![png](../images/shlok_2_17.webp)
 
 **Bhagavad Gita - Verse 2.17**        
 
