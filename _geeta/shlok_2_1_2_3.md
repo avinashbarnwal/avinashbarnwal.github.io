@@ -6,7 +6,7 @@ permalink: /geeta/krishna_started_talking_to_arjun
 date: 2024-10-17
 ---
 
-
+![png](../images/shlok_2_1_2_3.webp)
 
 **Bhagavad Gita - Chapter 2, Verse 1**         
 सञ्जय उवाच
