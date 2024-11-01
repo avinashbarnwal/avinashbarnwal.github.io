@@ -6,7 +6,7 @@ permalink: /geeta/arjun_turmoil
 date: 2024-10-18
 ---
 
-
+![png](../images/shlok_2_4_2_6.webp)
 
 **Bhagavad Gita, Chapter 2 (Sankhya Yoga), verses 2.4–2.6, along with their translation:**
 
