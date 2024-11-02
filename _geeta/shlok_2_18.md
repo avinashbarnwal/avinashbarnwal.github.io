@@ -1,3 +1,16 @@
+---
+title: "Fulfilling the duty while detached with the material outcomes"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/duty_beyond_materials
+date: 2024-11-02
+---
+
+
+![png](../images/shlok_2_18.webp)
+
+
+
 Bhagavad Gita 2.18
 
 "Antavanta ime deha nityasyoktah sharirinah | Anashino’prameyasya tasmad yudhyasva Bharata ||"
