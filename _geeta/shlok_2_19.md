@@ -1,3 +1,14 @@
+---
+title: "Soul cant be killed"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/soul_cant_be_killed
+date: 2024-11-03
+---
+
+
+![png](../images/shlok_2_19.webp)
+
 Here is verse 2.19 from the Bhagavad Gita:
 
 "Ya enam vetti hantāraṁ yaśh chainaṁ manyate hatam
