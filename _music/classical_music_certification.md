@@ -7,4 +7,4 @@ date: 2024-11-06
 ---
 
 
-![png](../images/shlok_1_21_1_41.webp)
+![png]("../images/Avinash Barnwal Vocals Aalamban Completion Certificate Level 2.png")
