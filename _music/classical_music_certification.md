@@ -7,4 +7,4 @@ date: 2024-11-06
 ---
 
 
-![png](..images/classical_music_certi_l2.png)
+![png](../images/classical_music_certi_l2.png)
