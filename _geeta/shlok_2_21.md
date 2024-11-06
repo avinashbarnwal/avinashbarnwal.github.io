@@ -6,7 +6,7 @@ permalink: /geeta/actions_dont_harm_true_self
 date: 2024-11-06
 ---
 
-![png](../images/shlok_2_21.webp =250x250)
+[<img src="../images/shlok_2_21.webp" width="200" height="200"/>](../images/shlok_2_21.webp)
 
 Here is verse 2.21 from the Bhagavad Gita:
 
