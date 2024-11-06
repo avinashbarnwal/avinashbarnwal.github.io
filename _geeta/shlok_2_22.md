@@ -1,3 +1,13 @@
+---
+title: "Reincarnation"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/reincarnation
+date: 2024-11-06
+---
+
+[<img src="../images/shlok_2_22.webp" width="1000" height="500"/>](../images/shlok_2_22.webp)
+
 In the Bhagavad Gita, Chapter 2, Verse 22, Lord Krishna uses a metaphor to describe the nature of the soul and its eternal quality. The verse is as follows:
 
 Verse (Sanskrit):
