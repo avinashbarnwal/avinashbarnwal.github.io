@@ -1,3 +1,13 @@
+---
+title: "True Self is beyond birth and death"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/self_beyond_birth_death
+date: 2024-11-04
+---
+
+![png](../images/shlok_2_20.webp)
+
 Here is verse 2.21 from the Bhagavad Gita:
 
 वेदाविनाशिनं नित्यं य एनमजमव्ययम् |
