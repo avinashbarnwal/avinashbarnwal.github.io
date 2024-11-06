@@ -1,12 +1,12 @@
 ---
-title: "True Self is beyond birth and death"
+title: "Actions do not harm the true self"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/self_beyond_birth_death
-date: 2024-11-04
+permalink: /geeta/actions_dont_harm_true_self
+date: 2024-11-06
 ---
 
-![png](../images/shlok_2_20.webp)
+![png](../images/shlok_2_21.webp)
 
 Here is verse 2.21 from the Bhagavad Gita:
 
