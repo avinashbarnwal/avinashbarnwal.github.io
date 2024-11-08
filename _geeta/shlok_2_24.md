@@ -6,7 +6,7 @@ permalink: /geeta/soul_cant_be_destroyed
 date: 2024-11-07
 ---
 
-[<img src="../images/shlok_2_23.webp" width="1000" height="500"/>](../images/shlok_2_24.webp)
+[<img src="../images/shlok_2_24.webp" width="1000" height="500"/>](../images/shlok_2_24.webp)
 
 Bhagavad Gita, Chapter 2, Verse 24:
 
