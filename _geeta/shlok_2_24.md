@@ -1,3 +1,13 @@
+---
+title: "Soul cant be destroyed"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/soul_cant_be_destroyed
+date: 2024-11-07
+---
+
+[<img src="../images/shlok_2_23.webp" width="1000" height="500"/>](../images/shlok_2_24.webp)
+
 Bhagavad Gita, Chapter 2, Verse 24:
 
 "acchedyo’yam adāhyo’yam akledyo’śoṣya eva ca nityaḥ sarvagataḥ sthāṇur acalo’yaṁ sanātanaḥ"
