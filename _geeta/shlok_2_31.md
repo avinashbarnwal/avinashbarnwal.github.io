@@ -1,14 +1,24 @@
-Here is verse 2.31 from the Bhagavad Gita:
+---
+title: "Deattach from physical loss"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/deattach_from_physical_loss
+date: 2024-11-15
+---
+
+[<img src="../images/shlok_2_31.webp" width="1000" height="500"/>](../images/shlok_2_31.webp)
+
+**Here is verse 2.31 from the Bhagavad Gita:**      
 
 स्वधर्ममपि चावेक्ष्य न विकम्पितुमर्हसि।
 धर्म्याद्धि युद्धाच्छ्रेयोऽन्यत्क्षत्रियस्य न विद्यते।।
 
-Transliteration:
+**Transliteration:**           
 
 svadharmam api cāvekṣya na vikampitum arhasi
 dharmyād dhi yuddhāc chreyo ’nyat kṣatriyasya na vidyate
 
-Translation:
+**Translation:**               
 
 Considering your duty as a warrior, you should not waver. For a warrior, there is nothing more honorable than a battle against evil.
 
