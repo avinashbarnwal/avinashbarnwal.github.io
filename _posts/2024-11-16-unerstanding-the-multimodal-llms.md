@@ -3,7 +3,8 @@ Understanding Multimodal LLMs
 In this article, i aim to explain how multimodal LLMs work and summarize the recent research papers.
 
 
-Use cases for multimodal LLMs
+
+1. Use cases for multimodal LLMs
 What are the multimodal LLMs?
 
 Multimodal LLMs are LLMs that accept different types of inputs. One typical example is summarizing an image when we provide it as input.
