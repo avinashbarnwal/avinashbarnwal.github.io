@@ -1,4 +1,15 @@
-Understanding Multimodal LLMs
+---
+title: "Understanding Multimodal LLMs"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/arjun_turmoil
+date: 2024-10-18
+---
+
+![png](../images/shlok_2_4_2_6.webp)
+
+
+
 
 In this article, i aim to explain how multimodal LLMs work and summarize the recent research papers.
 
