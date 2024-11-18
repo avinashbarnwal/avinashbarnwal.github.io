@@ -1,3 +1,13 @@
+---
+title: "Fulfil your duties"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/fulfil_your_duties
+date: 2024-11-15
+---
+
+[<img src="../images/shlok_2_45_2_47.webp" width="1000" height="500"/>](../images/shlok_2_45_2_47.webp)
+
 Bhagavad Gita, Chapter 2, Verse 48 (2.48) emphasizes equanimity and the importance of performing one's duties without attachment to success or failure. Here is the verse in Sanskrit with its transliteration and translation:
 
 Sanskrit:
