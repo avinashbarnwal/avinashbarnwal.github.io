@@ -3,7 +3,7 @@ title: "Selfless Actions"
 collection: geeta
 type: "Non-Fictional"
 permalink: /geeta/selfless_actions
-date: 2024-11-15
+date: 2024-11-19
 ---
 
 [<img src="../images/shlok_2_49.webp" width="1000" height="500"/>](../images/shlok_2_49.webp)
