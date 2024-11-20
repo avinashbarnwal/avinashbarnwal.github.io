@@ -1,3 +1,13 @@
+---
+title: "Yoga is skill in actions"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/yoga_is_skill_in_action
+date: 2024-11-19
+---
+
+[<img src="../images/shlok_2_50.webp" width="1000" height="500"/>](../images/shlok_2_50.webp)
+
 The Bhagavad Gita, Chapter 2, Verse 50 (2.50), addresses the concept of skillful action through the practice of yoga, emphasizing detachment and mindfulness. Here’s the Sanskrit verse and its meaning:
 
 Sanskrit:
