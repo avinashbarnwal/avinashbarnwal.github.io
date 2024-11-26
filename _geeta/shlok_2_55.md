@@ -1,3 +1,13 @@
+---
+title: "Yoga is skill in actions"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/yoga_is_skill_in_action
+date: 2024-11-19
+---
+
+[<img src="../images/shlok_2_55.webp" width="1000" height="500"/>](../images/shlok_2_55.webp)
+
 The shloka 2.55 from the Bhagavad Gita, also known as the verse explaining the qualities of a "sthitaprajna" (a person of steady wisdom), is as follows:
 
 Sanskrit:
