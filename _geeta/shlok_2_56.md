@@ -1,3 +1,13 @@
+---
+title: "Sage of steady wisdom"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/sage_of_steady_wisdom
+date: 2024-11-27
+---
+
+[<img src="../images/shlok_2_56.webp" width="1000" height="500"/>](../images/shlok_2_56.webp)
+
 **Bhagavad Gita, Chapter 2, Shloka 56 (Sanskrit and Translation):**
 
 **Sanskrit:**                 
