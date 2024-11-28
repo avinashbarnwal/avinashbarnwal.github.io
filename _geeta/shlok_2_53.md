@@ -3,7 +3,7 @@ title: "Importance of a steady and unwavering intellect in the spiritual journey
 collection: geeta
 type: "Non-Fictional"
 permalink: /geeta/importance_of_a_steady_and_unwavering_intellect_in_the_spiritual_journey
-date: 2024-11-21
+date: 2024-11-22
 ---
 
 [<img src="../images/shlok_2_53.webp" width="1000" height="500"/>](../images/shlok_2_53.webp)
