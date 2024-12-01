@@ -1,3 +1,13 @@
+---
+title: "How to manage desires"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/how_to_manage_desires
+date: 2024-11-27
+---
+
+[<img src="../images/shlok_2_58.webp" width="1000" height="500"/>](../images/shlok_2_58.webp)
+
 The Bhagavad Gita, Chapter 2, Shloka 58 reads:
 
 यदा संहरते चायं कूर्मोऽङ्गानीव सर्वश:।
