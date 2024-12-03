@@ -17,4 +17,5 @@ This shloka explains the progression of attachment and its consequences:
 Constant contemplation on sense objects leads to attachment.         
 Attachment generates desires.        
 Unfulfilled desires lead to frustration and anger.          
-This is a caution about the cycle of desires and emotions that can disturb mental peace and lead to unwise actions. Cultivating detachment and self-control helps in maintaining equanimity.       
+This is a caution about the cycle of desires and emotions that can disturb mental peace and lead to unwise actions.          
+Cultivating detachment and self-control helps in maintaining equanimity.       
