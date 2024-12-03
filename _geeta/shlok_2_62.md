@@ -1,4 +1,4 @@
-**The Bhagavad Gita, Shloka 2.62, is as follows:**
+**The Bhagavad Gita, Shloka 2.62, is as follows:**             
 
 **द्वितीय अध्याय - 62 श्लोक:**
 ध्यायतो विषयान्पुंसः संगस्तेषूपजायते।
@@ -14,8 +14,10 @@ When a person constantly thinks about sense objects, attachment to them arises. 
 **Explanation:**        
 This shloka explains the progression of attachment and its consequences:
 
-Constant contemplation on sense objects leads to attachment.         
-Attachment generates desires.        
-Unfulfilled desires lead to frustration and anger.          
+- Constant contemplation on sense objects leads to attachment.         
+- Attachment generates desires.        
+- Unfulfilled desires lead to frustration and anger.
+
+       
 This is a caution about the cycle of desires and emotions that can disturb mental peace and lead to unwise actions.          
 Cultivating detachment and self-control helps in maintaining equanimity.       
