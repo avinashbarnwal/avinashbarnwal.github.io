@@ -1,3 +1,13 @@
+---
+title: "Difficulty of self-control"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/difficulty_of_self_control
+date: 2024-11-27
+---
+
+[<img src="../images/shlok_2_60.webp" width="1000" height="500"/>](../images/shlok_2_60.webp)
+
 **Here is the translation and meaning of Bhagavad Gita, Chapter 2, Shloka 60:**
 
 **Sanskrit:**
