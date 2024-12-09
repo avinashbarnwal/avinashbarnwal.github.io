@@ -1,3 +1,13 @@
+---
+title: "Meditative life to attain peace and ultimate joy"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/meditative_life_to_attain_peace_and_ultimate_joy
+date: 2024-12-04
+---
+
+[<img src="../images/shlok_2_66.webp" width="1000" height="500"/>](../images/shlok_2_66.webp)
+
 **Here is Bhagavad Gita Chapter 2, Shloka 66 in Sanskrit along with its translation:**
 
 **Sanskrit:**     
