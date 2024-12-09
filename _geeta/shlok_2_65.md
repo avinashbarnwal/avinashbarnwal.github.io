@@ -1,3 +1,13 @@
+---
+title: "Miseries are destroyed by achieving the inner tranquility"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/miseries_are_destroyed_by_achieving_the_inner_tranquility
+date: 2024-12-03
+---
+
+[<img src="../images/shlok_2_65.webp" width="1000" height="500"/>](../images/shlok_2_65.webp)
+
 **Bhagavad Gita, Chapter 2, Verse 65 (2.65):**
 
 प्रसादे सर्वदुःखानां हानिरस्योपजायते।
