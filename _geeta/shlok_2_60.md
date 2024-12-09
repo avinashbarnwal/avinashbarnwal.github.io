@@ -3,7 +3,7 @@ title: "Difficulty of self-control"
 collection: geeta
 type: "Non-Fictional"
 permalink: /geeta/difficulty_of_self_control
-date: 2024-11-27
+date: 2024-11-28
 ---
 
 [<img src="../images/shlok_2_60.webp" width="1000" height="500"/>](../images/shlok_2_60.webp)
