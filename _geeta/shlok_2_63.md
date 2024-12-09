@@ -1,3 +1,13 @@
+---
+title: "Anger Management"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/anger_management
+date: 2024-12-01
+---
+
+[<img src="../images/shlok_2_63.webp" width="1000" height="500"/>](../images/shlok_2_63.webp)
+
 **The verse from the Bhagavad Gita, Chapter 2, Shloka 63, is as follows:**     
 
 **Shloka:**      
