@@ -1,3 +1,13 @@
+---
+title: "Free from attachment and self-control leads to tranquility"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/free_from_attachment_and_self-control_leads_to_tranquility
+date: 2024-12-02
+---
+
+[<img src="../images/shlok_2_64.webp" width="1000" height="500"/>](../images/shlok_2_64.webp)
+
 **Bhagavad Gita, Chapter 2, Shloka 64:**
 
 रागद्वेषवियुक्तैस्तु विषयानिन्द्रियैश्चरन्।
