@@ -6,7 +6,7 @@ permalink: /geeta/how_to_manage_desires
 date: 2024-11-27
 ---
 
-[<img src="../images/shlok_2_58.webp" width="1000" height="500"/>](../images/shlok_2_58.webp)
+[<img src="../images/shlok_2_59.webp" width="1000" height="500"/>](../images/shlok_2_59.webp)
 
 
 Bhagavad Gita, Chapter 2, Verse 59:
