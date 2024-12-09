@@ -1,3 +1,13 @@
+---
+title: "Cultivating detachment and self-control"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/cultivating_detachment_and_self-control
+date: 2024-11-30
+---
+
+[<img src="../images/shlok_2_62.webp" width="1000" height="500"/>](../images/shlok_2_62.webp)
+
 **The Bhagavad Gita, Shloka 2.62, is as follows:**             
 
 **द्वितीय अध्याय - 62 श्लोक:**
