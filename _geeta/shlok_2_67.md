@@ -1,5 +1,14 @@
-**The verse you are referring to is from the Bhagavad Gita, Chapter 2, Shloka 67.**
+---
+title:  "self-discipline and focus to maintain wisdom and spiritual balance"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/ self-discipline_and_focus_to_maintain_wisdom_and_spiritual_balance
+date: 2024-12-04
+---
 
+[<img src="../images/shlok_2_67.webp" width="1000" height="500"/>](../images/shlok_2_67.webp)
+
+**The verse you are referring to is from the Bhagavad Gita, Chapter 2, Shloka 67.**
 
 **Here's the Sanskrit text along with its translation:**     
 
