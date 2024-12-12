@@ -1,3 +1,13 @@
+---
+title: "Control the senses to achieve the peace"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/control_the_senses_to_achieve_the_peace
+date: 2024-12-10
+---
+
+[<img src="../images/shlok_2_68.webp" width="1000" height="500"/>](../images/shlok_2_68.webp)
+
 
 **The verse Bhagavad Gita 2.68 (Chapter 2, Verse 68) emphasizes the importance of controlling one's senses to achieve spiritual discipline and peace.**
 
