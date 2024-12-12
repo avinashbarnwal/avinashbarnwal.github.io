@@ -14,7 +14,6 @@ That which is night to all beings, in that the self-controlled person is awake. 
 **Interpretation:**    
 This shloka emphasizes the difference in perception between a spiritually wise individual and ordinary people. The "night" and "day" metaphor reflects contrasting states of awareness:
 
-**For the worldly:**           
-They are awake to material pursuits but asleep to spiritual reality.
-For the enlightened sage: They are awake to spiritual truth while being indifferent to material attractions.
+**For the worldly:** They are awake to material pursuits but asleep to spiritual reality.                    
+**For the enlightened sage:** They are awake to spiritual truth while being indifferent to material attractions.          
 This verse highlights the inner detachment and higher awareness of a self-realized soul compared to the common worldly outlook.
