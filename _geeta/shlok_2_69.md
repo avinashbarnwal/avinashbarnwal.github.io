@@ -1,3 +1,13 @@
+---
+title: "Worldly vs Enlightened"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/control_the_senses_to_achieve_the_peace
+date: 2024-12-10
+---
+
+[<img src="../images/shlok_2_69.webp" width="1000" height="500"/>](../images/shlok_2_69.webp)
+
 **The Geeta Shlok (Bhagavad Gita 2.69) reads as follows:**
 
 **Sanskrit:**    
