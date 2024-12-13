@@ -1,3 +1,13 @@
+---
+title: "Deattachment and Inner Stability"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/deattachment_and_inner_stability
+date: 2024-12-10
+---
+
+[<img src="../images/shlok_2_70.webp" width="1000" height="500"/>](../images/shlok_2_70.webp)
+
 **The shloka 2.70 from the Bhagavad Gita is as follows:**       
 
 **Sanskrit:**     
