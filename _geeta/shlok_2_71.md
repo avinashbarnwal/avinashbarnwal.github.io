@@ -1,3 +1,12 @@
+---
+title: "Unaffected from Happiness and Sorrow"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/unaffected_from_happiness_and_sorrow
+date: 2024-12-14
+---
+
+[<img src="../images/shlok_2_71.webp" width="1000" height="500"/>](../images/shlok_2_71.webp)
 
 **Here is Shloka 2.71 from the Bhagavad Gita along with its transliteration and meaning:**       
 
