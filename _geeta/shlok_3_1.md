@@ -14,5 +14,5 @@ tat kiṁ karmaṇi ghore māṁ niyojayasi keśava
 Arjuna said:
 If you consider knowledge (Jnana Yoga) to be superior to action (Karma Yoga), O Janardana (Krishna), then why are you urging me to engage in this dreadful action (war), O Keshava?
 
-**Explanation:**
+**Explanation:**        
 Arjuna is confused because Krishna earlier praised both knowledge and renunciation. In this verse, Arjuna questions why Krishna, after extolling the superiority of wisdom, is encouraging him to perform a seemingly violent and dreadful act like war. This marks the beginning of Arjuna's inquiry into the balance between knowledge and action, setting the stage for the teachings of Karma Yoga (the Yoga of Action).
