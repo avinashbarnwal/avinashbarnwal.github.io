@@ -1,14 +1,14 @@
 Here is Shloka 3.1 from the Bhagavad Gita, Chapter 3 (Karma Yoga), along with its translation:
 
 **Sanskrit:**      
-अर्जुन उवाच:
-ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन।
-तत्किं कर्मणि घोरे मां नियोजयसि केशव॥
+अर्जुन उवाच:            
+ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन।          
+तत्किं कर्मणि घोरे मां नियोजयसि केशव॥           
 
 **Transliteration:**      
-arjuna uvācha:
-jyāyasī chet karmaṇas te matā buddhir janārdana
-tat kiṁ karmaṇi ghore māṁ niyojayasi keśava
+arjuna uvācha:         
+jyāyasī chet karmaṇas te matā buddhir janārdana            
+tat kiṁ karmaṇi ghore māṁ niyojayasi keśava               
 
 **Translation:**    
 Arjuna said:
