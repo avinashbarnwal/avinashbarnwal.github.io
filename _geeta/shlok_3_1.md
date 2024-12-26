@@ -1,3 +1,13 @@
+---
+title: "Free from Delusion and Attachments"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/free_from_delusion_and_attachments
+date: 2024-12-15
+---
+
+[<img src="../images/shlok_2_72.webp" width="1000" height="500"/>](../images/shlok_2_72.webp)
+
 Here is Shloka 3.1 from the Bhagavad Gita, Chapter 3 (Karma Yoga), along with its translation:
 
 **Sanskrit:**      
