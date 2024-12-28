@@ -1,12 +1,12 @@
 ---
-title: "Free from Delusion and Attachments"
+title: "Yoga of Action"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/free_from_delusion_and_attachments
-date: 2024-12-15
+permalink: /geeta/yoga_of_action
+date: 2024-12-20
 ---
 
-[<img src="../images/shlok_2_72.webp" width="1000" height="500"/>](../images/shlok_2_72.webp)
+[<img src="../images/shlok_3_1.webp" width="1000" height="500"/>](../images/shlok_3_1.webp)
 
 Here is Shloka 3.1 from the Bhagavad Gita, Chapter 3 (Karma Yoga), along with its translation:
 
@@ -20,7 +20,7 @@ arjuna uvācha:
 jyāyasī chet karmaṇas te matā buddhir janārdana            
 tat kiṁ karmaṇi ghore māṁ niyojayasi keśava               
 
-**Translation:**    
+**Translation:**        
 Arjuna said:
 If you consider knowledge (Jnana Yoga) to be superior to action (Karma Yoga), O Janardana (Krishna), then why are you urging me to engage in this dreadful action (war), O Keshava?
 
