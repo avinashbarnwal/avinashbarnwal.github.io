@@ -1,3 +1,13 @@
+---
+title: "Duties vs Inaction"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/duties_vs_action
+date: 2024-12-26
+---
+[<img src="../images/shlok_3_8.webp" width="1000" height="500"/>](../images/shlok_3_8.webp)
+
+
 **Bhagavad Gita - Chapter 3, Verse 8 (3.8):**   
 
 "niyataṁ kuru karma tvaṁ
