@@ -1,3 +1,12 @@
+---
+title: "Jnan Yoga vs Karma Yoga"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/jnan_yoga_vs_karma_yoga
+date: 2024-12-22
+---
+[<img src="../images/shlok_3_3.webp" width="1000" height="500"/>](../images/shlok_3_3.webp)
+
 **Bhagavad Gita - Chapter 3, Shloka 3 (3.3):**    
 
 **श्रीभगवानुवाच:**    
