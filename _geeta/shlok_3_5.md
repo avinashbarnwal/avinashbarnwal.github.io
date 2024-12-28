@@ -1,4 +1,13 @@
-**Bhagavad Gita - Chapter 3, Verse 5 (Shloka 3.5):**
+---
+title: "Acting Selflessly"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/acting_selflessly
+date: 2024-12-24
+---
+[<img src="../images/shlok_3_5.webp" width="1000" height="500"/>](../images/shlok_3_5.webp)
+
+**Bhagavad Gita - Chapter 3, Verse 6 (Shloka 3.5):**
 
 "Na hi kaścit kṣaṇam api jātu tiṣṭhaty akarma-kṛt।          
 Kāryate hy avaśaḥ karma sarvaḥ prakṛti-jair guṇaiḥ॥"       
