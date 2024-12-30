@@ -1,3 +1,13 @@
+---
+title: "Service for Others"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/service_for_others
+date: 2024-12-29
+---
+[<img src="../images/shlok_3_10.webp" width="1000" height="500"/>](../images/shlok_3_10.webp)
+
+
 **Bhagavad Gita - Chapter 3, Verse 10 (3.10):**
 
 **Sanskrit:**     
