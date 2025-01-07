@@ -1,3 +1,13 @@
+---
+title: "Self-realization and Divine Connection"
+collection: posts
+type: "Sprituality"
+permalink: /posts/self_realization_and_divince_connection
+date: 2025-01-07
+---
+
+# Self-realization and Divine Connection
+
 The article primarily explores the philosophical and spiritual essence of devotion, self-realization, and the pursuit of liberation through the lens of Hindu traditions. It emphasizes the relationship between the individual soul and the divine, symbolized through metaphors of love, longing, and surrender.
 
 Key Themes:
