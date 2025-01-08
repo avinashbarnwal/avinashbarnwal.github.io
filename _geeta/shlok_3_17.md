@@ -1,3 +1,11 @@
+---
+title: "Practice Gratitude"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/practice_gratitude
+date: 2024-12-31
+---
+[<img src="../images/shlok_3_12.webp" width="1000" height="500"/>](../images/shlok_3_12.webp)     
 **Bhagavad Gita - Chapter 3, Verse 17 (3.17)**       
 
 श्लोकः      
