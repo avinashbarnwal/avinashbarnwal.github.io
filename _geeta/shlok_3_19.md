@@ -1,3 +1,12 @@
+---
+title: "Selfless Action"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/selfless_action
+date: 2025-01-14
+---
+[<img src="../images/shlok_3_19.webp" width="1000" height="500"/>](../images/shlok_3_19.webp)
+
 **Here is the verse from the Bhagavad Gita, Chapter 3, Shloka 19, in Sanskrit, with transliteration and meaning:**
 
 **Sanskrit:**     
