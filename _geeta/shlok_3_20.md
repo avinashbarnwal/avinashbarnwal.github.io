@@ -1,6 +1,7 @@
 **Here is Bhagavad Gita Chapter 3, Shloka 20, with its translation:**
 
-Sanskrit: कर्मणैव हि संसिद्धिमास्थिता जनकादयः।          
+**Sanskrit:**          
+कर्मणैव हि संसिद्धिमास्थिता जनकादयः।          
 लोकसंग्रहमेवापि सम्पश्यन्कर्तुमर्हसि॥      
 
 **Transliteration:**                      
