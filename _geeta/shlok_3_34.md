@@ -1,3 +1,14 @@
+---
+title: "Senses to serve you"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/senses_to_serve_you
+date: 2025-03-31
+---
+
+
+![png](../images/shlok_3_34.webp)
+
 **Bhagavad Gita – Chapter 3, Shloka 34 (3.34):**    
 
 इन्द्रियस्येन्द्रियस्यार्थे रागद्वेषौ व्यवस्थितौ |
