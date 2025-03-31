@@ -7,7 +7,7 @@ date: 2025-03-31
 ---
 
 
-![png](../images/shlok_3_34.png)
+![<img src="../images/shlok_2_60.webp" width="1000" height="500"/>][png](../images/shlok_3_34.png)
 
 **Bhagavad Gita – Chapter 3, Shloka 34 (3.34):**    
 
