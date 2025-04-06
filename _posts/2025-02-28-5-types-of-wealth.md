@@ -1,3 +1,11 @@
+---
+title: "The 5 Types of Wealth"
+collection: posts
+type: "Personal Finance"
+permalink: /posts/5_types_Wealth
+date: 2025-02-28
+---
+
 In "The 5 Types of Wealth," author Sahil Bloom presents a comprehensive guide to achieving a fulfilling life by focusing on five distinct forms of wealth:
 
 - **Time Wealth:** Emphasizes the importance of recognizing time as a finite resource and prioritizing activities that align with personal values, granting individuals the freedom to spend their time meaningfully. 
