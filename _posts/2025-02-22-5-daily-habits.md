@@ -1,3 +1,11 @@
+---
+title: "5 daily habits"
+collection: posts
+type: "Routine"
+permalink: /posts/5_daily_habits
+date: 2025-02-22
+---
+
 The speaker, Namabuddhaya, explains how daily habits—practices he and other monks follow—can lead to a happier and more fulfilling life. He argues that extraordinary achievements aren’t just about luck or innate talent but are the result of consistent, positive habits that shape our character. Here are the key practices he outlines:
 
 - **Morning Gratitude:** Start each day by being thankful for everything in life—including the Buddha, his teachings (Dhamma), the Sangha (community of monks), teachers, family, and even those who present challenges, as they build patience and resilience.      
