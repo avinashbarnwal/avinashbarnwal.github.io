@@ -1,3 +1,12 @@
+---
+title: "Summary of the Article on DeepSeek and Its AI Advancements"
+collection: posts
+type: "AI"
+permalink: /posts/deepseek
+date: 2025-02-05
+---
+
+
 **Summary of the Article on DeepSeek and Its AI Advancements**
 
 **Introduction**
