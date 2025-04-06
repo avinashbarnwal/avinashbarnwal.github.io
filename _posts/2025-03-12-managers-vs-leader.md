@@ -1,3 +1,11 @@
+---
+title: "Managers vs Leaders"
+collection: posts
+type: "Management"
+permalink: /posts/managers_vs_leaders
+date: 2025-04-06
+---
+
 Leadership Lab with Simon Sinek – Key Takeaways
 Introduction:
 Sophia Chuhofska, VP of People Strategy, welcomes attendees to the first Leadership Lab and introduces guest speaker Simon Sinek alongside Tao Rabiu, VP of Engineering. Tao will interview Simon, incorporating personal experiences and opening the floor for Q&A.
