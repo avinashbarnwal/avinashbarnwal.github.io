@@ -1,3 +1,16 @@
+---
+title: "How to achieve Nirvana"
+collection: geeta
+type: "Non-Fictional"
+permalink: /geeta/achieve_nirvana
+date: 2025-08-17
+---
+
+
+![png](../images/shlok_2_18.webp)
+
+
+
 Here is Bhagavad Gita, Chapter 6, Shloka 15 (6.15):
 
 Sanskrit (IAST):
