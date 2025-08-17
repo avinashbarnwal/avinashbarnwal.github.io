@@ -7,7 +7,7 @@ date: 2025-08-17
 ---
 
 
-![png](../images/shlok_2_18.webp)
+![png](../images/shlok_6_15.png)
 
 
 
