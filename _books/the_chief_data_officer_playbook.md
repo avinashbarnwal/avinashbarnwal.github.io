@@ -1,3 +1,13 @@
+---
+title: "The Chief Data Office Playbook"
+collection: books
+type: "Non-Fictional"
+permalink: /books/the_chief_data_officer_playbook
+date: 2025-08-24
+---
+
+
+
 # 📘 Book Summary: *The Chief Data Officer's Playbook*
 
 *By Caroline Carruthers & Peter Jackson*
