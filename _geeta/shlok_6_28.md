@@ -1,5 +1,12 @@
-भगवद् गीता 6.28 — Shloka, Meaning & Essence
+---
+title: "true happiness"
+collection: books
+type: "Non-Fictional"
+permalink: /geeta/true_happiness
+date: 2025-11-20
+---
 
+भगवद् गीता 6.28 — Shloka, Meaning & Essence
 Sanskrit    
 युञ्जन्नेवं सदात्मानं योगी विगतकल्मषः ।     
 सुखेन ब्रह्मसंस्पर्शमत्यन्तं सुखमश्नुते ॥ ६.२८ ॥      
