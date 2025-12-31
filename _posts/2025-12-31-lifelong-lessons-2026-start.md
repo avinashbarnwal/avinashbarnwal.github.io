@@ -1,3 +1,12 @@
+---
+title: "Goals for 2026 based on the lifelong lessons"
+collection: posts
+type: "Life Strategy"
+permalink: /posts/2025-12-31-lifelong-lessons-2026-star
+date: 2025-12-31
+---
+
+
 How should we select goals for 2026? They should be rooted in lifelong lessons. The goals I have set for 2026 are anchored in the lessons outlined below.
 
 Ten Lessons for a Fragile World — Key Ideas
