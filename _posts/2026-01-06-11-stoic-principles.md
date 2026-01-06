@@ -1,7 +1,7 @@
 11 Stoic Lessons for a Clear, Resilient Life
 
 - Focus on what you can control
--   Your actions, judgments, and effort are yours. Everything else is noise.
+-     Your actions, judgments, and effort are yours. Everything else is noise.
 
 - Accept reality as it is
 -   Resistance creates suffering; acceptance creates strength.
