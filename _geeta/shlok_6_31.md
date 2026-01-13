@@ -17,9 +17,9 @@ Oneness (Advaita in practice): The verse emphasizes lived unity, not just intell
 True Yoga: Yoga is not withdrawal from life, but continuous God-consciousness amid action.
 
 ## Integration of Paths:
-Bhakti – devotion to God
-Jnana – knowledge of oneness
-Karma – action without inner separation
+- Bhakti – devotion to God   
+- Jnana – knowledge of oneness      
+- Karma – action without inner separation         
 
 ## Practical Life Application
 See the same worth and dignity in everyone—colleagues, family, strangers.
