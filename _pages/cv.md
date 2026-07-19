@@ -18,6 +18,10 @@ Education
 Work experience
 ======
 
+* Aug 2026 - Current: Head of Analytics and Data Science
+  * Autocash.ai
+  * AI & Data Science & Machine Learning
+
 * Mar 2020 - Current: Manager - Data Science
   * Kapitus
   * Predictive Modeling
