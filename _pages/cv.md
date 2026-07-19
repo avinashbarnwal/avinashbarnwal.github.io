@@ -22,7 +22,7 @@ Work experience
   * Autocash.ai
   * AI & Data Science & Machine Learning
 
-* Mar 2020 - Current: Manager - Data Science
+* Mar 2020 - July 2026: Manager - Data Science
   * Kapitus
   * Predictive Modeling
 
