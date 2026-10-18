@@ -31,7 +31,7 @@
         <div class="pb-year hub-year"><h2 class="pb-year__label">{{ y }}</h2><div class="hub-grid">
         {% assign current_year = y %}{% assign open = true %}
       {% endif %}
-      {% capture meta %}{{ post.type | default: gname }} · {{ post.date | date: "%b %-d" }}{% endcapture %}
+      {% capture meta %}{{ post.type | default: gname }} · {{ post.date | date: "%b %-d" }}{% if post.medium_url %} · on Medium{% endif %}{% endcapture %}
       {% include hub-card.html doc=post meta=meta group=g %}
     {% endif %}
   {% endfor %}
