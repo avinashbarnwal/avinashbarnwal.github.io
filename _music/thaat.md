@@ -4,6 +4,7 @@ collection: music
 type: "Non-Fictional"
 permalink: /music/thaat
 date: 2024-10-19
+section: theory
 ---
 
 

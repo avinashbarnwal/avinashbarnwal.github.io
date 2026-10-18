@@ -6,6 +6,8 @@ permalink: /talks/2019-05-01-network-elasticnet.md
 venue: "2019 New York Data Summit (NYSDS)"
 date: 2019-05-01
 location: "Columbia University, New York"
+image: /files/network_elasticnet_aft.png
+paper: /publication/2019-05-11-network-elasticnet
 ---
 
 Poster Presentation of the paper <br/><img src='/files/network_elasticnet_aft.png'> 

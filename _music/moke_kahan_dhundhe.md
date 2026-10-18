@@ -4,6 +4,7 @@ collection: music
 type: "Non-Fictional"
 permalink: /music/moke_kahan_dhunde
 date: 2024-10-19
+section: songs
 ---
 
 **Moko Kahan Dhundhe Re Bande**  

@@ -1,4 +1,10 @@
-11 Stoic Lessons for a Clear, Resilient Life
+---
+title: "11 Stoic Lessons for a Clear, Resilient Life"
+collection: posts
+type: "Stoics"
+permalink: /posts/11-stoic-principles
+date: 2026-01-06
+---
 
 - Focus on what you can control
 -     Your actions, judgments, and effort are yours. Everything else is noise.

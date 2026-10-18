@@ -1,0 +1,102 @@
+---
+layout: landing
+title: "CV"
+excerpt: "Experience, education, research and skills"
+permalink: /cv/
+author_profile: false
+redirect_from:
+  - /resume
+---
+
+{% include base_path %}
+{% assign cv = site.data.cv %}
+{% assign first_job = cv.experience | last %}
+{% include hub-hero.html eyebrow="Curriculum vitae" title="CV" sub="Statistician turned AI builder: 14 years across lending, banking and fintech, now building agentic AI for finance." %}
+<section class="lp-wrap">
+  <dl class="gv-stats">
+    <div><dt>{{ cv.experience.size }}</dt><dd>roles</dd></div>
+    <div><dt>{{ first_job.start | split: " " | last }}</dt><dd>career start</dd></div>
+    <div><dt>{{ site.publications.size }}</dt><dd>publications</dd></div>
+    <div><dt>Ph.D.</dt><dd>Statistics</dd></div>
+  </dl>
+  <div class="lp-hero__cta">
+    <a class="agent-btn agent-btn--primary" href="mailto:{{ site.author.email }}">Get in touch</a>
+    <a class="agent-btn" href="{{ site.author.linkedin }}">LinkedIn</a>
+    <button type="button" class="agent-btn" onclick="window.print()">Print / save PDF</button>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">Experience</p>
+  <h2 class="lp-h2">Where I've worked.</h2>
+  <ol class="cv-timeline">
+    {% for job in cv.experience %}
+    <li class="cv-item{% if forloop.first %} is-current{% endif %}">
+      <span class="cv-item__dot" aria-hidden="true"></span>
+      <div class="cv-item__card">
+        <div class="cv-item__head">
+          <h3>{{ job.role }}</h3>
+          <span class="cv-item__dates">{{ job.start }} – {{ job.end }}</span>
+        </div>
+        <p class="cv-item__org">{{ job.org }}{% if forloop.first %} <span class="cv-now">Now</span>{% endif %}</p>
+        <p class="cv-item__focus">{{ job.focus }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<!-- Education + skills -->
+<section class="lp-wrap lp-section cv-two">
+  <div>
+    <p class="lp-eyebrow">Education</p>
+    <h2 class="lp-h2">Training.</h2>
+    {% for e in cv.education %}
+    <div class="cv-edu">
+      <span class="cv-edu__year">{{ e.year }}</span>
+      <div><h3>{{ e.degree }}</h3><p>{{ e.school }}</p></div>
+    </div>
+    {% endfor %}
+  </div>
+  <div>
+    <p class="lp-eyebrow">Skills</p>
+    <h2 class="lp-h2">Toolkit.</h2>
+    {% for g in cv.skills %}
+    <div class="cv-skills">
+      <h3>{{ g.group }}</h3>
+      <div class="cv-chips">{% for s in g.items %}<span>{{ s }}</span>{% endfor %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Research, talks, teaching -->
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">Research &amp; teaching</p>
+  <h2 class="lp-h2">Publications, talks and courses.</h2>
+  <div class="cv-lists">
+    <div class="cv-list">
+      <h3>Publications <a href="{{ base_path }}/publications/">All →</a></h3>
+      <ul>{% assign pubs = site.publications | sort: "date" | reverse %}{% for p in pubs %}
+        <li><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a><span>{{ p.venue | split: "," | first }} · {{ p.date | date: "%Y" }}</span></li>{% endfor %}
+      </ul>
+    </div>
+    <div class="cv-list">
+      <h3>Talks <a href="{{ base_path }}/talks/">All →</a></h3>
+      <ul>{% for t in site.talks %}
+        <li><a href="{{ base_path }}{{ t.url }}">{{ t.title }}</a><span>{{ t.venue }} · {{ t.date | date: "%Y" }}</span></li>{% endfor %}
+      </ul>
+      <h3>Teaching <a href="{{ base_path }}/teaching/">All →</a></h3>
+      <ul>{% for c in site.teaching %}
+        <li><a href="{{ base_path }}{{ c.url }}">{{ c.title }}</a><span>{{ c.venue }} · {{ c.date | date: "%Y" }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Service -->
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">Service &amp; leadership</p>
+  <ul class="cv-service">{% for s in cv.service %}<li>{{ s }}</li>{% endfor %}</ul>
+</section>

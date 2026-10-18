@@ -1,16 +1,31 @@
 ---
-layout: archive
-title: "Talks and presentations"
+layout: landing
+title: "Talks"
+excerpt: "Talks and poster presentations"
 permalink: /talks/
-author_profile: true
+author_profile: false
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
+{% assign talks = site.talks | sort: "date" | reverse %}
+{% include hub-hero.html eyebrow="Speaking" title="Talks &amp; posters" sub="Presentations of my research at conferences and summits." %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
-{% endif %}
-
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+<section class="lp-wrap lp-section tk-list">
+  {% for t in talks %}
+  <article class="tk-card">
+    {% if t.image %}<a class="tk-card__img" href="{{ base_path }}{{ t.url }}"><img src="{{ base_path }}{{ t.image }}" alt="Poster: {{ t.title }}" loading="lazy"></a>{% endif %}
+    <div class="tk-card__body">
+      <div class="pb-card__top">
+        <span class="pb-type pb-type--conference">{{ t.type | default: "Talk" }}</span>
+        <span class="pb-tag">{{ t.date | date: "%b %Y" }}</span>
+      </div>
+      <h3 class="pb-card__title"><a href="{{ base_path }}{{ t.url }}">{{ t.title }}</a></h3>
+      <p class="pb-card__venue">{{ t.venue }}{% if t.location %} · {{ t.location }}{% endif %}</p>
+      <div class="pb-actions">
+        <a class="agent-btn agent-btn--primary" href="{{ base_path }}{{ t.url }}">View poster</a>
+        {% if t.paper %}<a class="agent-btn" href="{{ base_path }}{{ t.paper }}">Read the paper</a>{% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>

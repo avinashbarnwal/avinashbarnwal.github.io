@@ -1,0 +1,20 @@
+# Groups blog post `type` values into a few topics for the /posts/ and /ai/ filters.
+# Add a new `type` here when you use one; unknown types fall into "Life & Books".
+- slug: ai
+  name: "AI & Data Science"
+  types: ["AI", "Generative AI", "Data Science"]
+- slug: leadership
+  name: "Leadership & Strategy"
+  types: ["Management", "Strategy", "Life Strategy"]
+- slug: finance
+  name: "Finance & Economy"
+  types: ["Finance", "Personal Finance", "economy"]
+- slug: philosophy
+  name: "Philosophy & Spirit"
+  types: ["Stoics", "dharma", "Sprituality"]
+- slug: society
+  name: "Society & Science"
+  types: ["Politics", "science"]
+- slug: life
+  name: "Life & Books"
+  types: ["Routine", "Life", "Books"]

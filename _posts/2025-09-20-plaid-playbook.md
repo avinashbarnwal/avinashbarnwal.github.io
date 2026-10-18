@@ -1,4 +1,10 @@
-# 🎧 Plaid Podcast -- Summary
+---
+title: "Plaid Podcast: Summary"
+collection: posts
+type: "Finance"
+permalink: /posts/plaid-playbook
+date: 2025-09-20
+---
 
 ## 1. Origins of Plaid & Founding Vision
 

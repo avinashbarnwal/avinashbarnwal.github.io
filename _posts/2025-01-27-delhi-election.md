@@ -1,3 +1,11 @@
+---
+title: "Delhi's Fiscal Record Under AAP"
+collection: posts
+type: "Politics"
+permalink: /posts/delhi-election
+date: 2025-01-27
+---
+
 
 The article evaluates the fiscal performance of the Aam Aadmi Party (AAP) government in Delhi during its tenure from 2015-16 to 2024-25, comparing it to the previous decade (2004-05 to 2012-13). It focuses on the financial impact of the AAP's welfare-based governance model, the "Delhi model," which includes free electricity, water, bus travel for women, and primary healthcare.
 

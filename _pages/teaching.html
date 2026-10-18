@@ -1,12 +1,27 @@
 ---
-layout: archive
+layout: landing
 title: "Teaching"
+excerpt: "Courses I've taught"
 permalink: /teaching/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
+{% assign courses = site.teaching | sort: "date" | reverse %}
+{% include hub-hero.html eyebrow="Teaching" title="Teaching" sub="Courses I've taught as a graduate student in Applied Mathematics and Statistics." %}
 
-{% for post in site.teaching reversed %}
-{% include archive-single.html %}
-{% endfor %}
+<section class="lp-wrap lp-section tc-list">
+  {% for c in courses %}
+  {% assign code = c.title | split: ":" | first | strip %}
+  {% assign name = c.title | split: ":" | last | strip %}
+  <a class="tc-card" href="{{ base_path }}{{ c.url }}">
+    <span class="tc-card__code">{{ code }}</span>
+    <span class="tc-card__body">
+      <span class="lp-post__meta">{{ c.type }} · {% assign m = c.date | date: "%-m" | plus: 0 %}{% if m >= 8 %}Fall{% elsif m >= 5 %}Summer{% else %}Spring{% endif %} {{ c.date | date: "%Y" }}</span>
+      <span class="tc-card__title">{{ name }}</span>
+      <span class="tc-card__venue">{{ c.venue }}{% if c.location %} · {{ c.location }}{% endif %}</span>
+      <span class="tc-card__role">{{ c.content | strip_html | strip_newlines | remove: "=" | strip }}</span>
+    </span>
+  </a>
+  {% endfor %}
+</section>

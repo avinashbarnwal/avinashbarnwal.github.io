@@ -1,4 +1,10 @@
-My Journey in Chennai
+---
+title: "My Journey in Chennai"
+collection: posts
+type: "Life"
+permalink: /posts/my-journey-in-chennai
+date: 2025-11-24
+---
 
 Have you ever moved to a new city and felt completely excited… and completely lost at the same time?
 

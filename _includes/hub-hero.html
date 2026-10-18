@@ -1,0 +1,9 @@
+{% comment %}
+  Shared hero for index pages.
+  Params: eyebrow, title, sub. Put a stats <dl class="gv-stats"> right after if needed.
+{% endcomment %}
+<section class="lp-hero lp-wrap hub-hero">
+  {% if include.eyebrow %}<p class="lp-eyebrow lp-eyebrow--center">{{ include.eyebrow }}</p>{% endif %}
+  <h1 class="lp-hero__title">{{ include.title }}</h1>
+  {% if include.sub %}<p class="lp-hero__sub">{{ include.sub }}</p>{% endif %}
+</section>

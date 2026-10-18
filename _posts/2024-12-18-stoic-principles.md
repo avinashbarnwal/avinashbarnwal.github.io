@@ -1,3 +1,11 @@
+---
+title: "Stoic Principles for Self-Renewal"
+collection: posts
+type: "Stoics"
+permalink: /posts/stoic-principles
+date: 2024-12-18
+---
+
 This reflection pulls heavily from Stoic philosophy and the teachings of Marcus Aurelius, Seneca, and Epictetus to offer a structured approach for self-improvement, particularly for starting fresh at the beginning of a new year.
 
 Here is a concise summary of the key Stoic ideas and practices discussed:

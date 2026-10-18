@@ -1,12 +1,34 @@
 ---
-layout: archive
+layout: landing
 title: "Life"
+excerpt: "Places, people and moments"
 permalink: /life/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
+{% include hub-hero.html eyebrow="Life" title="Life outside work" sub="Places, people and moments, plus what I read, study and sing." %}
 
-{% for post in site.life reversed %}
-{% include archive-single.html %}
-{% endfor %}
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">Moments</p>
+  <h2 class="lp-h2">Photo stories.</h2>
+  <div class="lf-grid">
+    {% assign items = site.life | sort: "date" | reverse %}
+    {% for d in items %}
+    <a class="lf-card" href="{{ base_path }}{{ d.url }}">
+      {% if d.cover %}<img src="{{ base_path }}{{ d.cover }}" alt="{{ d.title }}" loading="lazy">{% endif %}
+      <span class="lf-card__label"><span class="lp-post__meta">{{ d.date | date: "%b %Y" }}</span><span class="lf-card__title">{{ d.title }}</span></span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">More of me</p>
+  <h2 class="lp-h2">What I study for joy.</h2>
+  <div class="lp-posts">
+    <a class="lp-post" href="{{ base_path }}/geeta/"><span class="lp-post__meta">{{ site.geeta.size }} notes</span><h3>Bhagavad Geeta</h3><p>Verse-by-verse study notes, chapter by chapter.</p></a>
+    <a class="lp-post" href="{{ base_path }}/books/"><span class="lp-post__meta">{{ site.books.size }} books</span><h3>Bookshelf</h3><p>Key ideas from books on leadership, business and life.</p></a>
+    <a class="lp-post" href="{{ base_path }}/music/"><span class="lp-post__meta">{{ site.music.size }} notes</span><h3>Music</h3><p>Learning Hindustani classical music: thaats, raags and bandish.</p></a>
+  </div>
+</section>

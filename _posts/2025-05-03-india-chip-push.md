@@ -1,3 +1,11 @@
+---
+title: "India's Semiconductor Push"
+collection: posts
+type: "economy"
+permalink: /posts/india-chip-push
+date: 2025-05-03
+---
+
 Here are the key insights from the article:
 
 🇮🇳 India’s Semiconductor Push          

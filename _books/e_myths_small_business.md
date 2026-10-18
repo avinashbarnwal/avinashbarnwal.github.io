@@ -1,3 +1,11 @@
+---
+title: "The E-Myth Revisited"
+collection: books
+type: "Non-Fictional"
+permalink: /books/e_myth_revisited
+date: 2025-08-04
+---
+
 In "The E-Myth Revisited," Michael Gerber emphasizes the importance of defining your Primary Aim as part of building a business that aligns with your life goals.
 
 🎯 What is the “Primary Aim”?

@@ -1,12 +1,54 @@
 ---
-layout: archive
+layout: landing
 title: "Books"
+excerpt: "Notes and summaries from books I've read"
 permalink: /books/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
+{% assign books = site.books | sort: "date" | reverse %}
+{% assign newest = books | first %}{% assign oldest = books | last %}
+{% include hub-hero.html eyebrow="Bookshelf" title="Books" sub="Notes and key ideas from books on leadership, business, communication and life." %}
+<section class="lp-wrap">
+  <dl class="gv-stats">
+    <div><dt>{{ books.size }}</dt><dd>books summarised</dd></div>
+    <div><dt>{{ oldest.date | date: "%Y" }}–{{ newest.date | date: "%y" }}</dt><dd>reading years</dd></div>
+  </dl>
+</section>
 
-{% for post in site.books reversed %}
-{% include archive-single.html %}
-{% endfor %}
+<section class="lp-wrap hub-tools">
+  <label class="gv-search hub-search">
+    <span class="t-dim" aria-hidden="true">⌕</span>
+    <input id="bk-search" type="search" placeholder="Search books…" aria-label="Search books">
+  </label>
+</section>
+
+<section class="lp-wrap lp-section bk-shelf" id="bk-shelf">
+  {% for b in books %}
+  {% assign hue = forloop.index0 | modulo: 6 %}
+  {% assign parts = b.title | split: ":" %}
+  {% if parts.size == 1 and b.title contains "(" %}{% assign parts = b.title | remove: ")" | split: "(" %}{% endif %}
+  <a class="bk-book bk-book--{{ hue }}" href="{{ base_path }}{{ b.url }}" data-search="{{ b.title | downcase | escape }} {{ b.content | strip_html | strip_newlines | truncatewords: 40, '' | downcase | escape }}">
+    <span class="bk-cover">
+      <span class="bk-cover__title">{{ parts[0] | strip }}</span>
+      {% if parts.size > 1 %}<span class="bk-cover__sub">{{ parts[1] | strip }}</span>{% endif %}
+    </span>
+    <span class="bk-meta">Read {{ b.date | date: "%b %Y" }}</span>
+  </a>
+  {% endfor %}
+</section>
+
+<script>
+(function () {
+  /* Search filter. Block comments only. */
+  var input = document.getElementById("bk-search");
+  var books = document.querySelectorAll(".bk-book");
+  input.addEventListener("input", function () {
+    var q = input.value.trim().toLowerCase();
+    for (var i = 0; i < books.length; i++) {
+      books[i].style.display = !q || books[i].getAttribute("data-search").indexOf(q) !== -1 ? "" : "none";
+    }
+  });
+})();
+</script>

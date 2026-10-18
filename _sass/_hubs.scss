@@ -1,0 +1,307 @@
+/* ==========================================================================
+   Index pages: Blog, AI, Books, Talks, Teaching, Life, Music, CV
+   Builds on _landing.scss (lp-*, gv-*, pb-*) and the palette in _agentic.scss
+   ========================================================================== */
+
+.hub-hero { padding-bottom: 0.5em; }
+.hub-hero + .lp-wrap .gv-stats { margin-top: 1.2em; }
+.lp-wrap > .lp-hero__cta { margin-top: 1.6em; }
+
+/* Search + chips row */
+.hub-tools {
+  padding-top: 2.6em;
+  .pb-filters { margin-bottom: 1.1em; }
+}
+.hub-search { max-width: 640px; margin: 0 auto; }
+
+/* Year-grouped card grid */
+.hub-year .hub-grid { grid-column: 2; }
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.hub-card { height: 100%; }
+
+/* AI focus terminal */
+.hub-ai-focus .agent-term { max-width: 720px; margin: 2.4em auto 0; }
+
+/* Books: generated covers */
+.bk-shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.6em 1.2em;
+  padding-top: 2.6em;
+}
+.bk-book {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  &:hover { color: inherit; }
+  &:hover .bk-cover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 18px 36px rgba(30, 32, 51, 0.25); }
+}
+.bk-cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 2 / 3;
+  padding: 1.1em 1em 1em 1.3em;
+  overflow: hidden;
+  border-radius: 4px 12px 12px 4px;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(30, 32, 51, 0.18);
+  transition: transform 0.25s, box-shadow 0.25s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 8px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: -30%; right: -40%;
+    width: 90%; height: 70%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+.bk-cover__title {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.bk-cover__sub {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.45em;
+  font-size: 0.68em;
+  line-height: 1.35;
+  opacity: 0.85;
+}
+.bk-meta {
+  display: block;
+  margin-top: 0.6em;
+  font-family: $agent-mono;
+  font-size: 0.68em;
+  color: $sr-text-3;
+}
+.bk-book--0 .bk-cover { background: linear-gradient(160deg, #4250d5, #1e2033); }
+.bk-book--1 .bk-cover { background: linear-gradient(160deg, #e96c2f, #a5460f); }
+.bk-book--2 .bk-cover { background: linear-gradient(160deg, #1e2033, #3333cc); }
+.bk-book--3 .bk-cover { background: linear-gradient(160deg, #6a88e2, #33c); }
+.bk-book--4 .bk-cover { background: linear-gradient(160deg, #f38858, #e6651b); }
+.bk-book--5 .bk-cover { background: linear-gradient(160deg, #2b2f4a, #556adc); }
+
+/* Talks */
+.tk-list { display: grid; gap: 1.2em; }
+.tk-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  overflow: hidden;
+  border: 1px solid $sr-border;
+  border-radius: 16px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  &:hover { border-color: $sr-indigo-lt; box-shadow: 0 10px 30px rgba(51, 51, 204, 0.08); }
+}
+.tk-card__img {
+  display: block;
+  background: $sr-surface-2;
+  img { display: block; width: 100%; height: 100%; max-height: 260px; object-fit: cover; object-position: top; }
+}
+.tk-card__body { padding: 1.4em 1.5em; }
+
+/* Teaching */
+.tc-list { display: grid; gap: 1em; }
+.tc-card {
+  display: flex;
+  gap: 1.4em;
+  align-items: center;
+  padding: 1.4em 1.5em;
+  border: 1px solid $sr-border;
+  border-radius: 16px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  &:hover { color: inherit; border-color: $sr-indigo-lt; box-shadow: 0 10px 30px rgba(51, 51, 204, 0.08); }
+}
+.tc-card__code {
+  flex: none;
+  padding: 0.9em 1em;
+  border-radius: 12px;
+  background: $agent-ink;
+  color: #fff;
+  font-family: $agent-mono;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+.tc-card__body { display: block; }
+.tc-card__title { display: block; margin: 0.25em 0; font-size: 1.15em; font-weight: 600; color: $sr-text; }
+.tc-card__venue, .tc-card__role { display: block; font-size: 0.84em; color: $sr-text-3; }
+.tc-card__role { margin-top: 0.3em; color: $sr-text-2; }
+
+/* Life + music photo cards */
+.lf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1em;
+}
+.lf-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: $agent-ink;
+  color: #fff;
+  text-decoration: none;
+  img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  &:hover { color: #fff; }
+  &:hover img { transform: scale(1.05); }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 60%;
+    background: linear-gradient(transparent, rgba(30, 32, 51, 0.85));
+  }
+}
+.lf-card--wide { aspect-ratio: auto; min-height: 180px; img { position: absolute; top: 0; left: 0; } }
+.lf-card__label {
+  position: absolute;
+  left: 1.1em; right: 1.1em; bottom: 1em;
+  z-index: 1;
+  .lp-post__meta { color: $sr-orange-lt; }
+}
+.lf-card__title { display: block; margin-top: 0.2em; font-size: 1.2em; font-weight: 600; }
+
+/* CV */
+.cv-timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.6em;
+  list-style: none;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0.6em; bottom: 0.6em; left: 0.42em;
+    width: 2px;
+    background: linear-gradient($sr-orange, $sr-indigo-lt);
+  }
+}
+.cv-item { position: relative; margin: 0 0 1em; }
+.cv-item__dot {
+  position: absolute;
+  top: 1.45em;
+  left: -1.6em;
+  width: 0.9em;
+  height: 0.9em;
+  border: 3px solid $sr-page-bg;
+  border-radius: 50%;
+  background: $sr-indigo;
+}
+.is-current .cv-item__dot { background: $sr-orange; box-shadow: 0 0 0 4px rgba(233, 108, 47, 0.2); }
+.cv-item__card {
+  padding: 1.1em 1.3em;
+  border: 1px solid $sr-border;
+  border-radius: 14px;
+  background: #fff;
+}
+.cv-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.3em 1em;
+  h3 { margin: 0; font-size: 1.05em; color: $sr-text; }
+}
+.cv-item__dates { font-family: $agent-mono; font-size: 0.72em; color: $sr-text-3; }
+.cv-item__org { margin: 0.25em 0 0; font-size: 0.9em; font-weight: 600; color: $sr-indigo; }
+.cv-item__focus { margin: 0.2em 0 0; font-size: 0.85em; color: $sr-text-3; }
+.cv-now {
+  margin-left: 0.4em;
+  padding: 0.1em 0.5em;
+  border-radius: 999px;
+  background: $sr-orange;
+  color: #fff;
+  font-family: $agent-mono;
+  font-size: 0.7em;
+  vertical-align: middle;
+}
+.cv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; }
+.cv-edu {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+  margin-bottom: 0.8em;
+  padding: 1em 1.2em;
+  border: 1px solid $sr-border;
+  border-radius: 14px;
+  background: #fff;
+  h3 { margin: 0; font-size: 0.98em; color: $sr-text; }
+  p { margin: 0.15em 0 0; font-size: 0.85em; color: $sr-text-3; }
+}
+.cv-edu__year { flex: none; font-family: $agent-mono; font-size: 0.8em; font-weight: 700; color: $sr-orange; padding-top: 0.15em; }
+.cv-skills {
+  margin-bottom: 1.2em;
+  h3 { margin: 0 0 0.5em; font-size: 0.9em; color: $sr-text; }
+}
+.cv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  span { padding: 0.35em 0.8em; border: 1px solid $sr-border; border-radius: 999px; background: #fff; font-size: 0.8em; color: $sr-text-2; }
+}
+.cv-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; }
+.cv-list {
+  padding: 1.3em 1.4em;
+  border: 1px solid $sr-border;
+  border-radius: 16px;
+  background: #fff;
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0.6em;
+    font-size: 0.95em;
+    color: $sr-text;
+    a { font-size: 0.85em; font-weight: 600; text-decoration: none; }
+  }
+  ul { margin: 0 0 1.2em; padding: 0; list-style: none; }
+  ul:last-child { margin-bottom: 0; }
+  li { margin: 0 0 0.7em; font-size: 0.86em; line-height: 1.4; }
+  li a { color: $sr-text; text-decoration: none; font-weight: 500; }
+  li a:hover { color: $sr-indigo; }
+  li span { display: block; font-size: 0.85em; color: $sr-text-3; }
+}
+.cv-service { margin: 0; padding-left: 1.2em; color: $sr-text-2; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .hub-grid { grid-template-columns: 1fr; }
+  .tk-card { grid-template-columns: 1fr; }
+  .tk-card__img img { max-height: 220px; }
+  .cv-two, .cv-lists { grid-template-columns: 1fr; gap: 1.2em; }
+}
+@media (max-width: 700px) {
+  .hub-year .hub-grid { grid-column: auto; }
+}
+@media (max-width: 560px) {
+  .bk-shelf { grid-template-columns: repeat(2, 1fr); gap: 1.2em 0.9em; }
+  .tc-card { flex-direction: column; align-items: flex-start; }
+}
+
+/* Print the CV cleanly */
+@media print {
+  .masthead, .page__footer, .lp-hero__cta, body:before { display: none !important; }
+  html, body { background: #fff !important; }
+  .lp-section { padding-top: 1.5em; }
+  .cv-item__card, .cv-edu, .cv-list { box-shadow: none; break-inside: avoid; }
+}

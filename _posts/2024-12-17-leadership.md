@@ -1,3 +1,11 @@
+---
+title: "Leadership Lessons from The Parlor Room Podcast"
+collection: posts
+type: "Management"
+permalink: /posts/leadership
+date: 2024-12-17
+---
+
 The Parlor Room Podcast, hosted by Chris Lenane of Harvard Business School Online, features Professor Nancy Koehn, an expert on leadership, to discuss leadership in crisis. Key highlights include:
 
 **Defining Leadership:**    

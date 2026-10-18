@@ -1,4 +1,11 @@
-# Summary: *How good are your ML best practices?*  
+---
+title: "How Good Are Your ML Best Practices?"
+collection: posts
+type: "Data Science"
+permalink: /posts/ml-quality-system
+date: 2025-09-21
+---
+
 *(George Chouliaras et al., Booking.com Data Science)*  
 [Read the full article](https://booking.ai/how-good-are-your-ml-best-practices-fd7722262437)
 

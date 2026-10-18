@@ -1,13 +1,35 @@
 ---
-layout: archive
+layout: landing
 title: "Music"
+excerpt: "Learning Hindustani classical music"
 permalink: /music/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
+{% include hub-hero.html eyebrow="Music" title="सुर · Music" sub="Notes from learning Hindustani classical vocal music: the thaat system, raags, and songs I practise." %}
 
-{% for post in site.music reversed %}
-{% include archive-single.html %}
+{% assign sections = "journey|My journey|Certifications and milestones.,theory|Theory|Thaats and raags.,songs|Songs|Bhajans and Kabir's dohas I practise." | split: "," %}
+{% for s in sections %}
+  {% assign parts = s | split: "|" %}
+  {% assign docs = site.music | where: "section", parts[0] | sort: "date" | reverse %}
+  {% if docs.size > 0 %}
+  <section class="lp-wrap lp-section">
+    <p class="lp-eyebrow">{{ parts[1] }}</p>
+    <h2 class="lp-h2">{{ parts[2] }}</h2>
+    <div class="lp-posts">
+      {% for d in docs %}
+        {% if d.cover %}
+        <a class="lf-card lf-card--wide" href="{{ base_path }}{{ d.url }}">
+          <img src="{{ base_path }}{{ d.cover }}" alt="{{ d.title }}" loading="lazy">
+          <span class="lf-card__label"><span class="lp-post__meta">{{ d.date | date: "%b %Y" }}</span><span class="lf-card__title">{{ d.title }}</span></span>
+        </a>
+        {% else %}
+          {% capture meta %}{{ parts[1] }} · {{ d.date | date: "%b %Y" }}{% endcapture %}
+          {% include hub-card.html doc=d meta=meta %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 {% endfor %}
-

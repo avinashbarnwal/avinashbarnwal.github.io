@@ -1,0 +1,73 @@
+{% comment %}
+  Blog post index: topic chips, search, posts grouped by year.
+  Params: only (optional topic slug from _data/post_topics.yml to show just that topic).
+{% endcomment %}
+{% include base_path %}
+{% assign topics = site.data.post_topics %}
+
+<section class="lp-wrap hub-tools">
+  {% unless include.only %}
+  <div class="pb-filters" id="hub-filters" role="group" aria-label="Filter by topic">
+    <button type="button" class="is-on" data-group="">All</button>
+    {% for t in topics %}<button type="button" data-group="{{ t.slug }}">{{ t.name }}</button>{% endfor %}
+  </div>
+  {% endunless %}
+  <label class="gv-search hub-search">
+    <span class="t-dim" aria-hidden="true">⌕</span>
+    <input id="hub-search" type="search" placeholder="Search posts…" aria-label="Search posts">
+  </label>
+  <p class="gv-empty" id="hub-empty" hidden>Nothing matches that search.</p>
+</section>
+
+<section class="lp-wrap pb-list hub-list">
+  {% assign current_year = "" %}{% assign open = false %}
+  {% for post in site.posts %}
+    {% assign g = "life" %}{% assign gname = "Life & Books" %}
+    {% for t in topics %}{% if t.types contains post.type %}{% assign g = t.slug %}{% assign gname = t.name %}{% endif %}{% endfor %}
+    {% if include.only == nil or include.only == g %}
+      {% assign y = post.date | date: "%Y" %}
+      {% if y != current_year %}
+        {% if open %}</div></div>{% endif %}
+        <div class="pb-year hub-year"><h2 class="pb-year__label">{{ y }}</h2><div class="hub-grid">
+        {% assign current_year = y %}{% assign open = true %}
+      {% endif %}
+      {% capture meta %}{{ post.type | default: gname }} · {{ post.date | date: "%b %-d" }}{% endcapture %}
+      {% include hub-card.html doc=post meta=meta group=g %}
+    {% endif %}
+  {% endfor %}
+  {% if open %}</div></div>{% endif %}
+</section>
+
+<script>
+(function () {
+  /* Topic chips + search. Block comments only: the compress layout joins lines. */
+  var bar = document.getElementById("hub-filters");
+  var input = document.getElementById("hub-search");
+  var empty = document.getElementById("hub-empty");
+  var cards = document.querySelectorAll(".hub-list .hub-card");
+  var years = document.querySelectorAll(".hub-year");
+  var group = "";
+  function apply() {
+    var q = input.value.trim().toLowerCase(), any = false;
+    for (var i = 0; i < cards.length; i++) {
+      var c = cards[i];
+      var hit = (!group || c.getAttribute("data-group") === group) && (!q || c.getAttribute("data-search").indexOf(q) !== -1);
+      c.style.display = hit ? "" : "none";
+      if (hit) any = true;
+    }
+    for (var k = 0; k < years.length; k++) {
+      years[k].style.display = years[k].querySelectorAll('.hub-card:not([style*="none"])').length ? "" : "none";
+    }
+    empty.hidden = any;
+  }
+  input.addEventListener("input", apply);
+  if (bar) bar.addEventListener("click", function (e) {
+    var b = e.target;
+    if (b.tagName !== "BUTTON") return;
+    group = b.getAttribute("data-group");
+    var all = bar.querySelectorAll("button");
+    for (var i = 0; i < all.length; i++) all[i].className = all[i] === b ? "is-on" : "";
+    apply();
+  });
+})();
+</script>

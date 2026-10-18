@@ -1,3 +1,11 @@
+---
+title: "14 Things to Avoid in 2025"
+collection: posts
+type: "Stoics"
+permalink: /posts/14-things-to-avoid-in-2025
+date: 2025-01-07
+---
+
 **The article outlines 14 things to avoid based on Stoic philosophy to help you grow and improve in the new year:**      
 
 - Unnecessary Habits – Eliminate routines and practices that no longer serve you or are harmful. Focus on what is essential.        

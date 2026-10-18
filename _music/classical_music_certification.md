@@ -4,6 +4,8 @@ collection: music
 type: "Non-Fictional"
 permalink: /music/classical_music_certi
 date: 2026-07-03
+section: journey
+cover: /images/classical_music_certi_l2.png
 ---
 
 

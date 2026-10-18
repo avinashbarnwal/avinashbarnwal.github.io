@@ -1,0 +1,12 @@
+{% comment %}
+  One content card. Params: doc (a post or collection document), meta (small label line).
+{% endcomment %}
+{% include base_path %}
+{% assign hc_doc = include.doc %}
+{% assign hc_ex = hc_doc.excerpt | strip_html | strip_newlines | strip %}
+{% if hc_ex.size < 30 %}{% assign hc_ex = hc_doc.content | strip_html | strip_newlines | strip %}{% endif %}
+<a class="lp-post hub-card" href="{{ base_path }}{{ hc_doc.url }}" data-search="{{ hc_doc.title | downcase | escape }} {{ include.meta | downcase | escape }} {{ hc_ex | truncatewords: 40, '' | downcase | escape }}"{% if include.group %} data-group="{{ include.group }}"{% endif %}>
+  <span class="lp-post__meta">{{ include.meta }}</span>
+  <h3>{{ hc_doc.title }}</h3>
+  <p>{{ hc_ex | truncate: 130 }}</p>
+</a>

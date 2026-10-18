@@ -4,6 +4,7 @@ collection: life
 type: "Non-Fictional"
 permalink: /life/Cricket
 date: 2021-10-17
+cover: /images/life/Cricket/pic1.jpeg
 ---
 
 

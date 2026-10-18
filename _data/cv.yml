@@ -1,0 +1,52 @@
+# Source for the /cv/ page. Newest first.
+experience:
+  - role: "Head of Analytics and Data Science"
+    org: "Autocash.ai"
+    start: "Aug 2026"
+    end: "Present"
+    focus: "AI & Data Science & Machine Learning"
+  - role: "Manager - Data Science"
+    org: "Kapitus"
+    start: "Mar 2020"
+    end: "Jul 2026"
+    focus: "Predictive Modeling"
+  - role: "Data Scientist"
+    org: "Inncretech"
+    start: "Jun 2018"
+    end: "Jan 2020"
+    focus: "Data Science"
+  - role: "Senior Manager"
+    org: "Indiabulls Housing Finance"
+    start: "Aug 2015"
+    end: "Jul 2016"
+    focus: "Analytics and Investor Relations"
+  - role: "Senior Analyst"
+    org: "Deutsche Bank"
+    start: "Jan 2015"
+    end: "Jul 2015"
+    focus: "Derivatives Funding Desk"
+  - role: "Assistant Manager"
+    org: "Fullerton India Credit Company"
+    start: "Sep 2012"
+    end: "Nov 2014"
+    focus: "Analytics and Information Management"
+
+education:
+  - degree: "Ph.D. in Statistics"
+    school: "Stony Brook University"
+    year: 2019
+  - degree: "M.S. in Statistics and Informatics"
+    school: "IIT Kharagpur"
+    year: 2012
+  - degree: "B.S. in Statistics and Informatics"
+    school: "IIT Kharagpur"
+    year: 2012
+
+skills:
+  - group: "Machine Learning & Data Science"
+    items: ["Machine Learning", "Statistics", "Algorithms", "Medical Imaging"]
+  - group: "Languages"
+    items: ["Python", "C++", "R"]
+
+service:
+  - "Held multiple leadership positions during undergraduate and graduate schools."

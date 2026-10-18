@@ -1,4 +1,10 @@
-# The Great Mental Models, Volume 4: Economics & Art -- Summary
+---
+title: "The Great Mental Models, Volume 4: Economics & Art"
+collection: posts
+type: "Strategy"
+permalink: /posts/great-models
+date: 2025-09-13
+---
 
 ## What is this book about
 

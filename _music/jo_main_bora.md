@@ -4,6 +4,7 @@ collection: music
 type: "Non-Fictional"
 permalink: /music/kabir_ke_dohe_jo_main_bora
 date: 2024-09-08
+section: songs
 ---
 
 Line 1: जो मैं बौरा तो राम तोरा     

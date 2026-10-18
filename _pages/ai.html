@@ -1,0 +1,27 @@
+---
+layout: landing
+title: "AI"
+excerpt: "Notes on AI agents, LLMs and machine learning"
+permalink: /ai/
+author_profile: false
+---
+
+{% assign n_ai = 0 %}{% assign ai_types = site.data.post_topics | where: "slug", "ai" | first %}
+{% for p in site.posts %}{% if ai_types.types contains p.type %}{% assign n_ai = n_ai | plus: 1 %}{% endif %}{% endfor %}
+{% include hub-hero.html eyebrow="AI & Data Science" title="Notes on <span class='agent-grad'>AI</span>" sub="Summaries and notes on LLMs, AI agents and the machine learning systems behind them, written while building agentic AI for finance." %}
+
+<section class="lp-wrap hub-ai-focus">
+  <div class="agent-term">
+    <div class="agent-term__bar">
+      <span class="agent-term__dots"><i></i><i></i><i></i></span>
+      <span class="agent-term__title">focus.yaml</span>
+      <span class="agent-term__status"><span class="agent-pulse"></span>{{ n_ai }} notes</span>
+    </div>
+<pre class="agent-term__body"><span class="t-step">focus</span>:   agentic AI for finance
+<span class="t-tool">agents</span>:  planning · tool use · memory · self-evaluation
+<span class="t-tool">domain</span>:  cash forecasting · treasury · credit risk · lending
+<span class="t-tool">craft</span>:   evaluation · ML quality · getting models to production</pre>
+  </div>
+</section>
+
+{% include post-index.html only="ai" %}

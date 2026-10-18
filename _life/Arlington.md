@@ -4,6 +4,7 @@ collection: life
 type: "Non-Fictional"
 permalink: /life/Arlington
 date: 2021-10-17
+cover: /images/life/Arlington/pic1.jpeg
 ---
 
 

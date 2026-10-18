@@ -1,3 +1,11 @@
+---
+title: "Climate Change and US Wildfires"
+collection: posts
+type: "science"
+permalink: /posts/usa-on-climate-change
+date: 2025-02-03
+---
+
 The article discusses the impact of climate change, particularly in the context of wildfires in the United States, and the global response to climate agreements. It highlights the role of American policies, particularly under Donald Trump, in shaping environmental regulations and energy policies.
 
 Key Points:
