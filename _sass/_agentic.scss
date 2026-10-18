@@ -140,30 +140,14 @@ a:hover { color: $sr-indigo-dk; }
 .t-tool { color: #f59970; font-weight: 700; }
 .t-ok   { color: $agent-green; font-weight: 700; }
 
-/* Hero */
-.agent-hero {
-  margin: 0.5em 0 2.5em;
-  padding-bottom: 0.5em;
-  background: radial-gradient(ellipse at 50% 75%, rgba(167, 192, 241, 0.28), transparent 65%);
-}
-.agent-hero__headline {
-  margin: 1.2em 0 0.4em;
-  font-size: 2.2em;
-  line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: $sr-text;
-}
+/* Shared hero pieces */
 .agent-grad {
   background: linear-gradient(90deg, $sr-indigo-dk, $sr-indigo 45%, $sr-orange);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.agent-hero__lede { font-size: 1.02em; color: $sr-text-2; max-width: 42em; }
-.agent-hero__cta { display: flex; flex-wrap: wrap; gap: 0.6em; margin-top: 1.2em; }
-.agent-btn,
-.page__content .agent-btn {
+.agent-btn {
   display: inline-block;
   padding: 0.55em 1.1em;
   border: 1px solid $sr-border;
@@ -176,8 +160,7 @@ a:hover { color: $sr-indigo-dk; }
   transition: all 0.2s;
   &:hover { border-color: $sr-indigo-lt; color: $sr-indigo; }
 }
-.agent-btn--primary,
-.page__content .agent-btn--primary {
+.agent-btn--primary {
   border-color: transparent;
   background: $agent-ink;
   color: #fff;
@@ -278,7 +261,6 @@ a:hover { color: $sr-indigo-dk; }
 
 @media (max-width: 480px) {
   .agent-console .agent-term__status { display: none; }
-  .agent-hero__headline { font-size: 1.8em; }
 }
 
 @media (prefers-reduced-motion: reduce) {

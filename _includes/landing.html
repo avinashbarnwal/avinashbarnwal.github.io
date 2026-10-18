@@ -1,6 +1,18 @@
 {% include base_path %}
-<section class="agent-hero">
-  <div class="agent-term" aria-label="Agent run introducing Avinash">
+<!-- Hero -->
+<section class="lp-hero lp-wrap">
+  <a class="lp-pill" href="{{ base_path }}/cv/"><span class="lp-pill__dot"></span>Now: Head of Analytics &amp; Data Science at Autocash.ai <span aria-hidden="true">→</span></a>
+  <h1 class="lp-hero__title">Agentic AI for <span class="agent-grad">finance</span>.</h1>
+  <p class="lp-hero__sub">
+    I build AI agents and ML systems that forecast cash, price risk and automate finance work,
+    backed by a Ph.D. in Statistics and 14 years in lending and capital markets.
+  </p>
+  <div class="lp-hero__cta">
+    <a class="agent-btn agent-btn--primary" href="#try">Ask my agent</a>
+    <a class="agent-btn" href="{{ base_path }}/cv/">View CV</a>
+  </div>
+
+  <div class="agent-term lp-hero__shot" aria-label="Agent run introducing Avinash">
     <div class="agent-term__bar">
       <span class="agent-term__dots"><i></i><i></i><i></i></span>
       <span class="agent-term__title">avinash-agent — run #2026</span>
@@ -14,44 +26,78 @@
 <span class="t-step">reflect</span> focus = agentic AI for finance
 <span class="t-ok">done</span>    <span class="t-str">"Builds AI agents and ML systems that help businesses make better money decisions."</span></pre>
   </div>
+</section>
 
-  <h1 class="agent-hero__headline">I build <span class="agent-grad">agentic AI</span> for finance.</h1>
-  <p class="agent-hero__lede">
-    Head of Analytics &amp; Data Science at <strong>Autocash.ai</strong>, where I build AI agents for cash forecasting and treasury.
-    I'm a statistician by training (Ph.D., Stony Brook) and have spent 14 years turning models into decisions at
-    Kapitus, Deutsche Bank, Indiabulls and Fullerton India.
-  </p>
-  <div class="agent-hero__cta">
-    <a class="agent-btn agent-btn--primary" href="#agent-console">Ask my agent</a>
-    <a class="agent-btn" href="{{ base_path }}/ai/">AI writing</a>
-    <a class="agent-btn" href="{{ base_path }}/cv/">CV</a>
+<!-- Experience strip -->
+<section class="lp-logos lp-wrap">
+  <p class="lp-eyebrow lp-eyebrow--center">Experience across</p>
+  <ul class="lp-logos__row">
+    <li>Autocash.ai</li><li>Kapitus</li><li>Deutsche Bank</li><li>Indiabulls</li><li>Fullerton India</li><li>Stony Brook</li><li>IIT Kharagpur</li>
+  </ul>
+</section>
+
+<!-- Stats + about -->
+<section class="lp-section lp-wrap lp-about">
+  <div>
+    <p class="lp-eyebrow">About</p>
+    <h2 class="lp-h2">A statistician building agents.</h2>
+    <p>Trained as a statistician, I found my way through machine learning to build models that change real decisions. Today I work on AI agents that plan, use tools and reason over financial data, so businesses, especially small ones, can forecast cash, manage risk and get better financing.</p>
+  </div>
+  <dl class="lp-stats">
+    <div><dt>14+</dt><dd>years in finance &amp; data</dd></div>
+    <div><dt>Ph.D.</dt><dd>Statistics, Stony Brook</dd></div>
+    <div><dt>{{ site.publications.size }}</dt><dd>research publications</dd></div>
+    <div><dt>6</dt><dd>companies, banks &amp; fintechs</dd></div>
+  </dl>
+</section>
+
+<!-- Capabilities -->
+<section class="lp-section lp-wrap">
+  <p class="lp-eyebrow">What I build</p>
+  <h2 class="lp-h2">From models to autonomous workflows.</h2>
+  <div class="agent-cards">
+    <div class="agent-card">
+      <div class="agent-card__tag">agents</div>
+      <h3>Agentic finance workflows</h3>
+      <p>LLM agents that plan, call tools and check their own work across cash forecasting, treasury and AR/AP.</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-card__tag">models</div>
+      <h3>Credit &amp; risk ML</h3>
+      <p>Predictive models for small-business lending: underwriting, risk and portfolio decisions in production.</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-card__tag">systems</div>
+      <h3>ML that ships</h3>
+      <p>Evaluation, monitoring and quality systems that get models out of notebooks and into the business.</p>
+    </div>
   </div>
 </section>
 
-<section class="agent-cards">
-  <div class="agent-card">
-    <div class="agent-card__tag">agents</div>
-    <h3>Agentic finance workflows</h3>
-    <p>LLM agents that plan, call tools and check their own work across cash forecasting, treasury and AR/AP.</p>
-  </div>
-  <div class="agent-card">
-    <div class="agent-card__tag">models</div>
-    <h3>Credit &amp; risk ML</h3>
-    <p>Predictive models for small-business lending: underwriting, risk and portfolio decisions in production.</p>
-  </div>
-  <div class="agent-card">
-    <div class="agent-card__tag">systems</div>
-    <h3>ML that ships</h3>
-    <p>Evaluation, monitoring and quality systems that get models out of notebooks and into the business.</p>
-  </div>
+<!-- How it works -->
+<section class="lp-section lp-wrap">
+  <p class="lp-eyebrow">How my agents work</p>
+  <h2 class="lp-h2">Plan. Act. Check. Remember.</h2>
+  <ol class="lp-steps">
+    <li><span class="lp-steps__n">01</span><h3>Plan</h3><p>Break a finance goal, like a 13-week cash forecast, into concrete steps.</p></li>
+    <li><span class="lp-steps__n">02</span><h3>Act</h3><p>Call tools: ledgers, bank feeds, models and SQL, instead of guessing.</p></li>
+    <li><span class="lp-steps__n">03</span><h3>Check</h3><p>Reconcile results against the books and flag exceptions for a human.</p></li>
+    <li><span class="lp-steps__n">04</span><h3>Remember</h3><p>Keep context across runs so every cycle is sharper than the last.</p></li>
+  </ol>
 </section>
 
-<section class="agent-console" id="agent-console">
-  <div class="agent-term">
+<!-- Try it -->
+<section class="lp-section lp-wrap lp-try" id="try">
+  <div>
+    <p class="lp-eyebrow">Try it</p>
+    <h2 class="lp-h2">Ask my agent.</h2>
+    <p>A small demo of the pattern: each question is routed to a tool, and the answer comes back with links. It's scripted and runs entirely in your browser, with no model calls.</p>
+  </div>
+  <div class="agent-term agent-console">
     <div class="agent-term__bar">
       <span class="agent-term__dots"><i></i><i></i><i></i></span>
       <span class="agent-term__title">ask avinash-agent</span>
-      <span class="agent-term__status">scripted · runs in your browser</span>
+      <span class="agent-term__status">scripted</span>
     </div>
     <div class="agent-term__body agent-console__log" id="agent-log" aria-live="polite">
       <div><span class="t-ok">agent</span> Hi! Ask me about Avinash's work, research, writing or how to reach him.</div>
@@ -68,6 +114,39 @@
       <input id="agent-input" type="text" placeholder="Type a question…" aria-label="Ask a question">
       <button type="submit">Run</button>
     </form>
+  </div>
+</section>
+
+<!-- Writing -->
+<section class="lp-section lp-wrap">
+  <div class="lp-head-row">
+    <div>
+      <p class="lp-eyebrow">Writing</p>
+      <h2 class="lp-h2">Notes on AI &amp; ML.</h2>
+    </div>
+    <a class="lp-more" href="{{ base_path }}/ai/">All AI posts →</a>
+  </div>
+  <div class="lp-posts">
+    {% assign shown = 0 %}
+    {% for post in site.posts %}{% if shown < 3 %}{% if post.type contains 'AI' or post.type == 'Data Science' %}{% assign shown = shown | plus: 1 %}
+    <a class="lp-post" href="{{ base_path }}{{ post.url }}">
+      <span class="lp-post__meta">{{ post.type }} · {{ post.date | date: "%b %Y" }}</span>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+    </a>
+    {% endif %}{% endif %}{% endfor %}
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="lp-wrap">
+  <div class="lp-cta">
+    <h2>Building agents for finance?</h2>
+    <p>I'm always up for talking about agentic AI, forecasting and lending.</p>
+    <div class="lp-hero__cta">
+      <a class="agent-btn lp-cta__primary" href="mailto:{{ site.author.email }}">Email me</a>
+      <a class="agent-btn lp-cta__ghost" href="{{ site.author.linkedin }}">LinkedIn</a>
+    </div>
   </div>
 </section>
 
@@ -93,9 +172,8 @@
   var input = document.getElementById("agent-input");
   var busy = false;
 
-  function line(html, cls) {
+  function line(html) {
     var d = document.createElement("div");
-    if (cls) d.className = cls;
     d.innerHTML = html;
     log.appendChild(d);
     log.scrollTop = log.scrollHeight;
@@ -128,18 +206,20 @@
     if (e.target.tagName === "BUTTON") answer(e.target.textContent);
   });
 
-  // Reveal the hero trace line by line (skipped for reduced motion).
+  /* Reveal the hero trace line by line, skipped for reduced motion.
+     Only block comments here: the compress layout joins all lines. */
   var trace = document.getElementById("agent-trace");
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (trace && !reduce) {
     var lines = trace.innerHTML.split("\n");
     trace.innerHTML = "";
     var i = 0;
-    (function next() {
-      if (i >= lines.length) { trace.classList.add("is-done"); return; }
+    var next = function () {
+      if (i >= lines.length) { trace.className += " is-done"; return; }
       trace.innerHTML += (i ? "\n" : "") + lines[i++];
       setTimeout(next, i === 1 ? 500 : 380);
-    })();
+    };
+    next();
   }
 })();
 </script>
