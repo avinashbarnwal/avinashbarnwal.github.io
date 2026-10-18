@@ -27,17 +27,28 @@ $agent-muted    : #8d92ad;
 $agent-mono     : "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
 /* Site chrome */
-body { background: $sr-surface; color: $sr-text-2; }
+$sr-page-bg     : #f6f7fd;
+
+html { background-color: $sr-page-bg; }
+body {
+  color: $sr-text-2;
+  background-color: $sr-page-bg;
+  background-image:
+    radial-gradient(1100px 520px at 72% -120px, rgba(167, 192, 241, 0.45), transparent 70%),
+    radial-gradient(700px 360px at 8% 0, rgba(249, 187, 158, 0.22), transparent 70%);
+  background-repeat: no-repeat;
+}
+.page__footer { background-color: $sr-indigo-wash; border-top: 1px solid $sr-border; color: $sr-text-3; }
 .masthead {
-  background: rgba(252, 252, 252, 0.92);
-  border-bottom: 1px solid $sr-border;
+  background: rgba(246, 247, 253, 0.85);
+  border-bottom: 1px solid rgba(66, 80, 213, 0.12);
 }
 .greedy-nav {
   background: transparent;
   a { color: $sr-text; }
   a:hover { color: $sr-indigo; }
   .visible-links a:before { background: $sr-indigo; }
-  button { background-color: $sr-surface; }
+  button { background-color: transparent; }
   .navicon, .navicon:before, .navicon:after { background: $sr-text; }
   .hidden-links { background: #fff; border-color: $sr-border; a { color: $sr-text; } }
   .hidden-links:before { border-color: $sr-border transparent; }
