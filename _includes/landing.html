@@ -78,7 +78,41 @@
 <section class="lp-section lp-wrap">
   <p class="lp-eyebrow">How my agents work</p>
   <h2 class="lp-h2">Plan. Act. Check. Remember.</h2>
-  <ol class="lp-steps">
+  <div class="lp-loop" aria-hidden="true">
+    <svg viewBox="-20 0 660 300" id="agent-loop" role="img">
+      <defs>
+        <radialGradient id="al-glow"><stop offset="0" stop-color="#f59970" stop-opacity="0.9"/><stop offset="1" stop-color="#f59970" stop-opacity="0"/></radialGradient>
+        <linearGradient id="al-core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3333cc"/><stop offset="1" stop-color="#1e2033"/></linearGradient>
+      </defs>
+      <!-- loop and spokes -->
+      <rect class="al-loop" x="90" y="60" width="420" height="180" rx="40"/>
+      <line class="al-spoke" data-i="0" x1="300" y1="150" x2="90"  y2="60"/>
+      <line class="al-spoke" data-i="1" x1="300" y1="150" x2="510" y2="60"/>
+      <line class="al-spoke" data-i="2" x1="300" y1="150" x2="510" y2="240"/>
+      <line class="al-spoke" data-i="3" x1="300" y1="150" x2="90"  y2="240"/>
+      <!-- core -->
+      <circle class="al-pulse" cx="300" cy="150" r="46"/>
+      <circle class="al-pulse al-pulse--2" cx="300" cy="150" r="46"/>
+      <circle cx="300" cy="150" r="46" fill="url(#al-core)"/>
+      <text class="al-core-label" x="300" y="146">AGENT</text>
+      <text class="al-core-sub" x="300" y="166" id="al-status">planning</text>
+      <!-- travelling signal -->
+      <circle class="al-trail" id="al-trail2" r="5"/>
+      <circle class="al-trail" id="al-trail1" r="7"/>
+      <circle r="18" fill="url(#al-glow)" id="al-glow-dot"/>
+      <circle class="al-dot" r="6" id="al-dot"/>
+      <!-- nodes -->
+      <g class="al-node" data-i="0" transform="translate(90 60)"><rect x="-58" y="-22" width="116" height="44" rx="22"/><text y="6">① Plan</text></g>
+      <g class="al-node" data-i="1" transform="translate(510 60)"><rect x="-58" y="-22" width="116" height="44" rx="22"/><text y="6">② Act</text></g>
+      <g class="al-node" data-i="2" transform="translate(510 240)"><rect x="-58" y="-22" width="116" height="44" rx="22"/><text y="6">③ Check</text></g>
+      <g class="al-node" data-i="3" transform="translate(90 240)"><rect x="-58" y="-22" width="116" height="44" rx="22"/><text y="6">④ Remember</text></g>
+      <!-- tool calls that appear during Act -->
+      <g class="al-tools" transform="translate(524 106)">
+        <text y="8">ledger.query()</text><text y="26">bank_feed.sync()</text><text y="44">forecast.run()</text>
+      </g>
+    </svg>
+  </div>
+  <ol class="lp-steps" id="lp-steps">
     <li><span class="lp-steps__n">01</span><h3>Plan</h3><p>Break a finance goal, like a 13-week cash forecast, into concrete steps.</p></li>
     <li><span class="lp-steps__n">02</span><h3>Act</h3><p>Call tools: ledgers, bank feeds, models and SQL, instead of guessing.</p></li>
     <li><span class="lp-steps__n">03</span><h3>Check</h3><p>Reconcile results against the books and flag exceptions for a human.</p></li>
@@ -205,6 +239,56 @@
   document.getElementById("agent-chips").addEventListener("click", function (e) {
     if (e.target.tagName === "BUTTON") answer(e.target.textContent);
   });
+
+  /* Agent loop: a signal travels Plan -> Act -> Check -> Remember, lighting up
+     the matching node, spoke and step card. 2.2s per step. */
+  (function () {
+    var svg = document.getElementById("agent-loop");
+    if (!svg) return;
+    var pts = [[90, 60], [510, 60], [510, 240], [90, 240]];
+    var status = ["planning", "calling tools", "checking", "remembering"];
+    var nodes = svg.querySelectorAll(".al-node");
+    var spokes = svg.querySelectorAll(".al-spoke");
+    var cards = document.querySelectorAll("#lp-steps li");
+    var dot = document.getElementById("al-dot");
+    var glow = document.getElementById("al-glow-dot");
+    var t1 = document.getElementById("al-trail1");
+    var t2 = document.getElementById("al-trail2");
+    var label = document.getElementById("al-status");
+    var STEP = 2200, current = -1;
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function at(ms) {
+      var total = STEP * 4, t = ((ms % total) + total) % total;
+      var i = Math.floor(t / STEP), f = (t - i * STEP) / STEP;
+      var e = f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
+      var a = pts[i], b = pts[(i + 1) % 4];
+      return { i: i, x: a[0] + (b[0] - a[0]) * e, y: a[1] + (b[1] - a[1]) * e };
+    }
+    function place(el, p) { el.setAttribute("cx", p.x); el.setAttribute("cy", p.y); }
+    function setActive(i) {
+      if (i === current) return;
+      current = i;
+      for (var k = 0; k < 4; k++) {
+        var on = k === i ? " is-active" : "";
+        nodes[k].setAttribute("class", "al-node" + on);
+        spokes[k].setAttribute("class", "al-spoke" + on);
+        if (cards[k]) cards[k].className = on.trim();
+      }
+      svg.setAttribute("class", i === 1 ? "is-acting" : "");
+      label.textContent = status[i];
+    }
+    if (reduceMotion) { place(dot, { x: 90, y: 60 }); place(glow, { x: 90, y: 60 }); setActive(0); return; }
+    var start = null;
+    function frame(ts) {
+      if (start === null) start = ts;
+      var ms = ts - start, p = at(ms);
+      place(dot, p); place(glow, p); place(t1, at(ms - 120)); place(t2, at(ms - 240));
+      setActive(p.i);
+      window.requestAnimationFrame(frame);
+    }
+    window.requestAnimationFrame(frame);
+  })();
 
   /* Reveal the hero trace line by line, skipped for reduced motion.
      Only block comments here: the compress layout joins all lines. */

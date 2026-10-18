@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Sidebar author card (agentic style). Uses the palette from _agentic.scss
+   ========================================================================== */
+
+@keyframes ap-spin  { to { transform: rotate(360deg); } }
+@keyframes ap-ping  { 0% { transform: scale(1); opacity: 0.7; } 80%, 100% { transform: scale(2.4); opacity: 0; } }
+@keyframes ap-shine { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+
+.ap-card {
+  position: relative;
+
+  @include breakpoint($large) {
+    padding: 1.4em 1.2em 1.2em;
+    border: 1px solid $sr-border;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(51, 51, 204, 0.08);
+    text-align: center;
+  }
+}
+
+/* Avatar with rotating gradient ring */
+.sidebar .author__avatar img,
+.ap-ring img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.ap-ring {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  padding: 2px;
+  border-radius: 50%;
+  isolation: isolate;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, $sr-indigo-dk, $sr-indigo-lt, $sr-orange, $sr-orange-lt, $sr-indigo-dk);
+    animation: ap-spin 6s linear infinite;
+  }
+  @include breakpoint($large) {
+    width: 132px;
+    padding: 3px;
+  }
+}
+.ap-online {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  z-index: 2;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #22c55e;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: ap-ping 2s ease-out infinite;
+  }
+  @include breakpoint($large) {
+    right: 10px;
+    bottom: 10px;
+    width: 16px;
+    height: 16px;
+    border-width: 3px;
+  }
+}
+
+/* Name, role, live status */
+.sidebar .author__name {
+  font-size: 1.05em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: $sr-text;
+  @include breakpoint($large) { margin: 0.75em 0 0.2em; font-size: 1.15em; }
+}
+.sidebar .ap-role {
+  margin: 0.3em 0 0;
+  font-size: 0.72em;
+  line-height: 1.4;
+  color: $sr-text-3;
+}
+.sidebar .ap-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0.6em 0 0;
+  min-height: 2.2em;
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+  background: $agent-ink;
+  font-family: $agent-mono;
+  font-size: 0.62em;
+  line-height: 1.3;
+  color: #e4e6f0;
+  max-width: 100%;
+  @include breakpoint($large) { margin-top: 0.9em; }
+}
+.ap-status__dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $agent-green;
+  box-shadow: 0 0 0 0 rgba(155, 211, 106, 0.6);
+  animation: agent-pulse 2s infinite;
+}
+.ap-status__text {
+  text-align: left;
+  transition: opacity 0.25s, transform 0.25s;
+  &.is-out { opacity: 0; transform: translateY(-3px); }
+}
+
+/* Links */
+.sidebar .author__urls {
+  @include breakpoint($large) {
+    margin-top: 1.1em;
+    padding-top: 1em;
+    border-top: 1px solid $sr-border;
+    text-align: center;
+  }
+  .ap-meta { text-align: left; }
+  li { font-size: 0.78em; }
+}
+.sidebar .ap-meta {
+  margin: 0 0 0.35em;
+  color: $sr-text-3;
+  i { color: $sr-indigo; }
+}
+.sidebar .ap-cta-item { margin: 0.9em 0 0.8em; }
+.ap-cta {
+  display: block;
+  padding: 0.6em 0.8em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, $sr-indigo-dk, $sr-indigo, $sr-orange, $sr-indigo-dk);
+  background-size: 200% 100%;
+  color: #fff !important;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none !important;
+  animation: ap-shine 6s linear infinite;
+  transition: box-shadow 0.2s, transform 0.2s;
+  &:hover { box-shadow: 0 6px 18px rgba(51, 51, 204, 0.3); transform: translateY(-1px); }
+}
+.ap-cta__spark { display: inline-block; animation: ap-spin 4s linear infinite; }
+
+/* Icon-only pills in a row on wide screens (labels stay for screen readers) */
+.sidebar .ap-link {
+  display: inline-block;
+  margin: 0 0.25em 0.4em 0;
+  @include breakpoint($large) {
+    margin: 0 0.15em 0.35em 0;
+    a { width: 2.4em; height: 2.4em; padding: 0; justify-content: center; }
+    span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.35em 0.65em;
+    border: 1px solid $sr-border;
+    border-radius: 999px;
+    background: #fff;
+    color: $sr-text-2;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    &:hover { border-color: $sr-indigo-lt; color: $sr-indigo; }
+  }
+  i { color: $sr-indigo; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ap-ring:before, .ap-online:after, .ap-status__dot, .ap-cta, .ap-cta__spark { animation: none; }
+}

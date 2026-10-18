@@ -184,6 +184,78 @@
   color: $sr-orange;
 }
 
+/* Animated agent loop */
+@keyframes al-flow  { to { stroke-dashoffset: -24; } }
+@keyframes al-ping  { 0% { transform: scale(1); opacity: 0.45; } 100% { transform: scale(1.9); opacity: 0; } }
+
+.lp-loop {
+  margin: 0 0 1.6em;
+  padding: 1em;
+  border: 1px solid $sr-border;
+  border-radius: 20px;
+  background:
+    radial-gradient(400px 200px at 50% 50%, rgba(167, 192, 241, 0.35), transparent 70%),
+    rgba(255, 255, 255, 0.7);
+  svg { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 auto; overflow: visible; }
+}
+.al-loop {
+  fill: none;
+  stroke: $sr-indigo-lt;
+  stroke-width: 2;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
+  animation: al-flow 1.2s linear infinite;
+}
+.al-spoke {
+  stroke: $sr-border;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 8;
+  transition: stroke 0.3s;
+  &.is-active { stroke: $sr-orange; animation: al-flow 0.6s linear infinite reverse; }
+}
+.al-pulse {
+  fill: rgba(66, 80, 213, 0.25);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: al-ping 2.4s ease-out infinite;
+}
+.al-pulse--2 { animation-delay: 1.2s; }
+.al-core-label { fill: #fff; font-family: $agent-mono; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-anchor: middle; }
+.al-core-sub   { fill: $sr-orange-lt; font-family: $agent-mono; font-size: 10.5px; text-anchor: middle; }
+.al-node {
+  rect { fill: #fff; stroke: $sr-border; stroke-width: 1.5; transition: fill 0.3s, stroke 0.3s; }
+  text { fill: $sr-text; font-family: $sans-serif; font-size: 15px; font-weight: 600; text-anchor: middle; transition: fill 0.3s; }
+  &.is-active rect { fill: $agent-ink; stroke: $agent-ink; }
+  &.is-active text { fill: #fff; }
+}
+.al-tools text {
+  fill: $sr-indigo;
+  font-family: $agent-mono;
+  font-size: 11px;
+  text-anchor: start;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.is-acting .al-tools text { opacity: 1; }
+.is-acting .al-tools text:nth-child(2) { transition-delay: 0.25s; }
+.is-acting .al-tools text:nth-child(3) { transition-delay: 0.5s; }
+.al-dot   { fill: $sr-orange; }
+.al-trail { fill: $sr-orange; opacity: 0.25; }
+
+.lp-steps li { transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
+.lp-steps li.is-active {
+  border-color: $sr-orange-lt;
+  box-shadow: 0 10px 28px rgba(233, 108, 47, 0.14);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 560px) {
+  .lp-loop { padding: 0.4em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .al-loop, .al-spoke.is-active, .al-pulse { animation: none; }
+}
+
 /* Try it */
 .lp-try {
   display: grid;
