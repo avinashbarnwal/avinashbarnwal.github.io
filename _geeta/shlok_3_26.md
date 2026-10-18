@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.26"
+collection: geeta
+permalink: /geeta/shlok_3_26
+date: 2025-02-09
+---
+
 **Bhagavad Gita - Chapter 3, Verse 26**
 
 **न बुद्धिभेदं जनयेदज्ञानां कर्मसङ्गिनाम् |    

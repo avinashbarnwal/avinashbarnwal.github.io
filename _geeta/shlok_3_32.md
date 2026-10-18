@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.32"
+collection: geeta
+permalink: /geeta/shlok_3_32
+date: 2025-03-23
+---
+
 **Bhagavad Gita Chapter 3, Verse 32 (Shloka 3.32):**          
 
 ये तु द्वेष्यन्ति मम मतं नानुतिष्ठन्ति मे मतः |      

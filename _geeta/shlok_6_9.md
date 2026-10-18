@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.9"
+collection: geeta
+permalink: /geeta/shlok_6_9
+date: 2025-07-14
+---
+
 भगवद् गीता – अध्याय 6, श्लोक 9
 Sanskrit:
 सुहृन्मित्रार्युदासीनमध्यस्थद्वेष्यबन्धुषु |

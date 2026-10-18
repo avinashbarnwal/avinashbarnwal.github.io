@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.22"
+collection: geeta
+permalink: /geeta/shlok_3_22
+date: 2025-01-24
+---
+
 **The 22nd verse of Chapter 3 (Karma Yoga) of the Bhagavad Gita, spoken by Lord Krishna, states:**      
 
 न मे पार्थास्ति कर्तव्यं त्रिषु लोकेषु किञ्चन।        

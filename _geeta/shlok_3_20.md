@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.20"
+collection: geeta
+permalink: /geeta/shlok_3_20
+date: 2025-01-17
+---
+
 **Here is Bhagavad Gita Chapter 3, Shloka 20, with its translation:**
 
 **Sanskrit:**          

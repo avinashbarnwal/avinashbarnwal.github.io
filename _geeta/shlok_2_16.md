@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 2.16"
+collection: geeta
+permalink: /geeta/shlok_2_16
+date: 2024-10-30
+---
+
 **The Bhagavad Gita, Chapter 2, Verse 16, says:**       
 
 "nāsato vidyate bhāvo nābhāvo vidyate sataḥ | ubhayor api dṛṣṭo ’ntas tv anayos tattva-darśibhiḥ"

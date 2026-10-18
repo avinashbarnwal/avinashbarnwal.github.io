@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.15"
+collection: geeta
+permalink: /geeta/shlok_3_15
+date: 2025-01-06
+---
+
 **Bhagavad Gita - Chapter 3, Verse 15 (3.15):**
 
 कर्म ब्रह्मोद्भवं विद्धि ब्रह्माक्षरसमुद्भवम्।        

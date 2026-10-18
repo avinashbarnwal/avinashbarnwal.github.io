@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.18"
+collection: geeta
+permalink: /geeta/shlok_6_18
+date: 2025-09-01
+---
+
 Here is Bhagavad Gita, Chapter 6, Verse 18 (6.18) in Sanskrit with translation and explanation:
 
 📜 Sanskrit Shloka

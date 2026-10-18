@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 5.8–9"
+collection: geeta
+permalink: /geeta/shlok_5_8_5_9
+date: 2024-11-08
+---
+
 
 **Here are the verses from Bhagavad Gita, Chapter 5, Verses 8 and 9:**        
 

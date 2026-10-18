@@ -2,7 +2,7 @@
 title: "Worldly vs Enlightened"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/control_the_senses_to_achieve_the_peace
+permalink: /geeta/shlok_2_69
 date: 2024-12-10
 ---
 

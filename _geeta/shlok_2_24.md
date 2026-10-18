@@ -2,7 +2,7 @@
 title: "Soul cant be destroyed"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/soul_cant_be_destroyed
+permalink: /geeta/shlok_2_24
 date: 2024-11-07
 ---
 

@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.35"
+collection: geeta
+permalink: /geeta/shlok_3_35
+date: 2025-04-04
+---
+
 Sanskrit:
 
 श्रेयान् स्वधर्मो विगुणः परधर्मात् स्वनुष्ठितात्।

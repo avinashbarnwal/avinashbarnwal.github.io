@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.12"
+collection: geeta
+permalink: /geeta/shlok_6_12
+date: 2025-07-21
+---
+
 तत्रैकाग्रं मनः कृत्वा यतचित्तेन्द्रियक्रियः ।
 उपविश्यासने युञ्ज्याद्योगमात्मविशुद्धये ॥6.12॥
 Transliteration

@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.40"
+collection: geeta
+permalink: /geeta/shlok_3_40
+date: 2025-04-19
+---
+
 **Bhagavad Gita Chapter 3, Shloka 40 (गीता श्लोक 3.40) is as follows:**    
 
 **Sanskrit:**    

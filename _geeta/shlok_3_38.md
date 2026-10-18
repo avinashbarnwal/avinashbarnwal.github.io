@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.38"
+collection: geeta
+permalink: /geeta/shlok_3_38
+date: 2025-04-09
+---
+
 Bhagavad Gita – Chapter 3, Shloka 38 (3.38)
 
 Sanskrit:

@@ -1,3 +1,10 @@
+---
+title: "Kabir doha: Nindak niyare rakhiye"
+collection: geeta
+permalink: /geeta/kabir_dohe_2
+date: 2024-12-19
+---
+
 **The full couplet is:**
 
 **"निंदक नियरे राखिए, आंगन कुटी छवाय।

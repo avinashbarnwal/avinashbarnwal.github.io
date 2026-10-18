@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.36"
+collection: geeta
+permalink: /geeta/shlok_3_36
+date: 2025-04-07
+---
+
 In Bhagavad Gita Chapter 3, Verse 36, Arjuna asks Lord Krishna:​
 
 

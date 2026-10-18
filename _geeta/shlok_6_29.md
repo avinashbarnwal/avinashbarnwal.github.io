@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.29"
+collection: geeta
+permalink: /geeta/shlok_6_29
+date: 2025-11-22
+---
+
 📜 Bhagavad Gita 6.29
 
 Sanskrit:

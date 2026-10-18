@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.30"
+collection: geeta
+permalink: /geeta/shlok_3_30
+date: 2025-03-06
+---
+
 Bhagavad Gita - Chapter 3, Verse 30
 मयि सर्वाणि कर्माणि संन्यस्याध्यात्मचेतसा।
 निर्वीर्यनिर्ममो भूत्वा युध्यस्व विगतज्वरः॥

@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.16"
+collection: geeta
+permalink: /geeta/shlok_3_16
+date: 2025-01-07
+---
+
 **Bhagavad Gita - Chapter 3, Verse 16 (3.16):**
 
 "evam pravartitam chakram nānuvartayatīha yaḥ

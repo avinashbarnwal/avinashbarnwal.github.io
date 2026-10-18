@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.21"
+collection: geeta
+permalink: /geeta/shlok_6_21
+date: 2025-09-08
+---
+
 Here is Bhagavad Gita, Chapter 6, Shloka 21 (6.21):
 
 Sanskrit (Devanagari):

@@ -2,7 +2,7 @@
 title: "False Renunciation"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/jnan_yoga_vs_karma_yoga
+permalink: /geeta/shlok_3_6
 date: 2024-12-24
 ---
 [<img src="../images/shlok_3_6.webp" width="1000" height="500"/>](../images/shlok_3_6.webp)

@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.41"
+collection: geeta
+permalink: /geeta/shlok_3_41
+date: 2025-04-21
+---
+
 Bhagavad Gita Chapter 3, Shloka 41 (3.41) is as follows in Sanskrit, along with its transliteration and meaning:
 
 **Sanskrit:**   

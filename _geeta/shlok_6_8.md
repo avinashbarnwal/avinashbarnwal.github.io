@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.8"
+collection: geeta
+permalink: /geeta/shlok_6_8
+date: 2025-07-14
+---
+
 Certainly! Here's Bhagavad Gita Chapter 6, Shloka 8 (6.8) with Sanskrit, translation, and explanation:
 
 भगवद् गीता – अध्याय 6, श्लोक 8

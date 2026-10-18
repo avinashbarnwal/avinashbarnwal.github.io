@@ -1,12 +1,128 @@
 ---
-layout: archive
-title: "Geeta"
+layout: landing
+title: "Bhagavad Geeta"
+excerpt: "Verse-by-verse notes on the Bhagavad Geeta"
 permalink: /geeta/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
+{% assign chapters = site.data.geeta_chapters %}
 
-{% for post in site.geeta reversed %}
-{% include archive-single.html %}
-{% endfor %}
+{% comment %} Coverage per chapter, from file names like shlok_2_14, shlok_1_42_43 or shlok_2_8_2_9 {% endcomment %}
+{% assign total_covered = 0 %}
+{% assign total_notes = 0 %}
+{% assign chapters_started = 0 %}
+{% capture coverage %}{% for ch in chapters %}{% assign prefix = "/shlok_" | append: ch.n | append: "_" %}{% assign docs = site.geeta | where_exp: "d", "d.path contains prefix" %}{% assign covered = 0 %}{% for d in docs %}{% assign fn = d.path | split: "/" | last | remove: ".md" %}{% assign p = fn | split: "_" %}{% if p.size == 5 %}{% assign last_v = p[4] %}{% elsif p.size == 4 %}{% assign last_v = p[3] %}{% else %}{% assign last_v = p[2] %}{% endif %}{% assign span = last_v | minus: p[2] | plus: 1 %}{% assign covered = covered | plus: span %}{% endfor %}{{ covered }},{% endfor %}{% endcapture %}
+{% assign coverage = coverage | split: "," %}
+{% for ch in chapters %}{% assign i = forloop.index0 %}{% assign c = coverage[i] | plus: 0 %}{% assign total_covered = total_covered | plus: c %}{% if c > 0 %}{% assign chapters_started = chapters_started | plus: 1 %}{% endif %}{% endfor %}
+{% for d in site.geeta %}{% if d.path contains "/shlok_" %}{% assign total_notes = total_notes | plus: 1 %}{% endif %}{% endfor %}
+
+<!-- Hero -->
+<section class="lp-hero lp-wrap gv-hero">
+  <p class="lp-eyebrow lp-eyebrow--center">Bhagavad Geeta</p>
+  <h1 class="lp-hero__title gv-title">श्रीमद्भगवद्गीता</h1>
+  <p class="lp-hero__sub">
+    My verse-by-verse study notes: the Sanskrit, a translation, and what each verse means for everyday life and work.
+  </p>
+  <dl class="gv-stats">
+    <div><dt>{{ total_covered }}</dt><dd>of 700 verses</dd></div>
+    <div><dt>{{ chapters_started }}</dt><dd>of 18 chapters</dd></div>
+    <div><dt>{{ total_notes }}</dt><dd>verse notes</dd></div>
+  </dl>
+</section>
+
+<!-- Journey: all 18 chapters -->
+<section class="lp-section lp-wrap">
+  <p class="lp-eyebrow">The journey</p>
+  <h2 class="lp-h2">18 chapters, read in order.</h2>
+  <ol class="gv-map">
+    {% for ch in chapters %}{% assign i = forloop.index0 %}{% assign c = coverage[i] | plus: 0 %}{% assign pct = c | times: 100 | divided_by: ch.verses %}
+    <li class="{% if c > 0 %}is-started{% else %}is-upcoming{% endif %}">
+      {% if c > 0 %}<a href="#ch-{{ ch.n }}">{% endif %}
+        <span class="gv-map__n">{{ ch.n }}</span>
+        <span class="gv-map__name">{{ ch.en }}</span>
+        <span class="gv-bar"><span style="width: {{ pct }}%"></span></span>
+        <span class="gv-map__count">{% if c > 0 %}{{ c }}/{{ ch.verses }}{% else %}upcoming{% endif %}</span>
+      {% if c > 0 %}</a>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<!-- Search -->
+<section class="lp-wrap gv-search-wrap">
+  <label class="gv-search">
+    <span class="t-dim" aria-hidden="true">⌕</span>
+    <input id="gv-search" type="search" placeholder="Search verses: try “2.47”, “desire” or “soul”" aria-label="Search verses">
+  </label>
+  <p class="gv-empty" id="gv-empty" hidden>No verses match that search.</p>
+</section>
+
+<!-- Chapters -->
+{% for ch in chapters %}{% assign i = forloop.index0 %}{% assign c = coverage[i] | plus: 0 %}{% if c > 0 %}
+{% assign prefix = "/shlok_" | append: ch.n | append: "_" %}{% assign docs = site.geeta | where_exp: "d", "d.path contains prefix" %}
+<section class="lp-section lp-wrap gv-chapter" id="ch-{{ ch.n }}">
+  <div class="gv-chapter__head">
+    <div>
+      <p class="lp-eyebrow">Chapter {{ ch.n }} · {{ ch.name }}</p>
+      <h2 class="lp-h2">{{ ch.en }}</h2>
+    </div>
+    <span class="gv-chapter__count">{{ c }} of {{ ch.verses }} verses</span>
+  </div>
+  <div class="gv-grid">
+    {% for v in (1..ch.verses) %}{% assign vs = v | append: "" %}{% for d in docs %}{% assign fn = d.path | split: "/" | last | remove: ".md" %}{% assign p = fn | split: "_" %}{% if p[2] == vs %}
+    {% if p.size == 5 %}{% assign last_v = p[4] %}{% elsif p.size == 4 %}{% assign last_v = p[3] %}{% else %}{% assign last_v = nil %}{% endif %}
+    {% capture label %}{{ ch.n }}.{{ p[2] }}{% if last_v %}–{{ last_v }}{% endif %}{% endcapture %}
+    {% assign generic = d.title | slice: 0, 15 %}
+    {% if generic == "Bhagavad Geeta " %}{% assign nice = "" %}{% elsif d.title contains "_" %}{% assign nice = d.title | replace: "_", " " | capitalize %}{% else %}{% assign nice = d.title %}{% endif %}
+    <a class="gv-card{% if nice == '' %} gv-card--plain{% endif %}" href="{{ base_path }}{{ d.url }}" data-search="{{ label }} {{ nice | downcase }} {{ d.content | strip_html | strip_newlines | truncatewords: 60, '' | downcase | escape }}">
+      <span class="gv-card__v">{{ label }}</span>
+      <span class="gv-card__t">{% if nice != "" %}{{ nice }}{% else %}Verse notes{% endif %}</span>
+    </a>
+    {% endif %}{% endfor %}{% endfor %}
+  </div>
+</section>
+{% endif %}{% endfor %}
+
+<!-- Reflections -->
+<section class="lp-section lp-wrap gv-chapter" id="reflections">
+  <div class="gv-chapter__head">
+    <div>
+      <p class="lp-eyebrow">Beyond the verses</p>
+      <h2 class="lp-h2">Reflections &amp; dohas.</h2>
+    </div>
+  </div>
+  <div class="lp-posts">
+    {% for d in site.geeta %}{% unless d.path contains "/shlok_" %}
+    <a class="lp-post gv-card" href="{{ base_path }}{{ d.url }}" data-search="{{ d.title | downcase }} {{ d.content | strip_html | strip_newlines | truncatewords: 60, '' | downcase | escape }}">
+      <span class="lp-post__meta">{% if d.path contains "kabir" %}Kabir{% else %}Reflection{% endif %}</span>
+      <h3>{% if d.title contains "_" %}{{ d.title | replace: "_", " " | capitalize }}{% else %}{{ d.title }}{% endif %}</h3>
+      <p>{{ d.content | strip_html | strip_newlines | truncate: 110 }}</p>
+    </a>
+    {% endunless %}{% endfor %}
+  </div>
+</section>
+
+<script>
+(function () {
+  var input = document.getElementById("gv-search");
+  var empty = document.getElementById("gv-empty");
+  var cards = document.querySelectorAll(".gv-card");
+  var sections = document.querySelectorAll(".gv-chapter");
+  input.addEventListener("input", function () {
+    var q = input.value.trim().toLowerCase();
+    var any = false;
+    for (var i = 0; i < cards.length; i++) {
+      var hit = !q || cards[i].getAttribute("data-search").indexOf(q) !== -1;
+      cards[i].style.display = hit ? "" : "none";
+      if (hit) any = true;
+    }
+    for (var j = 0; j < sections.length; j++) {
+      var visible = sections[j].querySelectorAll('.gv-card:not([style*="none"])').length;
+      sections[j].style.display = visible ? "" : "none";
+    }
+    empty.hidden = any;
+  });
+})();
+</script>

@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 2.7"
+collection: geeta
+permalink: /geeta/shlok_2_7
+date: 2024-10-21
+---
+
 Sanskrit:
 कार्पण्यदोषोपहतस्वभावः
 प्रच्छामि त्वां धर्मसम्मूढचेताः।

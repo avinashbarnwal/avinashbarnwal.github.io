@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 4.2"
+collection: geeta
+permalink: /geeta/shlok_4_2
+date: 2025-05-08
+---
+
 
 Here is Bhagavad Gita Chapter 4, Verse 2 (Shloka 4.2) in Sanskrit, along with its transliteration, word-by-word meanings, and English translation:
 

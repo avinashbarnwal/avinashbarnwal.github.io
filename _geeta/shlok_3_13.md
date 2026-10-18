@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.13"
+collection: geeta
+permalink: /geeta/shlok_3_13
+date: 2025-01-02
+---
+
 **Bhagavad Gita - Chapter 3, Verse 13 (3.13):**        
 
 यज्ञशिष्टाशिनः सन्तो मुच्यन्ते सर्वकिल्बिषैः |                     

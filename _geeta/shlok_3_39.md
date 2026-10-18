@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.39"
+collection: geeta
+permalink: /geeta/shlok_3_39
+date: 2025-04-16
+---
+
 Bhagavad Gita Chapter 3, Verse 39 addresses the profound impact of desire on human consciousness.​       
 
 Sanskrit Verse (3.39)         

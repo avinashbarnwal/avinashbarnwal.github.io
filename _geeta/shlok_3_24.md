@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.24"
+collection: geeta
+permalink: /geeta/shlok_3_24
+date: 2025-02-02
+---
+
 **The Bhagavad Gita, Chapter 3, Verse 24 (श्लोक 3.24) states:**
 
 **सक्ताः कर्मण्यविद्वांसो यथा कुर्वन्ति भारत |        

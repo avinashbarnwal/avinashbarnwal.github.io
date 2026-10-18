@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.31"
+collection: geeta
+permalink: /geeta/shlok_6_31
+date: 2026-01-13
+---
+
 Bhagavad Gita – Chapter 6, Verse 31 (Detailed Explanation in English)
 
 ## Sanskrit Verse

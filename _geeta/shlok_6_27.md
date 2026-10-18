@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.27"
+collection: geeta
+permalink: /geeta/shlok_6_27
+date: 2025-11-09
+---
+
 Bhagavad Gita – Chapter 6, Shloka 27
 
 Sanskrit (IAST):

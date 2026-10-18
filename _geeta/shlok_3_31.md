@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.31"
+collection: geeta
+permalink: /geeta/shlok_3_31
+date: 2025-03-12
+---
+
 **Bhagavad Gita 3.31**
 
 ये मे मतमिदं नित्यमनुतिष्ठन्ति मानवाः |

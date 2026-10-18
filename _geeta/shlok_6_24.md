@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.24"
+collection: geeta
+permalink: /geeta/shlok_6_24
+date: 2025-10-14
+---
+
 Here’s Bhagavad Gita, Chapter 6, Shlok 24 (6.24):
 
 Sanskrit (IAST):

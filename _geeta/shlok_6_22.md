@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.22"
+collection: geeta
+permalink: /geeta/shlok_6_22
+date: 2025-09-12
+---
+
 Here is Bhagavad Gita, Chapter 6, Shloka 22 (6.22):
 
 Sanskrit (IAST):

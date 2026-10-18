@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.19"
+collection: geeta
+permalink: /geeta/shlok_6_19
+date: 2025-09-02
+---
+
 Here is Bhagavad Gita, Chapter 6, Verse 19 (6.19) in Sanskrit with translation and explanation:
 
 📜 Sanskrit Shloka      

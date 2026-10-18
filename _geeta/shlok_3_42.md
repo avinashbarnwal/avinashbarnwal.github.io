@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.42"
+collection: geeta
+permalink: /geeta/shlok_3_42
+date: 2025-04-27
+---
+
 Of course! Here’s Bhagavad Gita 3.42 along with its summary:
 
 श्लोक (Sanskrit):

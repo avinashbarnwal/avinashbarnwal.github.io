@@ -2,7 +2,7 @@
 title: "Practice Gratitude"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/practice_gratitude
+permalink: /geeta/shlok_3_17
 date: 2024-12-31
 ---
 [<img src="../images/shlok_3_12.webp" width="1000" height="500"/>](../images/shlok_3_12.webp)     

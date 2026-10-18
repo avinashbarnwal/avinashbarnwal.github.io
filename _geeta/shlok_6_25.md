@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.25"
+collection: geeta
+permalink: /geeta/shlok_6_25
+date: 2025-10-26
+---
+
 Bhagavad Gita, Chapter 6, Verse 25 (6.25):
 
 Sanskrit (IAST):

@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.10"
+collection: geeta
+permalink: /geeta/shlok_6_10
+date: 2025-07-15
+---
+
 Here’s Bhagavad Gītā Chapter 6, Verse 10 (6.10) in Sanskrit, along with an English translation and a brief explanation:
 
 🌿 भगवद्‌गीता ६.१०

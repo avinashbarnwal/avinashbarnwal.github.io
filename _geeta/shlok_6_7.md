@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.7"
+collection: geeta
+permalink: /geeta/shlok_6_7
+date: 2025-06-30
+---
+
 📿 Sanskrit Shloka
 
 जितात्मनः प्रशान्तस्य परमात्मा समाहितः ।  

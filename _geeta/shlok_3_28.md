@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.28"
+collection: geeta
+permalink: /geeta/shlok_3_28
+date: 2025-02-15
+---
+
 **The Bhagavad Gita, Chapter 3, Shloka 28 (3.28) states:**
 
 प्रकृतेः क्रियमाणानि गुणैः कर्माणि सर्वशः।      

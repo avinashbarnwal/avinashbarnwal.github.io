@@ -289,3 +289,162 @@
 @media (prefers-reduced-motion: reduce) {
   .lp, .lp-post, .lp-pill { animation: none; transition: none; }
 }
+
+/* ==========================================================================
+   Geeta index (/geeta/)
+   ========================================================================== */
+
+.gv-title {
+  font-family: "Noto Serif Devanagari", "Kohinoor Devanagari", "Devanagari Sangam MN", serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.gv-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 2.2em 0 0;
+  div {
+    min-width: 9.5em;
+    padding: 1em 1.3em;
+    border: 1px solid $sr-border;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  dt { font-size: 1.9em; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; color: $sr-text; }
+  dd { margin: 0.25em 0 0; font-size: 0.8em; color: $sr-text-3; }
+}
+
+/* 18-chapter map */
+.gv-map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6em 1.4em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li { margin: 0; }
+  a, li > span:first-child { color: inherit; text-decoration: none; }
+  a, .is-upcoming {
+    display: grid;
+    grid-template-columns: 1.8em 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 0.6em;
+    padding: 0.6em 0.8em;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  a:hover { background: rgba(255, 255, 255, 0.85); }
+  .is-upcoming { opacity: 0.55; }
+}
+.gv-map__n { grid-row: 1 / 3; font-family: $agent-mono; font-size: 0.8em; font-weight: 700; color: $sr-orange; }
+.gv-map__name { font-size: 0.88em; font-weight: 600; color: $sr-text; }
+.gv-map__count { font-family: $agent-mono; font-size: 0.68em; color: $sr-text-3; }
+.gv-bar {
+  grid-column: 2 / 4;
+  height: 4px;
+  margin-top: 0.45em;
+  border-radius: 4px;
+  background: $sr-border;
+  overflow: hidden;
+  span { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, $sr-indigo, $sr-orange); }
+}
+
+/* Search */
+.gv-search-wrap { padding-top: 3em; }
+.gv-search {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.25em 1.1em;
+  border: 1px solid $sr-border;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(51, 51, 204, 0.06);
+  input {
+    flex: 1;
+    margin: 0;
+    padding: 0.7em 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 0.95em;
+    &:focus { outline: none; box-shadow: none; }
+  }
+  &:focus-within { border-color: $sr-indigo-lt; }
+}
+.gv-empty { margin: 1em 0 0; text-align: center; color: $sr-text-3; }
+
+/* Chapter sections + verse cards */
+.gv-chapter { scroll-margin-top: 70px; }
+.gv-chapter__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1em;
+}
+.gv-chapter__count {
+  margin-bottom: 1.8em;
+  font-family: $agent-mono;
+  font-size: 0.72em;
+  color: $sr-text-3;
+  white-space: nowrap;
+}
+.gv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75em;
+}
+.gv-card {
+  display: block;
+  padding: 0.95em 1.1em;
+  border: 1px solid $sr-border;
+  border-radius: 12px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  &:hover {
+    border-color: $sr-indigo-lt;
+    box-shadow: 0 6px 20px rgba(51, 51, 204, 0.08);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+}
+.gv-card__v {
+  display: block;
+  font-family: $agent-mono;
+  font-size: 0.78em;
+  font-weight: 700;
+  color: $sr-indigo;
+}
+.gv-card__t {
+  display: block;
+  margin-top: 0.3em;
+  font-size: 0.86em;
+  line-height: 1.35;
+  color: $sr-text;
+}
+.gv-card--plain .gv-card__t { color: $sr-text-3; }
+
+/* Back link on individual verse pages */
+.gv-back {
+  display: inline-block;
+  margin-bottom: 1em;
+  font-family: $agent-mono;
+  font-size: 0.75em;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .gv-map { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .gv-map { grid-template-columns: 1fr; }
+  .gv-chapter__head { display: block; }
+  .gv-chapter__count { display: block; margin: -0.6em 0 1em; }
+  .gv-grid { grid-template-columns: 1fr 1fr; }
+}

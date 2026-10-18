@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.23"
+collection: geeta
+permalink: /geeta/shlok_3_23
+date: 2025-02-01
+---
+
 **The Bhagavad Gita, Chapter 3, Shloka 23 (Bhagavad Gita 3.23) states:**
 
 यदि ह्यहं न वर्तेयं जातु कर्मण्यतन्द्रित:।      

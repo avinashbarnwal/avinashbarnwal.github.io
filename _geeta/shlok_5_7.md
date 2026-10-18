@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 5.7"
+collection: geeta
+permalink: /geeta/shlok_5_7
+date: 2024-11-10
+---
+
 
 In Chapter 5, Verse 7 of the Bhagavad Gita, Lord Krishna describes the qualities and state of mind of a true yogi who is dedicated to selfless action. Here is the verse and its translation:
 

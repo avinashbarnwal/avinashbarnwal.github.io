@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.30"
+collection: geeta
+permalink: /geeta/shlok_6_30
+date: 2025-12-30
+---
+
 सरल अर्थ (Hindi Meaning)
 
 जो मुझे हर जगह देखता है और सब कुछ मुझमें देखता है,      

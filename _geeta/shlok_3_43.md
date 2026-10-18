@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.43"
+collection: geeta
+permalink: /geeta/shlok_3_43
+date: 2025-04-29
+---
+
 Here’s Bhagavad Gita Chapter 3, Shloka 43 in English:        
 
 **Sanskrit (Original):**        

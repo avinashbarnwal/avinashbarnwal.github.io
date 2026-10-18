@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.29"
+collection: geeta
+permalink: /geeta/shlok_3_29
+date: 2025-02-17
+---
+
 **Bhagavad Gita - Chapter 3, Shloka 29 (3.29)**     
 
 श्लोक:

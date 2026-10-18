@@ -1,0 +1,19 @@
+# Bhagavad Geeta chapters: number, Sanskrit name, English name, total verses
+- { n: 1,  name: "Arjuna Viṣāda Yoga",            en: "Arjuna's Despair",                  verses: 47 }
+- { n: 2,  name: "Sāṅkhya Yoga",                  en: "The Yoga of Knowledge",             verses: 72 }
+- { n: 3,  name: "Karma Yoga",                    en: "The Yoga of Action",                verses: 43 }
+- { n: 4,  name: "Jñāna Karma Sannyāsa Yoga",     en: "Knowledge and Renunciation",        verses: 42 }
+- { n: 5,  name: "Karma Sannyāsa Yoga",           en: "The Yoga of Renunciation",          verses: 29 }
+- { n: 6,  name: "Dhyāna Yoga",                   en: "The Yoga of Meditation",            verses: 47 }
+- { n: 7,  name: "Jñāna Vijñāna Yoga",            en: "Knowledge and Wisdom",              verses: 30 }
+- { n: 8,  name: "Akṣara Brahma Yoga",            en: "The Imperishable Brahman",          verses: 28 }
+- { n: 9,  name: "Rāja Vidyā Rāja Guhya Yoga",    en: "The Royal Secret",                  verses: 34 }
+- { n: 10, name: "Vibhūti Yoga",                  en: "Divine Glories",                    verses: 42 }
+- { n: 11, name: "Viśvarūpa Darśana Yoga",        en: "The Universal Form",                verses: 55 }
+- { n: 12, name: "Bhakti Yoga",                   en: "The Yoga of Devotion",              verses: 20 }
+- { n: 13, name: "Kṣetra Kṣetrajña Vibhāga Yoga", en: "The Field and its Knower",          verses: 34 }
+- { n: 14, name: "Guṇatraya Vibhāga Yoga",        en: "The Three Guṇas",                   verses: 27 }
+- { n: 15, name: "Puruṣottama Yoga",              en: "The Supreme Person",                verses: 20 }
+- { n: 16, name: "Daivāsura Sampad Vibhāga Yoga", en: "Divine and Demonic Natures",        verses: 24 }
+- { n: 17, name: "Śraddhātraya Vibhāga Yoga",     en: "The Three Kinds of Faith",          verses: 28 }
+- { n: 18, name: "Mokṣa Sannyāsa Yoga",           en: "Liberation through Renunciation",   verses: 78 }

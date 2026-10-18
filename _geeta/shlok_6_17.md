@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.17"
+collection: geeta
+permalink: /geeta/shlok_6_17
+date: 2025-08-23
+---
+
 Here is Bhagavad Gita, Chapter 6, Shloka 17 (6.17):
 
 Sanskrit (IAST):

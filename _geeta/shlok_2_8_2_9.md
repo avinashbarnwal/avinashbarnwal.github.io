@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 2.8–9"
+collection: geeta
+permalink: /geeta/shlok_2_8_2_9
+date: 2024-10-22
+---
+
 Verse 2.8 (Chapter 2, Sloka 8)
 न हि प्रपश्यामि ममापनुद्याद्
 यच्छोकमुच्छोषणमिन्द्रियाणाम् ।

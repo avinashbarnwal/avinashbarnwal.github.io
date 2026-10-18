@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.23"
+collection: geeta
+permalink: /geeta/shlok_6_23
+date: 2025-09-15
+---
+
 Here is Bhagavad Gita, Chapter 6, Shloka 23 (Sanskrit, transliteration, and meaning):
 
 📜 Sanskrit

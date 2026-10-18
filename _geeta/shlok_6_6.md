@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.6"
+collection: geeta
+permalink: /geeta/shlok_6_6
+date: 2025-05-28
+---
+
 
 **संस्कृत श्लोक:**
 बन्धुरात्मात्मनस्तस्य येनात्मैवात्मना जितः।

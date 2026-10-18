@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 4.1"
+collection: geeta
+permalink: /geeta/shlok_4_1
+date: 2025-05-03
+---
+
 📜 Sanskrit (Shloka 4.1)
 श्रीभगवानुवाच
 इमं विवस्वते योगं प्रोक्तवानहमव्ययम् |

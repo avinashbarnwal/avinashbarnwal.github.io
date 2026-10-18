@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.26"
+collection: geeta
+permalink: /geeta/shlok_6_26
+date: 2025-11-09
+---
+
 📜 Sanskrit (Devanagari)
 
 यतो यतो निश्चरति मनश्चञ्चलमस्थिरम्।

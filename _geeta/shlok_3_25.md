@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.25"
+collection: geeta
+permalink: /geeta/shlok_3_25
+date: 2025-02-04
+---
+
 **Bhagavad Gita 3.25 (Chapter 3, Verse 25)**
 
 सक्ताः कर्मण्यविद्वांसो यथा कुर्वन्ति भारत।     

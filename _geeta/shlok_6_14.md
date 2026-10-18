@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.14"
+collection: geeta
+permalink: /geeta/shlok_6_14
+date: 2025-08-12
+---
+
 Here’s Bhagavad Gita – Chapter 6, Verse 14 (6.14) in Sanskrit, transliteration, and meaning.
 
 Sanskrit:

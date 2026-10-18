@@ -2,7 +2,7 @@
 title: "Deattach from physical loss"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/deattach_from_physical_loss
+permalink: /geeta/shlok_2_31
 date: 2024-11-15
 ---
 

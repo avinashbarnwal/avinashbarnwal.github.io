@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.11"
+collection: geeta
+permalink: /geeta/shlok_6_11
+date: 2025-07-16
+---
+
 भगवद् गीता – अध्याय 6, श्लोक 11
 Sanskrit:
 

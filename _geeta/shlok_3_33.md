@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.33"
+collection: geeta
+permalink: /geeta/shlok_3_33
+date: 2025-03-29
+---
+
 **Bhagavad Gita 3.33**
 
 sadr̥śaṁ ceṣṭate svasyāḥ prakr̥ter jñānavān api |

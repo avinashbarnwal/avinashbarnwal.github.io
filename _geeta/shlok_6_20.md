@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.20"
+collection: geeta
+permalink: /geeta/shlok_6_20
+date: 2025-09-03
+---
+
 Here is Bhagavad Gita, Chapter 6, Verse 20 (6.20) in Sanskrit, along with transliteration and meaning:
 
 Sanskrit (IAST):   

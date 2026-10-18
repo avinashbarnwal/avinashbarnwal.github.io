@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.27"
+collection: geeta
+permalink: /geeta/shlok_3_27
+date: 2025-02-11
+---
+
 **Bhagavad Gita, Chapter 3, Shloka 27:**
 
 प्रकृतेः क्रियमाणानि गुणैः कर्माणि सर्वशः।        

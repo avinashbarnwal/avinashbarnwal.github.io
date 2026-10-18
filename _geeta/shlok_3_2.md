@@ -2,7 +2,7 @@
 title: "Yoga of Action"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/yoga_of_action
+permalink: /geeta/shlok_3_2
 date: 2024-12-21
 ---
 

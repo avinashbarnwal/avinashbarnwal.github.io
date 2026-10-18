@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 3.14"
+collection: geeta
+permalink: /geeta/shlok_3_14
+date: 2025-01-03
+---
+
 **Bhagavad Gita - Chapter 3, Verse 14 (3.14):**    
 
 अन्नाद्भवन्ति भूतानि पर्जन्यादन्नसम्भवः।

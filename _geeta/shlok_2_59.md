@@ -2,7 +2,7 @@
 title: "Manage desires"
 collection: geeta
 type: "Non-Fictional"
-permalink: /geeta/how_to_manage_desires
+permalink: /geeta/shlok_2_59
 date: 2024-11-27
 ---
 

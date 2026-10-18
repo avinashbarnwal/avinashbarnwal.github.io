@@ -1,3 +1,10 @@
+---
+title: "Bhagavad Geeta 6.16"
+collection: geeta
+permalink: /geeta/shlok_6_16
+date: 2025-08-21
+---
+
 Here is Bhagavad Gita Chapter 6, Shloka 16 (6.16):
 
 Sanskrit (IAST):
