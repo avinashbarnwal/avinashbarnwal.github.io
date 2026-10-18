@@ -1,0 +1,116 @@
+---
+layout: landing
+title: "Publications"
+excerpt: "Research in statistics and machine learning"
+permalink: /publications/
+author_profile: false
+---
+
+{% include base_path %}
+{% assign pubs = site.publications | sort: "date" | reverse %}
+{% assign first_year = pubs | last %}{% assign last_year = pubs | first %}
+{% assign n_journal = pubs | where: "pubtype", "Journal" | size %}
+{% assign n_conf = pubs | where: "pubtype", "Conference" | size %}
+{% capture all_tags %}{% for p in pubs %}{% for t in p.tags %}{{ t }}|{% endfor %}{% endfor %}{% endcapture %}
+{% assign tags = all_tags | split: "|" | uniq %}
+
+<!-- Hero -->
+<section class="lp-hero lp-wrap">
+  <p class="lp-eyebrow lp-eyebrow--center">Research</p>
+  <h1 class="lp-hero__title">Publications</h1>
+  <p class="lp-hero__sub">
+    Statistics and machine learning research: survival analysis in gradient boosting, network-regularized regression,
+    ensemble models for markets and models of human decision-making.
+  </p>
+  <div class="lp-hero__cta">
+    {% if site.author.googlescholar %}<a class="agent-btn agent-btn--primary" href="{{ site.author.googlescholar }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i>&nbsp; Google Scholar</a>{% endif %}
+    {% if site.author.orcid %}<a class="agent-btn" href="{{ site.author.orcid }}">ORCID</a>{% endif %}
+    {% if site.author.researchgate %}<a class="agent-btn" href="{{ site.author.researchgate }}">ResearchGate</a>{% endif %}
+  </div>
+  <dl class="gv-stats">
+    <div><dt>{{ pubs.size }}</dt><dd>publications</dd></div>
+    <div><dt>{{ n_journal }}</dt><dd>journal articles</dd></div>
+    <div><dt>{{ n_conf }}</dt><dd>conference papers</dd></div>
+    <div><dt>{{ first_year.date | date: "%Y" }}–{{ last_year.date | date: "%y" }}</dt><dd>active years</dd></div>
+  </dl>
+</section>
+
+<!-- Filters -->
+<section class="lp-wrap pb-filters-wrap">
+  <div class="pb-filters" id="pb-filters" role="group" aria-label="Filter by topic">
+    <button type="button" class="is-on" data-tag="">All</button>
+    {% for t in tags %}{% if t != "" %}<button type="button" data-tag="{{ t | slugify }}">{{ t }}</button>{% endif %}{% endfor %}
+  </div>
+</section>
+
+<!-- List, grouped by year -->
+<section class="lp-wrap pb-list">
+  {% assign current_year = "" %}
+  {% for p in pubs %}
+    {% assign y = p.date | date: "%Y" %}
+    {% if y != current_year %}
+      {% unless forloop.first %}</div>{% endunless %}
+      <div class="pb-year"><h2 class="pb-year__label">{{ y }}</h2>
+      {% assign current_year = y %}
+    {% endif %}
+    {% capture tagslugs %}{% for t in p.tags %}{{ t | slugify }} {% endfor %}{% endcapture %}
+    <article class="pb-card" data-tags="{{ tagslugs | strip }}">
+      <div class="pb-card__top">
+        <span class="pb-type pb-type--{{ p.pubtype | downcase }}">{{ p.pubtype | default: "Paper" }}</span>
+        {% for t in p.tags %}<span class="pb-tag">{{ t }}</span>{% endfor %}
+      </div>
+      <h3 class="pb-card__title"><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></h3>
+      {% if p.authors %}<p class="pb-card__authors">{{ p.authors | replace: "Avinash Barnwal", "<strong>Avinash Barnwal</strong>" | replace: "A. Barnwal", "<strong>A. Barnwal</strong>" }}</p>{% endif %}
+      <p class="pb-card__venue">{{ p.venue }}</p>
+      {% if p.impact %}<p class="pb-impact"><span>★</span> {{ p.impact }}</p>{% endif %}
+      <details class="pb-abstract">
+        <summary>Abstract</summary>
+        <p>{{ p.content | strip_html | remove: "Download paper here" | strip }}</p>
+      </details>
+      <div class="pb-actions">
+        {% if p.paperurl %}<a class="agent-btn agent-btn--primary" href="{{ p.paperurl }}">Paper</a>{% endif %}
+        {% if p.preprint %}<a class="agent-btn" href="{{ p.preprint }}">arXiv</a>{% endif %}
+        {% if p.poster %}<a class="agent-btn" href="{{ base_path }}{{ p.poster }}">Poster</a>{% endif %}
+        {% if p.citation %}<button type="button" class="agent-btn pb-cite" data-cite="{{ p.citation | strip_html | escape }}">Cite</button>{% endif %}
+      </div>
+    </article>
+    {% if forloop.last %}</div>{% endif %}
+  {% endfor %}
+</section>
+
+<script>
+(function () {
+  /* Topic filter. Block comments only: the compress layout joins lines. */
+  var bar = document.getElementById("pb-filters");
+  var cards = document.querySelectorAll(".pb-card");
+  var years = document.querySelectorAll(".pb-year");
+  bar.addEventListener("click", function (e) {
+    var b = e.target;
+    if (b.tagName !== "BUTTON") return;
+    var tag = b.getAttribute("data-tag");
+    var all = bar.querySelectorAll("button");
+    for (var i = 0; i < all.length; i++) all[i].className = all[i] === b ? "is-on" : "";
+    for (var j = 0; j < cards.length; j++) {
+      var tags = " " + cards[j].getAttribute("data-tags") + " ";
+      cards[j].style.display = !tag || tags.indexOf(" " + tag + " ") !== -1 ? "" : "none";
+    }
+    for (var k = 0; k < years.length; k++) {
+      years[k].style.display = years[k].querySelectorAll('.pb-card:not([style*="none"])').length ? "" : "none";
+    }
+  });
+
+  /* Cite: copy the plain-text citation */
+  var cites = document.querySelectorAll(".pb-cite");
+  for (var c = 0; c < cites.length; c++) {
+    cites[c].addEventListener("click", function () {
+      var btn = this, text = btn.getAttribute("data-cite");
+      var done = function () { btn.textContent = "Copied ✓"; setTimeout(function () { btn.textContent = "Cite"; }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { window.prompt("Copy citation:", text); });
+      } else {
+        window.prompt("Copy citation:", text);
+      }
+    });
+  }
+})();
+</script>
