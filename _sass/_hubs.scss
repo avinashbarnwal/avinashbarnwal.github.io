@@ -174,7 +174,12 @@
     background: linear-gradient(transparent, rgba(30, 32, 51, 0.85));
   }
 }
-.lf-card--wide { aspect-ratio: auto; min-height: 180px; img { position: absolute; top: 0; left: 0; } }
+.lf-card--wide {
+  aspect-ratio: auto;
+  img { height: 190px; object-position: top; }
+  &:after { display: none; }
+  .lf-card__label { position: static; display: block; padding: 0.9em 1.1em 1em; }
+}
 .lf-card__label {
   position: absolute;
   left: 1.1em; right: 1.1em; bottom: 1em;
