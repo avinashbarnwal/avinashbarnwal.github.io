@@ -1,5 +1,8 @@
 # main links links
 main:
+  - title: "AI"
+    url: /ai/
+
   - title: "Publications"
     url: /publications/
 
@@ -29,6 +32,3 @@ main:
 
   - title: "Buddhism"
     url: /buddhism/
-
-  - title: "AI"
-    url: /ai/

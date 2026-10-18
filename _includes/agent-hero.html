@@ -1,0 +1,145 @@
+{% include base_path %}
+<section class="agent-hero">
+  <div class="agent-term" aria-label="Agent run introducing Avinash">
+    <div class="agent-term__bar">
+      <span class="agent-term__dots"><i></i><i></i><i></i></span>
+      <span class="agent-term__title">avinash-agent — run #2026</span>
+      <span class="agent-term__status"><span class="agent-pulse"></span>online</span>
+    </div>
+    <pre class="agent-term__body" id="agent-trace"><span class="t-dim">$</span> agent.run(<span class="t-str">"introduce Avinash Barnwal"</span>)
+<span class="t-step">plan</span>    retrieve profile → call tools → summarize
+<span class="t-tool">tool</span>    read_cv()            <span class="t-ok">✓</span> Ph.D. Statistics, Stony Brook · IIT Kharagpur
+<span class="t-tool">tool</span>    query_experience()   <span class="t-ok">✓</span> 14 yrs across lending, credit &amp; capital markets
+<span class="t-tool">tool</span>    current_role()       <span class="t-ok">✓</span> Head of Analytics &amp; Data Science @ Autocash.ai
+<span class="t-step">reflect</span> focus = agentic AI for finance
+<span class="t-ok">done</span>    <span class="t-str">"Builds AI agents and ML systems that help businesses make better money decisions."</span></pre>
+  </div>
+
+  <h1 class="agent-hero__headline">I build <span class="agent-grad">agentic AI</span> for finance.</h1>
+  <p class="agent-hero__lede">
+    Head of Analytics &amp; Data Science at <strong>Autocash.ai</strong>, where I build AI agents for cash forecasting and treasury.
+    I'm a statistician by training (Ph.D., Stony Brook) and have spent 14 years turning models into decisions at
+    Kapitus, Deutsche Bank, Indiabulls and Fullerton India.
+  </p>
+  <div class="agent-hero__cta">
+    <a class="agent-btn agent-btn--primary" href="#agent-console">Ask my agent</a>
+    <a class="agent-btn" href="{{ base_path }}/ai/">AI writing</a>
+    <a class="agent-btn" href="{{ base_path }}/cv/">CV</a>
+  </div>
+</section>
+
+<section class="agent-cards">
+  <div class="agent-card">
+    <div class="agent-card__tag">agents</div>
+    <h3>Agentic finance workflows</h3>
+    <p>LLM agents that plan, call tools and check their own work across cash forecasting, treasury and AR/AP.</p>
+  </div>
+  <div class="agent-card">
+    <div class="agent-card__tag">models</div>
+    <h3>Credit &amp; risk ML</h3>
+    <p>Predictive models for small-business lending: underwriting, risk and portfolio decisions in production.</p>
+  </div>
+  <div class="agent-card">
+    <div class="agent-card__tag">systems</div>
+    <h3>ML that ships</h3>
+    <p>Evaluation, monitoring and quality systems that get models out of notebooks and into the business.</p>
+  </div>
+</section>
+
+<section class="agent-console" id="agent-console">
+  <div class="agent-term">
+    <div class="agent-term__bar">
+      <span class="agent-term__dots"><i></i><i></i><i></i></span>
+      <span class="agent-term__title">ask avinash-agent</span>
+      <span class="agent-term__status">scripted · runs in your browser</span>
+    </div>
+    <div class="agent-term__body agent-console__log" id="agent-log" aria-live="polite">
+      <div><span class="t-ok">agent</span> Hi! Ask me about Avinash's work, research, writing or how to reach him.</div>
+    </div>
+    <div class="agent-console__chips" id="agent-chips">
+      <button type="button">What do you work on?</button>
+      <button type="button">Experience</button>
+      <button type="button">Research</button>
+      <button type="button">AI writing</button>
+      <button type="button">Contact</button>
+    </div>
+    <form class="agent-console__form" id="agent-form" autocomplete="off">
+      <span class="t-dim">&gt;</span>
+      <input id="agent-input" type="text" placeholder="Type a question…" aria-label="Ask a question">
+      <button type="submit">Run</button>
+    </form>
+  </div>
+</section>
+
+<script>
+(function () {
+  var base = "{{ base_path }}";
+  var kb = [
+    { keys: ["work", "do", "build", "autocash", "now", "role", "agent"], tool: "current_role()",
+      a: "Head of Analytics & Data Science at Autocash.ai since Aug 2026, building AI agents and ML for cash forecasting, treasury and finance automation." },
+    { keys: ["experience", "career", "kapitus", "job", "history", "worked"], tool: "query_experience()",
+      a: "Autocash.ai (2026–) · Kapitus, Manager – Data Science (2020–26) · Inncretech (2018–20) · Indiabulls Housing Finance · Deutsche Bank · Fullerton India (from 2012). Full details: <a href='" + base + "/cv/'>CV</a>." },
+    { keys: ["research", "phd", "paper", "publication", "xgboost", "statistic"], tool: "search_publications()",
+      a: "Ph.D. in Statistics (Stony Brook). Papers include survival regression with AFT in XGBoost, stacking neural nets for crypto investing, and network elastic net for gene expression. See <a href='" + base + "/publications/'>publications</a>." },
+    { keys: ["writing", "blog", "post", "ai", "llm", "read"], tool: "search_posts(topic=\"AI\")",
+      a: "Notes on LangChain, multimodal LLMs, MemGPT, DeepSeek and ML quality systems. Start at <a href='" + base + "/ai/'>/ai</a> or browse <a href='" + base + "/posts/'>all posts</a>." },
+    { keys: ["contact", "email", "reach", "hire", "linkedin", "connect"], tool: "get_contact()",
+      a: "Email <a href='mailto:avinashbarnwal123@gmail.com'>avinashbarnwal123@gmail.com</a> or connect on <a href='https://www.linkedin.com/in/avinash-barnwal/'>LinkedIn</a>." },
+    { keys: ["life", "book", "geeta", "music", "hobby", "personal", "yoga"], tool: "search_site(\"life\")",
+      a: "Outside work: <a href='" + base + "/books/'>books</a>, the <a href='" + base + "/geeta/'>Bhagavad Geeta</a>, <a href='" + base + "/music/'>music</a> and <a href='" + base + "/life/'>life notes</a>." }
+  ];
+  var log = document.getElementById("agent-log");
+  var form = document.getElementById("agent-form");
+  var input = document.getElementById("agent-input");
+  var busy = false;
+
+  function line(html, cls) {
+    var d = document.createElement("div");
+    if (cls) d.className = cls;
+    d.innerHTML = html;
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+    return d;
+  }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function answer(q) {
+    if (busy || !q.trim()) return;
+    busy = true;
+    var lq = q.toLowerCase();
+    var best = null, score = 0;
+    kb.forEach(function (k) {
+      var s = k.keys.filter(function (w) { return lq.indexOf(w) !== -1; }).length;
+      if (s > score) { score = s; best = k; }
+    });
+    line("<span class='t-dim'>you</span> " + esc(q));
+    var tool = best ? best.tool : "search_site(\"" + esc(q) + "\")";
+    var t = line("<span class='t-tool'>tool</span> " + tool + " <span class='t-dim agent-spin'>…</span>");
+    setTimeout(function () {
+      t.querySelector(".agent-spin").outerHTML = "<span class='t-ok'>✓</span>";
+      line("<span class='t-ok'>agent</span> " + (best ? best.a :
+        "I don't have a scripted answer for that. Try one of the suggestions, or email <a href='mailto:avinashbarnwal123@gmail.com'>Avinash</a> directly."));
+      busy = false;
+    }, 550);
+  }
+
+  form.addEventListener("submit", function (e) { e.preventDefault(); answer(input.value); input.value = ""; });
+  document.getElementById("agent-chips").addEventListener("click", function (e) {
+    if (e.target.tagName === "BUTTON") answer(e.target.textContent);
+  });
+
+  // Reveal the hero trace line by line (skipped for reduced motion).
+  var trace = document.getElementById("agent-trace");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (trace && !reduce) {
+    var lines = trace.innerHTML.split("\n");
+    trace.innerHTML = "";
+    var i = 0;
+    (function next() {
+      if (i >= lines.length) { trace.classList.add("is-done"); return; }
+      trace.innerHTML += (i ? "\n" : "") + lines[i++];
+      setTimeout(next, i === 1 ? 500 : 380);
+    })();
+  }
+})();
+</script>
