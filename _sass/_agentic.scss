@@ -2,45 +2,61 @@
    Agentic AI theme layer
    ========================================================================== */
 
-$agent-ink      : #0b1020;
-$agent-ink-2    : #141a2e;
-$agent-line     : #263049;
-$agent-violet   : #7c5cff;
-$agent-cyan     : #22d3ee;
-$agent-green    : #34d399;
-$agent-amber    : #fbbf24;
-$agent-muted    : #8b93a7;
+/* Palette modelled on sarvam.ai: soft neutrals, indigo primary, orange accent */
+$sr-surface     : #fcfcfc;
+$sr-surface-2   : #f5f5f5;
+$sr-border      : #e6e6e6;
+$sr-text        : #1f1f1f;
+$sr-text-2      : #3d3d3d;
+$sr-text-3      : #666;
+$sr-indigo      : #4250d5;
+$sr-indigo-dk   : #3333cc;
+$sr-indigo-lt   : #a7c0f1;
+$sr-indigo-wash : #e8effc;
+$sr-orange      : #e96c2f;
+$sr-orange-lt   : #f9bb9e;
+
+$agent-ink      : #1e2033;
+$agent-ink-2    : #262940;
+$agent-line     : #34385a;
+$agent-violet   : $sr-indigo;
+$agent-cyan     : $sr-orange;
+$agent-green    : #9bd36a;
+$agent-amber    : $sr-orange-lt;
+$agent-muted    : #8d92ad;
 $agent-mono     : "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
 /* Site chrome */
+body { background: $sr-surface; color: $sr-text-2; }
 .masthead {
-  background: $agent-ink;
-  border-bottom: 1px solid $agent-line;
-  box-shadow: 0 1px 0 rgba(124, 92, 255, 0.35);
+  background: rgba(252, 252, 252, 0.92);
+  border-bottom: 1px solid $sr-border;
 }
 .greedy-nav {
-  background: $agent-ink;
-  a { color: #d7dcea; }
-  a:hover { color: #fff; }
-  .visible-links a:before { background: linear-gradient(90deg, $agent-violet, $agent-cyan); }
-  button { background-color: $agent-ink; }
-  .hidden-links { background: $agent-ink-2; border-color: $agent-line; a { color: #d7dcea; } }
-  .hidden-links:before, .hidden-links:after { border-color: $agent-ink-2 transparent; }
+  background: transparent;
+  a { color: $sr-text; }
+  a:hover { color: $sr-indigo; }
+  .visible-links a:before { background: $sr-indigo; }
+  button { background-color: $sr-surface; }
+  .navicon, .navicon:before, .navicon:after { background: $sr-text; }
+  .hidden-links { background: #fff; border-color: $sr-border; a { color: $sr-text; } }
+  .hidden-links:before { border-color: $sr-border transparent; }
+  .hidden-links:after { border-color: #fff transparent; }
 }
 .masthead__menu-item--lg a { font-weight: 700; }
 
-a { color: #5b3df5; }
-a:hover { color: #0e7490; }
-.page__title, .archive__subtitle { letter-spacing: -0.01em; }
+a { color: $sr-indigo; }
+a:hover { color: $sr-indigo-dk; }
+.page__title, .archive__subtitle { letter-spacing: -0.01em; color: $sr-text; }
 
 /* Terminal */
 .agent-term {
   background: $agent-ink;
   border: 1px solid $agent-line;
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(11, 16, 32, 0.25), 0 0 0 1px rgba(124, 92, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(51, 51, 204, 0.12), 0 2px 6px rgba(30, 32, 51, 0.08);
   overflow: hidden;
-  color: #d7dcea;
+  color: #e4e6f0;
   font-family: $agent-mono;
 }
 .agent-term__bar {
@@ -78,63 +94,70 @@ a:hover { color: #0e7490; }
   padding: 1em 1.1em;
   background: transparent;
   border: 0;
-  color: #d7dcea;
+  color: #e4e6f0;
   font-family: $agent-mono;
   font-size: 0.74em;
   line-height: 1.75;
   white-space: pre-wrap;
   overflow-x: auto;
-  a { color: $agent-cyan; }
+  a { color: $sr-indigo-lt; }
 }
 #agent-trace { min-height: 13.5em; }
 #agent-trace:not(.is-done):after {
   content: "▋";
-  color: $agent-violet;
+  color: $sr-orange-lt;
   animation: agent-blink 1s steps(1) infinite;
 }
 @keyframes agent-blink { 50% { opacity: 0; } }
 
 .t-dim  { color: $agent-muted; }
 .t-str  { color: $agent-amber; }
-.t-step { color: $agent-violet; font-weight: 700; }
-.t-tool { color: $agent-cyan; font-weight: 700; }
+.t-step { color: $sr-indigo-lt; font-weight: 700; }
+.t-tool { color: #f59970; font-weight: 700; }
 .t-ok   { color: $agent-green; font-weight: 700; }
 
 /* Hero */
-.agent-hero { margin: 0.5em 0 2.5em; }
+.agent-hero {
+  margin: 0.5em 0 2.5em;
+  padding-bottom: 0.5em;
+  background: radial-gradient(ellipse at 50% 75%, rgba(167, 192, 241, 0.28), transparent 65%);
+}
 .agent-hero__headline {
   margin: 1.2em 0 0.4em;
   font-size: 2.2em;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: $agent-ink;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: $sr-text;
 }
 .agent-grad {
-  background: linear-gradient(90deg, $agent-violet, $agent-cyan);
+  background: linear-gradient(90deg, $sr-indigo-dk, $sr-indigo 45%, $sr-orange);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.agent-hero__lede { font-size: 1.02em; color: #3d4457; max-width: 42em; }
+.agent-hero__lede { font-size: 1.02em; color: $sr-text-2; max-width: 42em; }
 .agent-hero__cta { display: flex; flex-wrap: wrap; gap: 0.6em; margin-top: 1.2em; }
 .agent-btn,
 .page__content .agent-btn {
   display: inline-block;
   padding: 0.55em 1.1em;
-  border: 1px solid #d5d9e6;
+  border: 1px solid $sr-border;
+  background: #fff;
   border-radius: 999px;
   font-size: 0.85em;
   font-weight: 600;
   text-decoration: none !important;
-  color: $agent-ink;
+  color: $sr-text;
   transition: all 0.2s;
-  &:hover { border-color: $agent-violet; color: $agent-violet; }
+  &:hover { border-color: $sr-indigo-lt; color: $sr-indigo; }
 }
-.agent-btn--primary {
+.agent-btn--primary,
+.page__content .agent-btn--primary {
   border-color: transparent;
-  background: linear-gradient(90deg, $agent-violet, #5b8cff);
+  background: $agent-ink;
   color: #fff;
-  &:hover { color: #fff; filter: brightness(1.1); }
+  &:hover { color: #fff; border-color: transparent; background: $sr-indigo-dk; }
 }
 
 /* Capability cards */
@@ -146,20 +169,20 @@ a:hover { color: #0e7490; }
 }
 .agent-card {
   padding: 1.1em 1.2em;
-  border: 1px solid #e3e6ef;
+  border: 1px solid $sr-border;
   border-radius: 12px;
-  background: linear-gradient(180deg, #fff, #f7f8fc);
+  background: #fff;
   transition: border-color 0.2s, transform 0.2s;
-  &:hover { border-color: rgba(124, 92, 255, 0.5); transform: translateY(-2px); }
-  h3 { margin: 0.35em 0 0.3em; font-size: 1em; color: $agent-ink; }
-  p  { margin: 0; font-size: 0.85em; color: #4b5266; }
+  &:hover { border-color: $sr-indigo-lt; box-shadow: 0 6px 20px rgba(51, 51, 204, 0.08); transform: translateY(-2px); }
+  h3 { margin: 0.35em 0 0.3em; font-size: 1em; color: $sr-text; }
+  p  { margin: 0; font-size: 0.85em; color: $sr-text-3; }
 }
 .agent-card__tag {
   display: inline-block;
   font-family: $agent-mono;
   font-size: 0.68em;
   color: $agent-violet;
-  &:before { content: "● "; color: $agent-green; }
+  &:before { content: "● "; color: $sr-orange; }
 }
 
 /* Console */
@@ -180,11 +203,11 @@ a:hover { color: #0e7490; }
     border: 1px solid $agent-line;
     border-radius: 999px;
     background: $agent-ink-2;
-    color: #c3c9da;
+    color: #c9cce0;
     font-family: $agent-mono;
     font-size: 0.68em;
     cursor: pointer;
-    &:hover { border-color: $agent-violet; color: #fff; }
+    &:hover { border-color: $sr-indigo-lt; color: #fff; }
   }
 }
 .agent-console__form {
@@ -210,7 +233,7 @@ a:hover { color: #0e7490; }
     padding: 0.35em 0.9em;
     border: 0;
     border-radius: 6px;
-    background: $agent-violet;
+    background: $sr-orange;
     color: #fff;
     font-family: $agent-mono;
     font-size: 0.72em;
@@ -224,9 +247,9 @@ a:hover { color: #0e7490; }
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: $agent-violet;
+  color: $sr-indigo;
   border: 0;
-  &:before { content: "// "; color: $agent-muted; }
+  &:before { content: "// "; color: $sr-orange; }
 }
 
 @media (max-width: 480px) {
