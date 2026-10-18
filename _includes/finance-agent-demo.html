@@ -1,0 +1,203 @@
+{% comment %}
+  Animated demo: an agent ingests bank transactions, categorises them, builds a
+  13-week cash forecast, flags a shortfall and acts on it. Synthetic numbers.
+{% endcomment %}
+<section class="lp-section lp-wrap fx-section" id="agent-demo">
+  <p class="lp-eyebrow">Agent at work</p>
+  <h2 class="lp-h2">An agent running a 13-week cash forecast.</h2>
+
+  <div class="fx" id="fx" aria-label="Animated demo of an AI agent building a cash forecast">
+    <div class="fx-bar">
+      <ol class="fx-phases" id="fx-phases">
+        <li data-p="0">Ingest</li><li data-p="1">Categorise</li><li data-p="2">Forecast</li><li data-p="3">Alert</li><li data-p="4">Act</li>
+      </ol>
+      <span class="fx-note">illustrative · synthetic data</span>
+    </div>
+
+    <div class="fx-body">
+      <!-- Left: bank feed -->
+      <div class="fx-feed">
+        <div class="fx-pane-title"><span class="agent-pulse"></span> bank_feed.sync()</div>
+        <ul class="fx-rows" id="fx-rows"></ul>
+        <div class="fx-agent-line" id="fx-agent-line"><span class="t-tool">agent</span> <span id="fx-agent-text">waiting for transactions…</span></div>
+      </div>
+
+      <!-- Right: forecast chart -->
+      <div class="fx-chart">
+        <div class="fx-pane-title">13-week cash forecast <span class="fx-legend"><i class="fx-k fx-k--act"></i>actual <i class="fx-k fx-k--fc"></i>forecast <i class="fx-k fx-k--min"></i>buffer</span></div>
+        <svg viewBox="0 0 520 250" id="fx-svg" role="img" aria-label="Cash balance by week">
+          <g id="fx-grid"></g>
+          <path id="fx-band" class="fx-band"/>
+          <line id="fx-min" class="fx-min" x1="40" x2="500"/>
+          <text id="fx-min-label" class="fx-axis fx-min-label" x="498">$250k buffer</text>
+          <path id="fx-actual" class="fx-line fx-line--act"/>
+          <path id="fx-base" class="fx-line fx-line--fc"/>
+          <path id="fx-adj" class="fx-line fx-line--adj"/>
+          <g id="fx-flag" class="fx-flag"><circle r="16" class="fx-flag__ring"/><circle r="5" class="fx-flag__dot"/></g>
+          <g id="fx-xlabels"></g>
+        </svg>
+
+        <div class="fx-toast" id="fx-toast" role="status">
+          <div class="fx-toast__head"><span class="fx-toast__icon" id="fx-toast-icon">!</span><strong id="fx-toast-title">Projected shortfall in week 7</strong></div>
+          <p id="fx-toast-body">Cash dips to $232k, $18k under the $250k buffer. Recommend moving two vendor payments ($40k) from week 7 to week 9.</p>
+          <div class="fx-toast__actions" id="fx-toast-actions"><span class="fx-btn fx-btn--go" id="fx-approve">Approve</span><span class="fx-btn">Review</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  /* Finance agent demo. Block comments only: the compress layout joins all lines. */
+  var root = document.getElementById("fx");
+  if (!root) return;
+  var NS = "http://www.w3.org/2000/svg";
+  var rowsEl = document.getElementById("fx-rows");
+  var agentText = document.getElementById("fx-agent-text");
+  var phases = document.querySelectorAll("#fx-phases li");
+  var toast = document.getElementById("fx-toast");
+  var toastIcon = document.getElementById("fx-toast-icon");
+  var toastTitle = document.getElementById("fx-toast-title");
+  var toastBody = document.getElementById("fx-toast-body");
+  var toastActions = document.getElementById("fx-toast-actions");
+  var approve = document.getElementById("fx-approve");
+  var flag = document.getElementById("fx-flag");
+
+  var txns = [
+    ["Card processor payout", "+$48,200", "Receivables", "in"],
+    ["Payroll run", "−$61,500", "Payroll", "out"],
+    ["Cloud hosting", "−$7,940", "Software", "out"],
+    ["Invoice #1042 · Acme Co", "+$22,000", "Receivables", "in"],
+    ["Payroll tax", "−$14,300", "Tax", "out"],
+    ["Office lease", "−$9,800", "Rent", "out"]
+  ];
+  var actual = [420, 395, 410, 380];
+  var base = [380, 340, 290, 232, 268, 305, 330, 300, 345, 370];
+  var adj  = [380, 340, 290, 272, 308, 305, 330, 300, 345, 370];
+  var MIN = 250;
+
+  function x(week) { return 40 + (week - 1) * (460 / 12); }
+  function y(v) { return 220 - (v - 200) * (200 / 250); }
+  function pathFrom(vals, startWeek) {
+    var d = "";
+    for (var i = 0; i < vals.length; i++) d += (i ? " L" : "M") + x(startWeek + i).toFixed(1) + " " + y(vals[i]).toFixed(1);
+    return d;
+  }
+
+  /* Static chart scaffolding */
+  var grid = document.getElementById("fx-grid");
+  [200, 300, 400].forEach(function (v) {
+    var l = document.createElementNS(NS, "line");
+    l.setAttribute("x1", 40); l.setAttribute("x2", 500); l.setAttribute("y1", y(v)); l.setAttribute("y2", y(v));
+    l.setAttribute("class", "fx-gridline"); grid.appendChild(l);
+    var t = document.createElementNS(NS, "text");
+    t.setAttribute("x", 34); t.setAttribute("y", y(v) + 4); t.setAttribute("class", "fx-axis fx-axis--y");
+    t.textContent = "$" + v + "k"; grid.appendChild(t);
+  });
+  var xl = document.getElementById("fx-xlabels");
+  for (var w = 1; w <= 13; w++) {
+    var t = document.createElementNS(NS, "text");
+    t.setAttribute("x", x(w)); t.setAttribute("y", 242); t.setAttribute("class", "fx-axis fx-axis--x");
+    t.textContent = "W" + w; xl.appendChild(t);
+  }
+  document.getElementById("fx-min").setAttribute("y1", y(MIN));
+  document.getElementById("fx-min").setAttribute("y2", y(MIN));
+  document.getElementById("fx-min-label").setAttribute("y", y(MIN) - 6);
+  var pAct = document.getElementById("fx-actual"), pBase = document.getElementById("fx-base"), pAdj = document.getElementById("fx-adj");
+  pAct.setAttribute("d", pathFrom(actual, 1));
+  pBase.setAttribute("d", pathFrom(base, 4));
+  pAdj.setAttribute("d", pathFrom(adj, 4));
+  var up = "", dn = "";
+  for (var i = 0; i < base.length; i++) {
+    var spread = 6 + i * 4;
+    up += (i ? " L" : "M") + x(4 + i).toFixed(1) + " " + y(base[i] + spread).toFixed(1);
+  }
+  for (var j = base.length - 1; j >= 0; j--) dn += " L" + x(4 + j).toFixed(1) + " " + y(base[j] - (6 + j * 4)).toFixed(1);
+  document.getElementById("fx-band").setAttribute("d", up + dn + " Z");
+  flag.setAttribute("transform", "translate(" + x(7) + " " + y(232) + ")");
+
+  [pAct, pBase, pAdj].forEach(function (p) {
+    var len = p.getTotalLength();
+    p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+    p.setAttribute("data-len", len);
+  });
+
+  function setPhase(n) {
+    for (var k = 0; k < phases.length; k++) phases[k].className = k < n ? "is-done" : (k === n ? "is-on" : "");
+  }
+  function draw(p, ms) { p.style.transition = "stroke-dashoffset " + ms + "ms ease-out"; p.style.strokeDashoffset = 0; }
+  function undraw(p) { p.style.transition = "none"; p.style.strokeDashoffset = p.getAttribute("data-len"); }
+  function addRow(t) {
+    var li = document.createElement("li");
+    li.className = "fx-row fx-row--" + t[3];
+    li.innerHTML = "<span class='fx-row__name'>" + t[0] + "</span><span class='fx-row__amt'>" + t[1] + "</span><span class='fx-chip'>" + t[2] + "</span>";
+    rowsEl.appendChild(li);
+    setTimeout(function () { li.className += " is-in"; }, 20);
+    return li;
+  }
+
+  var timers = [];
+  function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+  function reset() {
+    timers.forEach(clearTimeout); timers = [];
+    rowsEl.innerHTML = "";
+    root.className = "fx";
+    toast.className = "fx-toast";
+    approve.className = "fx-btn fx-btn--go";
+    [pAct, pBase, pAdj].forEach(undraw);
+  }
+
+  function run() {
+    reset();
+    setPhase(0); agentText.textContent = "pulling transactions from 3 bank accounts…";
+    var rows = [];
+    txns.forEach(function (t, i) { at(300 + i * 420, function () { rows.push(addRow(t)); }); });
+    at(2900, function () { setPhase(1); agentText.textContent = "categorising with the ledger's chart of accounts…"; });
+    txns.forEach(function (t, i) { at(3100 + i * 260, function () { if (rows[i]) rows[i].className += " is-tagged"; }); });
+    at(4900, function () { setPhase(2); agentText.textContent = "forecasting weekly cash from AR, AP and payroll…"; root.className = "fx is-forecast"; draw(pAct, 700); });
+    at(5600, function () { draw(pBase, 1600); });
+    at(7500, function () { setPhase(3); agentText.textContent = "week 7 breaches the cash buffer: drafting a fix…"; root.className = "fx is-forecast is-alert"; });
+    at(8100, function () {
+      toastIcon.textContent = "!"; toastTitle.textContent = "Projected shortfall in week 7";
+      toastBody.textContent = "Cash dips to $232k, $18k under the $250k buffer. Recommend moving two vendor payments ($40k) from week 7 to week 9.";
+      toastActions.style.display = ""; toast.className = "fx-toast is-in";
+    });
+    at(10300, function () { approve.className = "fx-btn fx-btn--go is-pressed"; });
+    at(10700, function () {
+      setPhase(4); agentText.textContent = "rescheduling payments in AP and re-running the forecast…";
+      toast.className = "fx-toast"; root.className = "fx is-forecast is-acted"; draw(pAdj, 1200);
+    });
+    at(12100, function () {
+      toastIcon.textContent = "✓"; toastTitle.textContent = "Plan updated";
+      toastBody.textContent = "Cash stays above the buffer in all 13 weeks. Finance team notified with a summary.";
+      toastActions.style.display = "none"; toast.className = "fx-toast is-in is-ok";
+      agentText.textContent = "done · next run tomorrow 06:00";
+    });
+    at(12300, function () { setPhase(5); });
+    at(16500, run);
+  }
+
+  function finalState() {
+    txns.forEach(function (t) { var li = addRow(t); li.className += " is-in is-tagged"; });
+    root.className = "fx is-forecast is-acted";
+    [pAct, pBase, pAdj].forEach(function (p) { p.style.strokeDashoffset = 0; });
+    toastIcon.textContent = "✓"; toastTitle.textContent = "Plan updated";
+    toastBody.textContent = "Cash stays above the buffer in all 13 weeks after moving two vendor payments from week 7 to week 9.";
+    toastActions.style.display = "none"; toast.className = "fx-toast is-in is-ok";
+    agentText.textContent = "done"; setPhase(5);
+  }
+
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { finalState(); return; }
+
+  /* Start when the demo scrolls into view; stop when it leaves. */
+  var running = false;
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      var vis = entries[0].isIntersecting;
+      if (vis && !running) { running = true; run(); }
+      if (!vis && running) { running = false; reset(); }
+    }, { threshold: 0.35 }).observe(root);
+  } else { run(); }
+})();
+</script>
