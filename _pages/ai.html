@@ -1,35 +1,78 @@
 ---
 layout: landing
 title: "AI"
-excerpt: "Notes on AI agents, LLMs and machine learning"
+excerpt: "Agentic AI for finance: projects, code and notes on LLMs, agents and machine learning"
 permalink: /ai/
 author_profile: false
 ---
-
+{% include base_path %}
 {% assign n_ai = 0 %}{% assign ai_types = site.data.post_topics | where: "slug", "ai" | first %}
 {% for p in site.posts %}{% if ai_types.types contains p.type %}{% assign n_ai = n_ai | plus: 1 %}{% endif %}{% endfor %}
-{% include hub-hero.html eyebrow="AI & Data Science" title="Notes on <span class='agent-grad'>AI</span>" sub="Summaries and notes on LLMs, AI agents and the machine learning systems behind them, written while building agentic AI for finance." %}
+{% assign projects = site.data.ai_projects %}
+{% assign n_agents = 0 %}{% for d in site.data.cfo_agents %}{% assign n_agents = n_agents | plus: d.agents.size %}{% endfor %}
 
-{% include base_path %}
-<section class="lp-wrap hub-ai-focus">
-  <div class="agent-term">
-    <div class="agent-term__bar">
-      <span class="agent-term__dots"><i></i><i></i><i></i></span>
-      <span class="agent-term__title">focus.yaml</span>
-      <span class="agent-term__status"><span class="agent-pulse"></span>{{ n_ai }} notes</span>
-    </div>
+{% include hub-hero.html eyebrow="AI & Data Science" title="Building <span class='agent-grad'>agentic AI</span> for finance" sub="Agents that do real finance work (collections, close, treasury, cash forecasting) with rules that make the decisions, models that write the explanations, and a person who signs off. Code, experiments and notes from building them." %}
+
+<section class="lp-wrap">
+  <dl class="gv-stats">
+    <div><dt>{{ projects.size }}</dt><dd>projects</dd></div>
+    <div><dt>{{ n_agents }}</dt><dd>finance agents</dd></div>
+    <div><dt>{{ n_ai }}</dt><dd>notes &amp; essays</dd></div>
+  </dl>
+  <p class="lp-hero__cta">
+    <a class="agent-btn agent-btn--primary" href="#projects">See the projects</a>
+    <a class="agent-btn" href="#writing">Read the notes</a>
+  </p>
+</section>
+
+<section class="lp-wrap lp-section" id="projects">
+  <p class="lp-eyebrow">build log</p>
+  <h2 class="lp-h2">Projects</h2>
+  <div class="ai-projects">
+    {% for p in projects %}
+    {% if p.url %}{% assign p_href = p.url %}{% if p_href contains "://" %}{% else %}{% assign p_href = base_path | append: p.url %}{% endif %}{% else %}{% assign p_href = p.code %}{% endif %}
+    <article class="ai-proj{% if forloop.first %} ai-proj--feature{% endif %}">
+      <span class="lp-post__meta">{{ p.tag }}</span>
+      <h3><a href="{{ p_href }}">{{ p.title }}</a></h3>
+      <p>{{ p.blurb }}</p>
+      <p class="ai-proj__links">
+        {% if p.url %}<a href="{{ p_href }}">{{ p.url_label | default: "Open" }} →</a>{% endif %}
+        {% if p.post %}{% assign p_post = site.posts | where: "title", p.post | first %}{% if p_post %}<a href="{{ base_path }}{{ p_post.url }}">Read the write-up →</a>{% endif %}{% endif %}
+        {% if p.code %}<a href="{{ p.code }}">Code on GitHub ↗</a>{% endif %}
+      </p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% include finance-agent-demo.html %}
+
+<section class="lp-wrap lp-section" id="writing">
+  <p class="lp-eyebrow">writing</p>
+  <h2 class="lp-h2">Start here</h2>
+  {% assign picks = "How AI Stack in the CFO Vertical Can Double the ROI of Fintech|Causal Reasoning for Agentic AI|Understanding the LLM Orchestration Stack" | split: "|" %}
+  <div class="lp-posts">
+    {% for t in picks %}{% assign sp = site.posts | where: "title", t | first %}{% if sp %}
+    {% capture sp_meta %}{{ sp.type }} · {{ sp.date | date: "%b %Y" }}{% endcapture %}
+    {% include hub-card.html doc=sp meta=sp_meta %}
+    {% endif %}{% endfor %}
+  </div>
+
+  <div class="hub-ai-focus">
+    <div class="agent-term">
+      <div class="agent-term__bar">
+        <span class="agent-term__dots"><i></i><i></i><i></i></span>
+        <span class="agent-term__title">focus.yaml</span>
+        <span class="agent-term__status"><span class="agent-pulse"></span>{{ n_ai }} notes</span>
+      </div>
 <pre class="agent-term__body"><span class="t-step">focus</span>:   agentic AI for finance
 <span class="t-tool">agents</span>:  planning · tool use · memory · self-evaluation
 <span class="t-tool">domain</span>:  cash forecasting · treasury · credit risk · lending
 <span class="t-tool">craft</span>:   evaluation · ML quality · getting models to production</pre>
+    </div>
   </div>
-  <a class="lp-post ca-hub-link" href="{{ base_path }}/ai/cfo-agents/">
-    <span class="lp-post__meta">process guide · 20 agents</span>
-    <h3>How the AI CFO agents work →</h3>
-    <p>Step-by-step process docs for every agent in the ai-cfo repo, from credit and collections to close, consolidation, treasury and B2B payments.</p>
-  </a>
-</section>
 
-{% include finance-agent-demo.html %}
+  <h2 class="lp-h2 ai-all">All notes</h2>
+</section>
 
 {% include post-index.html only="ai" %}

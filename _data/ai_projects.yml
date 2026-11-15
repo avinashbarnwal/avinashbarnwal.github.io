@@ -1,0 +1,40 @@
+# Projects shown on /ai/. First entry is featured (full width).
+# url: main link (internal pages start with "/"); code: GitHub link (public repos only).
+
+- title: "AI CFO agent stack"
+  tag: "finance · 20 agents"
+  blurb: "Proof-of-concept agents across order-to-cash, payables, close, consolidation, treasury and B2B payments. Rules make every decision; Claude only writes the memo, email or status note."
+  url: "/ai/cfo-agents/"
+  url_label: "Read the process guide"
+  code: "https://github.com/avinashbarnwal/ai-cfo"
+
+- title: "trustgate"
+  tag: "AI coding · verification"
+  blurb: "An agent for large code migrations. Claude rewrites one function at a time; static checks, property-based differential tests and SMT equivalence proofs decide what a human needs to review."
+  code: "https://github.com/avinashbarnwal/ai-software-engineering"
+
+- title: "10 agent papers, in code"
+  tag: "agents · research"
+  blurb: "Small runnable demos of the core idea in Chain-of-Thought, ReAct, Toolformer, Reflexion, Tree of Thoughts, Voyager, AutoGen and three more. Runs offline, or live against Claude."
+  code: "https://github.com/avinashbarnwal/foundational-llm-model/tree/main/ai-agents"
+
+- title: "Recommendation foundation model"
+  tag: "PyTorch · transformers"
+  blurb: "A reference implementation of a Netflix-style foundation model: one autoregressive transformer over full interaction histories, with sparse attention and metadata embeddings."
+  post: "Building a Foundation Model for Personalized Recommendation"
+  code: "https://github.com/avinashbarnwal/foundational-llm-model/tree/main/netflix"
+
+- title: "Keeper: autonomous AR agent"
+  tag: "finance · human-in-the-loop"
+  blurb: "Reads open invoices and customer history, picks the next best action per account, does low-stakes ones itself and sends the rest to an approval queue, with a full audit trail."
+  code: "https://github.com/avinashbarnwal/ai-cfo/tree/main/autocash-agent"
+
+- title: "Monthly financial review agent"
+  tag: "finance · FastAPI + React"
+  blurb: "Month-end Excel workbooks in, a guided evidence-first review out: the agent walks the CFO through the numbers and ends with a management-ready deck narrative."
+  code: "https://github.com/avinashbarnwal/ai-cfo/tree/main/herocycle-mfr"
+
+- title: "Jev vs. Claude Haiku"
+  tag: "experiment · treasury"
+  blurb: "Categorising 200 bank statement lines two ways, and what it says about which treasury labels you can post without a human checking them."
+  code: "https://github.com/avinashbarnwal/ai-cfo/tree/main/jev-vs-haiku"
