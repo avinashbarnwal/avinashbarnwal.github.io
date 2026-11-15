@@ -37,6 +37,18 @@ author_profile: false
   </ol>
 </section>
 
+<section class="lp-wrap ca-legend-wrap">
+  <p class="ca-legend-title">Reading the process flows</p>
+  <ul class="pf-legend">
+    <li class="pf--in">input data</li>
+    <li class="pf--step">deterministic step</li>
+    <li class="pf--decide">decision + branches</li>
+    <li class="pf--out">output</li>
+    <li class="pf--llm">Claude writes</li>
+    <li class="pf--human">human signs off</li>
+  </ul>
+</section>
+
 <nav class="lp-wrap ca-jump" aria-label="Domains">
   {% for d in domains %}<a href="#{{ d.slug }}">{{ d.domain }} <span>{{ d.agents.size }}</span></a>{% endfor %}
 </nav>
@@ -58,6 +70,19 @@ author_profile: false
       </div>
       <span class="ca-tag{% if a.llm == '' %} ca-tag--rules{% endif %}">{% if a.llm == '' %}rules only{% else %}rules + Claude{% endif %}</span>
     </header>
+    {% if a.flow %}
+    <div class="pf-wrap">
+      <ol class="pf" aria-label="{{ a.name }} process flow">
+        {% for n in a.flow %}
+        <li class="pf-node pf--{{ n.t }}">
+          <span class="pf-kind">{% case n.t %}{% when "in" %}input{% when "decide" %}decision{% when "llm" %}Claude{% when "human" %}human{% when "out" %}output{% else %}step {{ forloop.index0 }}{% endcase %}</span>
+          <span class="pf-label">{{ n.label }}</span>
+          {% if n.branches %}<ul class="pf-branches">{% for b in n.branches %}{% assign bp = b | split: " → " %}<li><span>{{ bp[0] }}</span> <b>{{ bp[1] }}</b></li>{% endfor %}</ul>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endif %}
     <div class="ca-agent__body">
       <div class="ca-agent__steps">
         <h4>Process</h4>

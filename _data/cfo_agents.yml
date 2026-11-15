@@ -19,6 +19,13 @@
       outputs: "Scored customer table with recommended limit and order decision; count of holds and limit changes."
       human: "Credit manager approves holds and limit changes."
       llm: "Credit review memo for the weakest customer."
+      flow:
+        - {"t": "in", "label": "Customer master + open AR"}
+        - {"t": "step", "label": "Score 0–100: bureau 40 · timeliness 35 · size 25"}
+        - {"t": "step", "label": "Risk class + limit = revenue × 0.2% × score"}
+        - {"t": "decide", "label": "Open AR + order ≤ limit?", "branches": ["Yes → Release", "No, High risk → Hold", "No, other → Release w/ approval"]}
+        - {"t": "llm", "label": "Credit review memo"}
+        - {"t": "human", "label": "Credit manager approves"}
 
     - name: "e-Invoicing Portal Agent"
       module: "order_to_cash_agent.einvoicing.agent"
@@ -34,6 +41,14 @@
       outputs: "Invoice list with status, channel and errors; ready vs blocked counts."
       human: "Billing fixes blocked invoices before resubmission."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Outgoing invoices"}
+        - {"t": "step", "label": "Check mandatory fields"}
+        - {"t": "step", "label": "Recompute tax · exemption code"}
+        - {"t": "decide", "label": "Any errors?", "branches": ["No → Ready", "Yes → Blocked"]}
+        - {"t": "step", "label": "Route by country: Peppol · SdI · GST IRP · Chorus Pro · portal"}
+        - {"t": "out", "label": "UBL-style payload"}
+        - {"t": "human", "label": "Billing fixes blocked"}
 
     - name: "Collections Management Agent"
       module: "order_to_cash_agent.collections.agent"
@@ -48,6 +63,14 @@
       outputs: "Collector worklist with risk score and strategy; total open AR, total past due, % past due."
       human: "Collector reviews and sends the email, works the list."
       llm: "Dunning email for the highest-risk customer."
+      flow:
+        - {"t": "in", "label": "Open invoices"}
+        - {"t": "step", "label": "Days past due"}
+        - {"t": "step", "label": "Roll up per customer"}
+        - {"t": "step", "label": "Risk score: exposure × delinquency"}
+        - {"t": "decide", "label": "Max days past due", "branches": ["> 60 → Escalate + credit hold", "> 30 → Collector call", "> 0 → Friendly email", "0 → Courtesy note"]}
+        - {"t": "llm", "label": "Dunning email"}
+        - {"t": "human", "label": "Collector sends"}
 
     - name: "Cash Application Agent"
       module: "order_to_cash_agent.cash_application.agent"
@@ -62,6 +85,13 @@
       outputs: "Receipt-to-invoice matches with method and confidence; auto-match rate; exception count."
       human: "Cash app analyst works the exception queue."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Bank receipts + open invoices"}
+        - {"t": "decide", "label": "Invoice ref in remittance?", "branches": ["Yes → Apply", "No → Next step"]}
+        - {"t": "step", "label": "Fuzzy-match payer to customer"}
+        - {"t": "decide", "label": "1–3 invoices sum to amount?", "branches": ["Yes → Apply", "No → Exception"]}
+        - {"t": "out", "label": "Matches + auto-match rate"}
+        - {"t": "human", "label": "Analyst works exceptions"}
 
     - name: "Deductions Management Agent"
       module: "order_to_cash_agent.deductions.agent"
@@ -77,6 +107,12 @@
       outputs: "Coded deductions with decision and next action; count and value by decision."
       human: "Analyst researches open items and approves disputes."
       llm: "Dispute letter for an invalid deduction, citing the evidence."
+      flow:
+        - {"t": "in", "label": "Deductions + backup docs"}
+        - {"t": "step", "label": "Classify memo: promo · pricing · shortage · damage · freight · compliance"}
+        - {"t": "decide", "label": "Backup supports it?", "branches": ["Promo + agreement → Valid", "Shortage/damage + clean POD → Invalid", "Compliance fine → Dispute", "Under $100 → Write off", "Else → Research"]}
+        - {"t": "llm", "label": "Dispute letter"}
+        - {"t": "human", "label": "Analyst approves disputes"}
 
 - domain: "Accounts Payable"
   slug: ap
@@ -96,6 +132,12 @@
       outputs: "Answered queries; onboarding decisions with risk flags."
       human: "AP verifies held suppliers by phone before approval."
       llm: "Help-desk answers to supplier questions."
+      flow:
+        - {"t": "in", "label": "Supplier queries + onboarding"}
+        - {"t": "step", "label": "Look up invoice status + pay date"}
+        - {"t": "llm", "label": "Help-desk answer"}
+        - {"t": "decide", "label": "Onboarding screen", "branches": ["Sanctions hit → Block", "Bank change + domain mismatch → Hold", "No tax form → Hold", "Clean → Approve"]}
+        - {"t": "human", "label": "Call-back verification"}
 
     - name: "AP Automation Agent"
       module: "accounts_payable_agent.ap_automation.agent"
@@ -111,6 +153,14 @@
       outputs: "Invoice table with GL account, price variance and status; touchless %, exceptions, duplicates."
       human: "Buyer resolves price and quantity exceptions."
       llm: "Exception summary for the AP manager with next steps."
+      flow:
+        - {"t": "in", "label": "Invoice text + PO + goods receipt"}
+        - {"t": "step", "label": "Extract fields"}
+        - {"t": "step", "label": "Join PO + receipt"}
+        - {"t": "decide", "label": "Three-way match", "branches": ["Duplicate → Reject", "Price > 2% → Exception", "Qty > received → Exception", "Match → Post"]}
+        - {"t": "step", "label": "GL code by vendor"}
+        - {"t": "llm", "label": "Exception summary"}
+        - {"t": "human", "label": "Buyer resolves"}
 
     - name: "Vendor Payments Agent"
       module: "accounts_payable_agent.vendor_payments.agent"
@@ -125,6 +175,13 @@
       outputs: "Payment run with amount, reason, rail and in-run flag; discounts captured, rail mix, items deferred for cash."
       human: "Treasury or the controller approves the run before release."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Approved invoices + cash"}
+        - {"t": "step", "label": "Annualise discounts"}
+        - {"t": "decide", "label": "Pay now?", "branches": ["Discount APR > 8% → Take discount", "Due ≤ 7 days → Pay", "Else → Defer"]}
+        - {"t": "step", "label": "Rail: wire · virtual card · ACH"}
+        - {"t": "decide", "label": "Fits available cash?", "branches": ["Yes → In run", "No → Deferred"]}
+        - {"t": "human", "label": "Approve run"}
 
 - domain: "Close & Reconciliation"
   slug: close
@@ -144,6 +201,12 @@
       outputs: "Exception lines only; match rate, gross revenue, unexplained fee variance."
       human: "Revenue accountant chases missing files and disputes fees."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Orders · settlements · deposits"}
+        - {"t": "step", "label": "Expected net = gross × (1 − fee)"}
+        - {"t": "decide", "label": "Ties out?", "branches": ["No file → Missing settlement", "No deposit → Timing", "Fee var > $50 → Fee variance", "Else → Matched"]}
+        - {"t": "out", "label": "Exceptions + match rate"}
+        - {"t": "human", "label": "Chase files, dispute fees"}
 
     - name: "Balance Sheet Reconciliation Agent"
       module: "close_reconciliation_agent.balance_sheet_reconciliation.agent"
@@ -158,6 +221,13 @@
       outputs: "Reconciliation table with explained/unexplained variance, risk and status."
       human: "Reviewer signs off; accountant books adjusting entries for exceptions."
       llm: "Explanation of exceptions and suggested adjusting entries."
+      flow:
+        - {"t": "in", "label": "GL vs supporting balances"}
+        - {"t": "step", "label": "Variance − reconciling items"}
+        - {"t": "step", "label": "Risk-rate the account"}
+        - {"t": "decide", "label": "Unexplained variance", "branches": ["0, not High → Auto-certify", "0, High risk → Sign-off", "Under $1k → Sign-off", "$1k+ → Investigate"]}
+        - {"t": "llm", "label": "Explain + adjusting entries"}
+        - {"t": "human", "label": "Reviewer signs off"}
 
     - name: "Intercompany Management Agent"
       module: "close_reconciliation_agent.intercompany.agent"
@@ -172,6 +242,14 @@
       outputs: "Pair-level match table; netting positions; gross vs net settlement and % reduction."
       human: "Entity accountants fix unmatched bookings before eliminations."
       llm: ""
+      flow:
+        - {"t": "in", "label": "IC AR / AP by entity"}
+        - {"t": "step", "label": "Translate to USD"}
+        - {"t": "step", "label": "Pair AR ↔ AP"}
+        - {"t": "decide", "label": "Match?", "branches": ["One side missing → Book it", "Diff < $100 → Matched", "Else → Mismatch"]}
+        - {"t": "step", "label": "Net per entity"}
+        - {"t": "out", "label": "Pay / receive netting centre"}
+        - {"t": "human", "label": "Fix bookings"}
 
     - name: "Financial Close Agent"
       module: "close_reconciliation_agent.financial_close.agent"
@@ -186,6 +264,14 @@
       outputs: "Task table with planned finish, blockers and late flag; critical path; accrual journal."
       human: "Controller unblocks tasks and approves the accrual journal."
       llm: "Close status update for the Controller."
+      flow:
+        - {"t": "in", "label": "Close tasks + GRNI"}
+        - {"t": "step", "label": "Plan finish from dependencies"}
+        - {"t": "step", "label": "Flag late + blocked"}
+        - {"t": "step", "label": "Critical path → close day"}
+        - {"t": "out", "label": "Accrual journal"}
+        - {"t": "llm", "label": "Close status update"}
+        - {"t": "human", "label": "Controller approves"}
 
 - domain: "Consolidation & Reporting"
   slug: reporting
@@ -206,6 +292,14 @@
       outputs: "Consolidated TB by entity with eliminations; IC difference, NCI share, consolidated net income."
       human: "Group reporting reviews eliminations and the IC difference."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Entity TBs + FX rates"}
+        - {"t": "step", "label": "Translate: BS closing · P&L average"}
+        - {"t": "step", "label": "CTA to OCI"}
+        - {"t": "step", "label": "Eliminate IC balances"}
+        - {"t": "step", "label": "NCI on IN01 (80%)"}
+        - {"t": "decide", "label": "TB balances?", "branches": ["Yes → Publish", "No → Review"]}
+        - {"t": "human", "label": "Group reporting review"}
 
     - name: "Financial Reporting Agent"
       module: "consolidation_reporting_agent.financial_reporting.agent"
@@ -219,6 +313,12 @@
       outputs: "Flux table with flags; revenue vs budget %, EBITDA margin; draft commentary."
       human: "Line owners confirm drivers before the CFO pack goes out."
       llm: "CFO-pack commentary, told not to invent business drivers."
+      flow:
+        - {"t": "in", "label": "Actual · budget · prior month"}
+        - {"t": "step", "label": "Variance $ and %"}
+        - {"t": "decide", "label": "Over 3% and $50k?", "branches": ["Yes → Flag", "No → Skip"]}
+        - {"t": "llm", "label": "Commentary, no invented drivers"}
+        - {"t": "human", "label": "Owners confirm drivers"}
 
 - domain: "Treasury & Risk"
   slug: treasury
@@ -238,6 +338,14 @@
       outputs: "Proposed transfers; cash by entity; idle cash to invest."
       human: "Treasurer approves transfers and investments."
       llm: "Morning cash brief for the Treasurer."
+      flow:
+        - {"t": "in", "label": "Bank balances + targets"}
+        - {"t": "step", "label": "Global USD position"}
+        - {"t": "decide", "label": "Each account", "branches": ["Above target → Sweep to header", "Below minimum → Fund", "Else → Leave"]}
+        - {"t": "step", "label": "Idle = cash − buffer − targets"}
+        - {"t": "out", "label": "Invest idle: MMF / T-bills"}
+        - {"t": "llm", "label": "Morning cash brief"}
+        - {"t": "human", "label": "Treasurer approves"}
 
     - name: "Cash Forecasting Agent"
       module: "treasury_risk_agent.cash_forecasting.agent"
@@ -252,6 +360,14 @@
       outputs: "13-week forecast by category with net flow and closing cash; low point; back-test MAPE."
       human: "Treasury reviews the low point and any category with poor accuracy."
       llm: "Four-bullet CFO summary of the forecast."
+      flow:
+        - {"t": "in", "label": "52 weeks of flows + opening cash"}
+        - {"t": "step", "label": "Seasonal-naive × trend per category"}
+        - {"t": "step", "label": "Back-test last 13 weeks (MAPE)"}
+        - {"t": "step", "label": "Forecast 13 weeks"}
+        - {"t": "out", "label": "Closing cash + low point"}
+        - {"t": "llm", "label": "CFO summary"}
+        - {"t": "human", "label": "Review low point"}
 
     - name: "Treasury Payments Agent"
       module: "treasury_risk_agent.treasury_payments.agent"
@@ -267,6 +383,13 @@
       outputs: "Screened batch with anomaly score, decision and approvers; release value; pain.001 payload."
       human: "Named approvers release; holds are investigated first."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Payment batch + history"}
+        - {"t": "step", "label": "Anomaly z-score"}
+        - {"t": "decide", "label": "Screen", "branches": ["Watchlist → Block", "Duplicate → Hold", "Bank change → Call-back", "|z| > 3 → Hold", "Else → Clear"]}
+        - {"t": "step", "label": "Approvers by amount"}
+        - {"t": "out", "label": "pain.001 file"}
+        - {"t": "human", "label": "Approvers release"}
 
 - domain: "B2B Payments"
   slug: b2b
@@ -285,6 +408,13 @@
       outputs: "Route, method, fee and retry plan per payment; savings vs sending everything by card."
       human: "Payments ops reviews the routing rules and retries."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Payments + route table"}
+        - {"t": "step", "label": "Filter eligible routes"}
+        - {"t": "step", "label": "Pick min fee ÷ auth rate"}
+        - {"t": "decide", "label": "Declined before?", "branches": ["Insufficient funds → Retry in 3d", "Issuer down → Alt processor", "Do not honor → Ask for ACH"]}
+        - {"t": "out", "label": "Route + fee"}
+        - {"t": "human", "label": "Ops reviews rules"}
 
     - name: "Surcharge Management Agent"
       module: "b2b_payments_agent.surcharge_management.agent"
@@ -298,6 +428,12 @@
       outputs: "Surcharge % and amount with reason; fees incurred vs recovered."
       human: "Legal confirms current state rules before go-live."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Card payments"}
+        - {"t": "decide", "label": "Surcharge allowed?", "branches": ["Debit / prepaid → No", "Prohibited state → No", "Else → Yes"]}
+        - {"t": "step", "label": "Rate = min(3%, cost of acceptance)"}
+        - {"t": "out", "label": "Disclosure text"}
+        - {"t": "human", "label": "Legal confirms rules"}
 
     - name: "Interchange Fee Optimizer Agent"
       module: "b2b_payments_agent.interchange_fee_optimizer.agent"
@@ -310,3 +446,9 @@
       outputs: "Level before and after, fees and saving per transaction; total saving in $ and bps."
       human: "Payments ops reviews the enrichment mapping."
       llm: ""
+      flow:
+        - {"t": "in", "label": "Card transactions"}
+        - {"t": "decide", "label": "Data level", "branches": ["Tax + PO + lines → L3", "Tax + PO → L2", "Else → L1"]}
+        - {"t": "step", "label": "Enrich from invoice"}
+        - {"t": "out", "label": "Fee saving (bps)"}
+        - {"t": "human", "label": "Ops reviews mapping"}
