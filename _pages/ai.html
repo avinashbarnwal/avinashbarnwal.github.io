@@ -10,6 +10,7 @@ author_profile: false
 {% for p in site.posts %}{% if ai_types.types contains p.type %}{% assign n_ai = n_ai | plus: 1 %}{% endif %}{% endfor %}
 {% include hub-hero.html eyebrow="AI & Data Science" title="Notes on <span class='agent-grad'>AI</span>" sub="Summaries and notes on LLMs, AI agents and the machine learning systems behind them, written while building agentic AI for finance." %}
 
+{% include base_path %}
 <section class="lp-wrap hub-ai-focus">
   <div class="agent-term">
     <div class="agent-term__bar">
@@ -22,6 +23,11 @@ author_profile: false
 <span class="t-tool">domain</span>:  cash forecasting · treasury · credit risk · lending
 <span class="t-tool">craft</span>:   evaluation · ML quality · getting models to production</pre>
   </div>
+  <a class="lp-post ca-hub-link" href="{{ base_path }}/ai/cfo-agents/">
+    <span class="lp-post__meta">process guide · 20 agents</span>
+    <h3>How the AI CFO agents work →</h3>
+    <p>Step-by-step process docs for every agent in the ai-cfo repo, from credit and collections to close, consolidation, treasury and B2B payments.</p>
+  </a>
 </section>
 
 {% include finance-agent-demo.html %}

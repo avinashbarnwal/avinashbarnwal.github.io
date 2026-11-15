@@ -1,0 +1,99 @@
+---
+layout: landing
+title: "AI CFO Agents: Process Guide"
+excerpt: "How each of the 20 finance agents in the ai-cfo repo works: inputs, decision steps, outputs and where a human signs off."
+permalink: /ai/cfo-agents/
+author_profile: false
+---
+{% include base_path %}
+{% assign domains = site.data.cfo_agents %}
+{% assign n_agents = 0 %}{% assign n_llm = 0 %}
+{% for d in domains %}{% for a in d.agents %}{% assign n_agents = n_agents | plus: 1 %}{% if a.llm != "" %}{% assign n_llm = n_llm | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
+
+{% include hub-hero.html eyebrow="AI CFO · process guide" title="How the <span class='agent-grad'>finance agents</span> work" sub="A process document for every agent in the ai-cfo repo: what it reads, the steps it takes, the rules behind each decision, what it hands back, and where a person signs off." %}
+
+<section class="lp-wrap">
+  <dl class="gv-stats">
+    <div><dt>{{ n_agents }}</dt><dd>agents</dd></div>
+    <div><dt>{{ domains.size }}</dt><dd>finance domains</dd></div>
+    <div><dt>{{ n_llm }}</dt><dd>use Claude to write</dd></div>
+    <div><dt>0</dt><dd>decisions made by the LLM</dd></div>
+  </dl>
+  <p class="lp-hero__cta">
+    <a class="agent-btn agent-btn--primary" href="https://github.com/avinashbarnwal/ai-cfo">View the code on GitHub</a>
+  </p>
+</section>
+
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">shared pattern</p>
+  <h2 class="lp-h2">Every agent runs the same loop</h2>
+  <p class="ca-lead">The agents are deterministic first. Rules and statistics make every decision, so the result is the same on every run and each outcome traces back to a rule. Claude only writes the human-facing text (an email, a memo, a status note). Without an API key the agent still runs and falls back to a template.</p>
+  <ol class="ca-flow">
+    <li><span class="lp-steps__n">01</span><h3>Ingest</h3><p><code>sample_data()</code> returns DataFrames: invoices, balances, bank lines. Synthetic by default, so it runs with zero setup.</p></li>
+    <li><span class="lp-steps__n">02</span><h3>Decide</h3><p>Rules, thresholds and simple stats score, match and classify each record.</p></li>
+    <li><span class="lp-steps__n">03</span><h3>Route</h3><p>Clean items go straight through; exceptions get a status and a next action.</p></li>
+    <li><span class="lp-steps__n">04</span><h3>Narrate</h3><p>Optionally, Claude turns the structured result into prose for the owner.</p></li>
+    <li><span class="lp-steps__n">05</span><h3>Hand back</h3><p><code>AgentResult</code>: KPI summary, action table, narrative, extras such as journals or payment files.</p></li>
+  </ol>
+</section>
+
+<nav class="lp-wrap ca-jump" aria-label="Domains">
+  {% for d in domains %}<a href="#{{ d.slug }}">{{ d.domain }} <span>{{ d.agents.size }}</span></a>{% endfor %}
+</nav>
+
+{% assign i = 0 %}
+{% for d in domains %}
+<section class="lp-wrap lp-section ca-domain" id="{{ d.slug }}">
+  <p class="lp-eyebrow">{{ d.folder }}/</p>
+  <h2 class="lp-h2">{{ d.domain }}</h2>
+  <p class="ca-lead">{{ d.intro }}</p>
+
+  {% for a in d.agents %}{% assign i = i | plus: 1 %}
+  <article class="ca-agent" id="{{ a.module | split: '.' | slice: 1 | first }}">
+    <header class="ca-agent__head">
+      <span class="ca-agent__n">{% if i < 10 %}0{% endif %}{{ i }}</span>
+      <div>
+        <h3>{{ a.name }}</h3>
+        <p>{{ a.summary }}</p>
+      </div>
+      <span class="ca-tag{% if a.llm == '' %} ca-tag--rules{% endif %}">{% if a.llm == '' %}rules only{% else %}rules + Claude{% endif %}</span>
+    </header>
+    <div class="ca-agent__body">
+      <div class="ca-agent__steps">
+        <h4>Process</h4>
+        <ol>{% for s in a.steps %}<li>{{ s }}</li>{% endfor %}</ol>
+      </div>
+      <dl class="ca-agent__facts">
+        <dt>Inputs</dt><dd>{{ a.inputs }}</dd>
+        <dt>Outputs</dt><dd>{{ a.outputs }}</dd>
+        <dt>Human checkpoint</dt><dd>{{ a.human }}</dd>
+        {% if a.llm != "" %}<dt>Claude writes</dt><dd>{{ a.llm }}</dd>{% endif %}
+        <dt>Run</dt><dd><code>python -m {{ a.module }}</code></dd>
+      </dl>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+
+<section class="lp-wrap lp-section">
+  <p class="lp-eyebrow">running it</p>
+  <h2 class="lp-h2">Try an agent</h2>
+  <div class="agent-term ca-term">
+    <div class="agent-term__bar">
+      <span class="agent-term__dots"><i></i><i></i><i></i></span>
+      <span class="agent-term__title">ai-cfo</span>
+    </div>
+<pre class="agent-term__body"><span class="t-dim"># from the repo root</span>
+<span class="t-step">pip</span> install -r requirements.txt
+
+<span class="t-dim"># run one agent on synthetic data, offline (template text, no API call)</span>
+AGENT_OFFLINE=1 <span class="t-step">python</span> -m order_to_cash_agent.collections.agent
+
+<span class="t-dim"># let Claude write the narrative</span>
+<span class="t-tool">export</span> ANTHROPIC_API_KEY=<span class="t-str">…</span>
+<span class="t-step">python</span> -m treasury_risk_agent.cash_forecasting.agent</pre>
+  </div>
+  <p class="ca-note">These are proofs of concept on synthetic data. Fee rates, FX rates, thresholds and the surcharge state list are illustrative. Confirm them, and swap in real ERP and bank feeds, before relying on any output.</p>
+  <p><a href="{{ base_path }}/ai/">← Back to AI</a></p>
+</section>
