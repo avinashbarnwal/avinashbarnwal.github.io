@@ -1,5 +1,6 @@
 ---
 title: "Impacting businesses through predictive models"
+excerpt: "Nearly 90% of models never reach production. The common reasons, from shifting requirements during development to deployment and monitoring gaps."
 collection: posts
 type: "Data Science"
 permalink: /posts/impact_business_models

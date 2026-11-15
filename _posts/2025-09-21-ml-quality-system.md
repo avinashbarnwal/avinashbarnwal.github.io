@@ -1,5 +1,6 @@
 ---
 title: "How Good Are Your ML Best Practices?"
+excerpt: "Notes on Booking.com's framework for choosing ML best practices by linking each one to measurable quality attributes, so teams adopt what has the most impact under their constraints."
 collection: posts
 type: "Data Science"
 permalink: /posts/ml-quality-system

@@ -352,8 +352,8 @@
   .ai-proj__links a { color: $sr-indigo-lt; &:hover { color: $sr-orange-lt; } }
 }
 #projects, #writing { scroll-margin-top: 80px; }
-.hub-ai-focus .agent-term { margin-top: 2.4em; }
-.ai-all { margin-top: 2.2em; margin-bottom: 0; }
+.ai-all { margin-top: 2.4em; margin-bottom: 0; }
+#writing + .hub-tools { padding-top: 1.2em; }
 
 @media (max-width: 900px) { .ai-projects { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) {

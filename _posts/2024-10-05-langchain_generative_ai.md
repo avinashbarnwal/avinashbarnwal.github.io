@@ -1,5 +1,6 @@
 ---
 title: "LangChain - Generative AI"
+excerpt: "A quick tour of LangChain: what it does, how it connects LLMs to external tools, context and memory, and the features that make LLM apps faster to build."
 collection: posts
 type: "Data Science"
 permalink: /posts/langchain

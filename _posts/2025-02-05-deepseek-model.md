@@ -1,5 +1,6 @@
 ---
 title: "Summary of the Article on DeepSeek and Its AI Advancements"
+excerpt: "How DeepSeek, a Chinese AI lab, shipped frontier-level models at a fraction of competitors' cost, and why it shifts the AI debate from existential risk to geopolitics."
 collection: posts
 type: "AI"
 permalink: /posts/deepseek

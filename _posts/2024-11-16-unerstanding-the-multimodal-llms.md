@@ -1,5 +1,6 @@
 ---
 title: "Understanding Multimodal LLMs"
+excerpt: "How multimodal LLMs take in images as well as text, the main architectures for combining them, and a summary of recent research papers."
 collection: posts
 type: "Generative AI"
 permalink: /posts/understanding_multimodal_llms
