@@ -1,0 +1,174 @@
+---
+title: "Building a Transaction Foundation Model for Financial Intelligence"
+collection: "posts"
+type: "AI"
+layout: field-note
+category: "Engineering"
+permalink: "/posts/building-a-transaction-foundation-model"
+date: 2026-11-21
+excerpt: "One decoder. Every card’s full history. Many risk models."
+tags: ["ai-agent", "ai", "finance"]
+---
+{% raw %}
+<p><em>One decoder. Every card’s full history. Many risk models.</em></p>
+
+<p>Last month I rebuilt Netflix’s foundation model for recommendation. This time the same idea goes after money: train one decoder on unlabeled transaction histories, then let fraud, credit and churn models build on what it learns.</p>
+
+<p>Payments companies are already doing this. Stripe, Nubank, Visa, Mastercard, Revolut and Plaid have all described large models trained on transaction data. NVIDIA published an open recipe for it, and I ported that recipe into ai-cfo with portable libraries: pandas, PyTorch, Hugging Face and XGBoost.</p>
+
+<p>This post walks through how I built each piece, what the code does, and what is still left to do.</p>
+
+<h2 id="at-a-glance">At a glance</h2>
+<ul class="fn__glance">
+<li>13 tokens per transaction: one marker plus one token per field, instead of the ~39 a GPT-2 BPE tokenizer spends on commas and dollar signs.</li>
+<li>A small vocabulary: 3,171 tokens on the synthetic data, against 50,257 for GPT-2.</li>
+<li>A compact Llama-style decoder, pretrained with plain next-token prediction. No labels.</li>
+<li>One embedding per transaction, which only sees the history up to that transaction.</li>
+<li>A fraud test: XGBoost on hand-built features, on embeddings, and on both, all scored on the same time-ordered test set.</li>
+<li>Runs on a laptop CPU, a single GPU, or eight GPUs with <code>torchrun</code>.</li>
+</ul>
+
+<h2 id="the-language-of-money">The language of money</h2>
+
+<p>Most fraud and credit models still run on hand-engineered features: amount, hour, merchant category, time since the last purchase. Each team builds its own set. Each set looks at one row, or a few rolling averages, and misses the order in which things happened.</p>
+
+<p>But order is the signal. A $900 online purchase in another state at 3 a.m. is normal for one cardholder and alarming for another. You can only tell which by reading that person’s history.</p>
+
+<p>A language model learns meaning from the order of words. A transaction foundation model learns behaviour from the order of payments. Train it once on everyone’s history, and every downstream team gets a vector that already knows what “normal” looks like for this card.</p>
+
+<h2 id="a-tokenizer-built-for-transactions">A tokenizer built for transactions</h2>
+
+<p>The obvious shortcut is to write each transaction as a CSV line and feed it to a text tokenizer. GPT-2’s tokenizer spends about 39 tokens per transaction that way, most of them on punctuation and digits. At a 4,096-token budget, that is roughly 100 transactions of history.</p>
+
+<p>The domain tokenizer emits one token per field instead. Every transaction becomes:</p>
+
+<pre><code>[TXN] AMT_b10 MERCH_h1247 MCC_5311 HOUR_19 DOW_3 MON_1 CHIP_Online Transaction ZIP3_866 STATE_AZ ERR_0 DT_UNK CARD_0</code></pre>
+
+<p>That is 13 tokens, so the same budget now holds about three times as much history. Each field gets the treatment it needs:</p>
+
+<ul>
+<li><strong>Amounts</strong> go into signed log-scale bins, so a $12 coffee and a $1,200 laptop land far apart, and refunds get bins of their own.</li>
+<li><strong>Merchants</strong> are hashed into 2,048 buckets. New merchants never grow the vocabulary.</li>
+<li><strong>Categories</strong> such as MCC, hour, ZIP3 and state keep their most frequent values. Rare and unseen values map to that field’s own UNK token.</li>
+<li><strong>Time since the previous transaction</strong> gets log bins too. Bursts of spending show up as short gaps.</li>
+</ul>
+
+<p>Every transaction starts with a <code>[TXN]</code> marker, so its last token always sits at a fixed offset. That matters later, when we pool embeddings.</p>
+
+<p>Each field is a small tokenizer class. Adding a new field, say a device ID or a beneficiary country, is a few lines in <code>default_steps()</code>.</p>
+
+<p>Code: <code>tokenizer.py</code>.</p>
+
+<h2 id="no-leakage-by-design">No leakage, by design</h2>
+
+<p>Fraud models are easy to fool yourself with. Three rules keep this pipeline honest:</p>
+
+<ul>
+<li><strong>Split by time, not at random.</strong> The first 80% of transactions train the model, the next 10% validate it, and the last 10% test it. The model never sees the future.</li>
+<li><strong>Fit everything on the training period.</strong> The tokenizer vocabulary and the pretraining data both come from the first 80% only.</li>
+<li><strong>Never tokenize the label.</strong> The fraud flag is not a field. The foundation model learns behaviour, not answers.</li>
+</ul>
+
+<p>Code: <code>data.py</code>.</p>
+
+<h2 id="built-like-a-language-model">Built like a language model</h2>
+
+<figure><img alt="Flow from card transactions to domain tokens, time-split training windows, a decoder foundation model, then a next-token head with causal LM loss, a transaction embedding feeding an XGBoost fraud model and review queue, and a saved checkpoint." src="/images/medium/building-a-transaction-foundation-model/img01.png" /><figcaption><b>FIG A</b>One decoder turns card histories into embeddings a fraud model can use.</figcaption></figure>
+
+<p>Under the hood, the model is a standard Hugging Face <code>LlamaForCausalLM</code>, sized to match NVIDIA’s recipe: hidden size 512, 8 layers, grouped-query attention with 8 query heads and 2 key-value heads, rotary positions up to 8,192 tokens, SwiGLU and RMSNorm. With the TabFormer vocabulary, that is about 29M parameters. Tiny by LLM standards, and enough for a vocabulary of a few thousand tokens.</p>
+
+<p><strong>Windows that respect transactions.</strong> Training samples random windows from each cardholder’s history. Windows always start on a transaction boundary, so the model never sees half a payment. Busy cardholders are sampled more often, in proportion to their history length.</p>
+
+<p><strong>Plain next-token prediction.</strong> No special heads and no labels. Predicting the next merchant bucket, amount bin or time gap forces the model to learn each cardholder’s routine.</p>
+
+<p><strong>A checkpoint anyone can load.</strong> Training is a plain PyTorch loop with AdamW, warmup and cosine decay, and bf16 on GPU. The result saves as standard safetensors and loads back with <code>AutoModelForCausalLM.from_pretrained</code>. With <code>torchrun</code>, data-parallel training across GPUs switches on automatically.</p>
+
+<p>Code: <code>model.py</code>.</p>
+
+<h2 id="one-vector-per-transaction">One vector per transaction</h2>
+
+<p>With causal attention, only the last position has seen everything before it. So the hidden state at the last token of transaction <em>t</em> is an embedding of the cardholder’s history up to and including <em>t</em>. Never the future, and never the label.</p>
+
+<p>That gives a useful property: one forward pass over a window produces an embedding for every transaction in it. Long histories are covered with overlapping windows, so each transaction keeps at least half a window of prior context.</p>
+
+<p>The 512-dimensional vectors are compressed to 64 with PCA, fitted on the training period. On the synthetic run, 64 dimensions kept 98% of the variance.</p>
+
+<p>Code: <code>embeddings.py</code>.</p>
+
+<h2 id="does-it-move-fraud-detection">Does it move fraud detection?</h2>
+
+<p>A foundation model is only worth it if a downstream metric moves. The test: three XGBoost classifiers, scored on the same held-out time period.</p>
+
+<ol>
+<li><strong>Raw:</strong> 13 hand-engineered features. The baseline.</li>
+<li><strong>Embeddings only:</strong> the 64 PCA dimensions.</li>
+<li><strong>Combined:</strong> both, 77 features.</li>
+</ol>
+
+<p>Judge by average precision (AP) first, not ROC-AUC. At around 0.1% fraud, ROC-AUC saturates near 1 and hides what happens at the top of the score list. That top is where a review team with fixed daily capacity actually works.</p>
+
+<p>On IBM’s TabFormer dataset (24.4M synthetic card transactions), NVIDIA reports that the combined model lifts AP by about 42% over the raw baseline, from 0.124 to 0.176. ROC-AUC barely moves. Embeddings on their own do worse than the baseline. They complement hand-built features; they don’t replace them.</p>
+
+<p>Swap the fraud label for churn or default, and the same pattern applies.</p>
+
+<p>Code: <code>downstream.py</code>.</p>
+
+<h2 id="fraud-that-only-history-reveals">Fraud that only history reveals</h2>
+
+<p>I wanted the pipeline to run with zero setup, so it ships with a synthetic generator. The generator is built so that fraud is hard to see from a single row.</p>
+
+<p>Each synthetic cardholder has a home state, favourite merchants, a typical spend and their own active hours. Some are night owls, so the hour alone proves nothing. Fraud arrives as a burst of spending in another state at new merchants. But so does ordinary travel.</p>
+
+<p>What separates them is the cardholder’s own history. Fraud bursts run several times above their usual spend, come through a channel they rarely use, and land far from their normal hours. A single row is ambiguous. The sequence is not. That is exactly the case a foundation model should help with.</p>
+
+<h2 id="an-agent-for-the-cfo-stack">An agent for the CFO stack</h2>
+
+<p>The pipeline is also wrapped as an agent, with the same contract as every other agent in ai-cfo. It trains a small model, reports baseline and combined AP and ROC-AUC, and returns the 25 highest-risk test transactions as a review queue. An LLM then explains in four sentences what the lift means for a fraud team with fixed daily capacity.</p>
+
+<p>Code: <code>agent.py</code>, <code>pipeline.py</code>.</p>
+
+<h2 id="try-it">Try it</h2>
+
+<p>The whole pipeline runs on a CPU with synthetic data. It generates card histories, tokenizes them, pretrains, extracts embeddings and runs the fraud comparison.</p>
+
+<pre><code>git clone https://github.com/avinashbarnwal/ai-cfo.git
+cd ai-cfo
+python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r transaction_foundation_model/requirements.txt
+.venv/bin/python -m transaction_foundation_model.pipeline --synthetic --preset small --max-steps 300</code></pre>
+
+<p>For the full setup, download TabFormer’s <code>card_transaction.v1.csv</code> and run on a GPU:</p>
+
+<pre><code>python -m transaction_foundation_model.pipeline --data data/card_transaction.v1.csv \
+    --preset paper --max-steps 3000 --seq-len 4096 --batch-size 16</code></pre>
+
+<p>Set <code>TFM_CUDF=1</code> to run the pandas steps on the GPU with cuDF, and use <code>torchrun --nproc-per-node 8</code> to train across eight GPUs.</p>
+
+<p>With the smoke-test settings:</p>
+<ul>
+<li>201,624 synthetic transactions from 400 cardholders, 0.55% of them fraud</li>
+<li>1.2M parameters, with 78-transaction windows</li>
+<li>pretraining loss fell from 8.09, the random-guess level, to 3.31 in 300 steps</li>
+<li>about 19 minutes end to end on a 2-core cloud CPU</li>
+</ul>
+
+<p><strong>A note on results:</strong> on this small synthetic run, the combined model lifted ROC-AUC from 0.959 to 0.972, but AP stayed flat (0.288 against 0.284). Embeddings alone scored far lower. A 1.2M-parameter model trained for 300 CPU steps hasn’t learned much yet. These numbers show the pipeline works end to end, not that it catches more fraud. The real test is the full-size model on TabFormer.</p>
+
+<h2 id="and-im-not-done">And I’m not done</h2>
+
+<p>This is version one. Next up:</p>
+<ul>
+<li>The full run: the 29M-parameter preset on all 24.4M TabFormer transactions, to see whether I reproduce NVIDIA’s AP lift.</li>
+<li>Beyond fraud: churn, credit default and cash-flow anomalies from the same embeddings.</li>
+<li>Business payments: bank feeds and AP/AR flows instead of consumer card swipes, which is where a CFO stack lives.</li>
+<li>Scaling experiments: does AP keep improving as the model and the data grow?</li>
+</ul>
+
+<p>If you work on fraud or credit models, I’d love to hear what you would add.</p>
+
+<h2 id="references">References</h2>
+<ul>
+<li>NVIDIA Technical Blog, <a href="https://developer.nvidia.com/blog/build-your-own-transaction-foundation-model-for-financial-intelligence/">Build Your Own Transaction Foundation Model for Financial Intelligence</a>, June 2026. The recipe this project follows.</li>
+<li>NVIDIA, <a href="https://build.nvidia.com/nvidia/build-your-own-transaction-foundation-model">Build Your Own Transaction Foundation Model</a> developer example.</li>
+<li>Code: <a href="https://github.com/avinashbarnwal/ai-cfo/tree/main/transaction_foundation_model">github.com/avinashbarnwal/ai-cfo</a>, transaction_foundation_model/ folder.</li>
+</ul>
+{% endraw %}
